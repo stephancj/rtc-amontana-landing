@@ -1,6 +1,6 @@
 import React from 'react'
 import Link  from 'next/link'
-import Logo from '/public/images/logo2.png'
+import Logo from '/public/images/Rotaract Logo_FR21_White.png'
 import Projects from '../../api/projects'
 import Image from 'next/image'
 
@@ -9,6 +9,8 @@ const Footer = (props) =>{
     const ClickHandler = () =>{
         window.scrollTo(10, 0);
      }
+
+    const currentYear = new Date().getFullYear();
 
   return(
     <footer className="wpo-site-footer">
@@ -23,7 +25,7 @@ const Footer = (props) =>{
                             <p>Welcome and open yourself to your truest love this year with us! With the Release Process</p>
                             <ul>
                                 <li>
-                                    <Link href="/">
+                                    <Link href="https://www.facebook.com/profile.php?id=100064547237957" target='_blank'>
                                         <i className="ti-facebook"></i>
                                     </Link>
                                 </li>
@@ -67,9 +69,9 @@ const Footer = (props) =>{
                             <div className="contact-ft">
                                 <p>Would you have any enquiries.Please feel free to contuct us</p>
                                 <ul>
-                                    <li><i className="fi flaticon-mail"></i>charitio@gmail.com</li>
-                                    <li><i className="fi flaticon-phone-call"></i>+888 (123) 869523</li>
-                                    <li><i className="fi flaticon-location"></i>New York – 1075 Firs Avenue</li>
+                                    <li><i className="fi flaticon-mail"></i>amontana.rotaract@gmail.com</li>
+                                    <li><i className="fi flaticon-phone-call"></i>+261 XX XX XXX XX</li>
+                                    <li><i className="fi flaticon-location"></i>Madagascar – Antananarivo, 101</li>
                                 </ul>
                             </div>
                         </div>
@@ -100,7 +102,7 @@ const Footer = (props) =>{
             <div className="container">
                 <div className="row">
                     <div className="col col-xs-12">
-                        <p className="copyright"> &copy; 2023 charitio Theme. Design By <Link href="/">wpOcean</Link>. All Rights Reserved.</p>
+                        <p className="copyright"> &copy; {currentYear} Rotaract Club Antananarivo Amontana. All Rights Reserved.</p>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,6 @@
-import cimg1 from '/public/images/campaign/1.jpg'
-import cimg2 from '/public/images/campaign/2.jpg'
-import cimg3 from '/public/images/campaign/3.jpg'
+import cimg1 from '/public/images/campaign/education.jpg'
+import cimg2 from '/public/images/campaign/eau.jpg'
+import cimg3 from '/public/images/campaign/medecine.jpg'
 
 import eimg1 from '/public/images/campaign/4.jpg'
 import eimg2 from '/public/images/campaign/5.jpg'

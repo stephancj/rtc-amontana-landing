@@ -21,12 +21,12 @@ const HomePage = (props) => {
         <div>
             <Navbar Logo={Logo} />
             <Hero />
-            <Service Fclass={'wpo-features-section-s2'} vclassClass={'v1'}/>
             <About/>
+            <Service Fclass={'wpo-features-section-s2'} vclassClass={'v1'}/>
             <CauseSection/>
             <TeamSection/>
-            <Testimonial/>
-            <CtaSection vImg={vimg} cTitle={'Lets Chenge The World With Humanity'}/>
+            {/* <Testimonial/> */}
+            <CtaSection vImg={vimg} cTitle={'Lets Change The World With Humanity'}/>
             <EventSection/>
             <BlogSection/>
             <PartnerSection/>

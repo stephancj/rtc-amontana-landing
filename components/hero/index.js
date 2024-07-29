@@ -3,9 +3,9 @@ import Link from 'next/link'
 import Clients from './client'
 import Image from 'next/image'
 
-import hero1 from '/public/images/slider/right-img2.png'
+import hero1 from '/public/images/slider/fanionRTCA.jpg'
 import hero2 from '/public/images/slider/s.png'
-import hero3 from '/public/images/slider/right-img.png'
+import hero3 from '/public/images/slider/heroRTCA1.jpg'
 
 
 
@@ -21,7 +21,7 @@ const Hero =() => {
                                 <span>Help The Poor Children</span>
                             </div>
                             <div className="wpo-hero-title">
-                                <h2>Your Marcy Can Change Someone’s Life</h2>
+                                <h2>La camaraderie par le service</h2>
                             </div>
                             <div className="wpo-hero-subtitle">
                                 <p>We help local nonprofits access the funding, tools, training, and support they need
