@@ -6,7 +6,7 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <title>charitio - Multipurpose Charity Nonprofit Next Js Template</title>
+          <title>Rotaract Club Amontana - Site officiel</title>
           <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
         </Head>
         <body>
