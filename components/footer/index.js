@@ -102,7 +102,7 @@ const Footer = (props) =>{
             <div className="container">
                 <div className="row">
                     <div className="col col-xs-12">
-                        <p className="copyright"> &copy; {currentYear} Rotaract Club Antananarivo Amontana. All Rights Reserved.</p>
+                        <p className="copyright"> &copy; {currentYear} Rotaract Club Amontana.</p>
                     </div>
                 </div>
             </div>
