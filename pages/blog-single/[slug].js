@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { useRouter } from 'next/router'
-import blogs from '../../api/events'
+import blogs from '../../api/blogs'
 import Link from 'next/link'
 import PageTitle from '../../components/pagetitle';
 import Navbar from '../../components/Navbar';

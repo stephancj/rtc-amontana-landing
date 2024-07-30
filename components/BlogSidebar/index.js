@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link'
-import blogs from '../../api/events'
+import blogs from '../../api/blogs'
 import Services from '../../api/service';
 import Projects from '../../api/projects'
 import about from '/public/images/blog/about-widget.jpg'
