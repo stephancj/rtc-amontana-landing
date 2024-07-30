@@ -30,7 +30,7 @@ const Hero =() => {
                                     to become more.</p>
                             </div>
                             <div className="btns">
-                                <Link href="/about" className="btn theme-btn-s2">Get Started</Link>
+                                <Link href="/about" className="btn theme-btn-s2">Rejoignez-nous</Link>
                             </div>
                         </div>
                     </div>
