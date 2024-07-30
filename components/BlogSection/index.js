@@ -1,13 +1,22 @@
-import React from 'react'
-import blogs from '../../api/blogs'
+import React, { use } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useEffect } from 'react'
+import { getAllEvents } from '../../api/events'
 
 const BlogSection = (props) => {
+    const [events, setEvents] = React.useState([]);
     
     const ClickHandler = () =>{
         window.scrollTo(10, 0);
-     }
+    }
+
+    useEffect(() => {
+        (async () => {
+            const eventsList = await getAllEvents();
+            setEvents(eventsList);
+        })();
+    }, []);
 
     return(
 
@@ -25,16 +34,16 @@ const BlogSection = (props) => {
                 </div>
                 <div className="wpo-blog-items">
                     <div className="row">
-                        {blogs.slice(0,3).map((blog, Bitem) => (
-                            <div className="col col-lg-4 col-md-6 col-12" key={Bitem}>
+                        {events.slice(0,3).map((event, eItem) => (
+                            <div className="col col-lg-4 col-md-6 col-12" key={eItem}>
                                 <div className="wpo-blog-item">
                                     <div className="wpo-blog-img">
-                                        <Image src={blog.screens} alt=""/>
+                                        <Image src={`https://rtc-amontana.pockethost.io/api/files/${event.collectionId}/${event.id}/${event.image}`} alt={event.title} width={1000} height={1000}/>
                                     </div>
                                     <div className="wpo-blog-content">
                                         <div className="wpo-blog-content-top">
-                                            <span>{blog.create_at}</span>
-                                            <h2><Link onClick={ClickHandler} href='/blog-single/[slug]' as={`/blog-single/${blog.slug}`}>{blog.title}</Link></h2>
+                                            <span>{event.create_at}</span>
+                                            <h2><Link onClick={ClickHandler} href='/blog-single/[slug]' as={`/blog-single/${event.slug}`}>{event.title}</Link></h2>
                                         </div>
                                         {/* <div className="wpo-blog-content-btm">
                                             <div className="wpo-blog-content-btm-left">
