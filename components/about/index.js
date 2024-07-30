@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from  'next/link'
-import abimg from '/public/images/about.jpg'
+import abimg from '/public/images/rtcaAbout.jpg'
 import shape from '/public/images/ab-shape-2.png'
 import Image from 'next/image'
 

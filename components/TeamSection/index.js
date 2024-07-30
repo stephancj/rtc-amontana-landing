@@ -7,8 +7,10 @@ import Image from "next/image";
 
 const TeamSection = () => {
 
+    const alphabeticalOrederedTeams = Teams.sort((a, b) => a.name.localeCompare(b.name))
+
     var settings = {
-        dots: false,
+        dots: true,
         arrows: false,
         speed: 1000,
         slidesToShow: 4,
@@ -73,7 +75,7 @@ const TeamSection = () => {
                 <div className="wpo-team-wrap">
                     <div className="team-slider">
                         <Slider {...settings}>
-                            {Teams.slice(0, 6).map((Team, tm) => (
+                            {alphabeticalOrederedTeams.map((Team, tm) => (
                                 <div className="wpo-team-item" key={tm}>
                                     <div className="wpo-team-img">
                                         <Image src={Team.tImg} alt="" />

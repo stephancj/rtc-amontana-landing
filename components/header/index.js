@@ -50,15 +50,6 @@ export default class Header extends Component {
                                         <ul className="nav navbar-nav mb-2 mb-lg-0">
                                             <li className="menu-item-has-children">
                                                 <Link onClick={ClickHandler} href="/">Home</Link>
-                                                {/* <ul className="sub-menu">
-                                                    <li><Link onClick={ClickHandler} href="/home">Home Charity</Link></li>
-                                                    <li><Link onClick={ClickHandler} href="/home2">Home Education</Link></li>
-                                                    <li><Link onClick={ClickHandler} href="/home3">Home Wildlife</Link></li>
-                                                    <li><Link onClick={ClickHandler} href="/home4">Home Ocean Polution</Link></li>
-                                                    <li><Link onClick={ClickHandler} href="/home5">Home World Pandemic</Link></li>
-                                                    <li><Link onClick={ClickHandler} href="/home6">Home Nature</Link></li>
-                                                    <li><Link onClick={ClickHandler} href="/home7">Home Nature S2</Link></li>
-                                                </ul> */}
                                             </li>
                                             <li className="menu-item-has-children">
                                                 <Link href="/cause">Cause</Link>
@@ -92,13 +83,13 @@ export default class Header extends Component {
                                                 </ul>
                                             </li>
                                             <li className="menu-item-has-children">
-                                                <Link onClick={ClickHandler} href="/blog">Blog</Link>
-                                                <ul className="sub-menu">
+                                                <Link onClick={ClickHandler} href="/#blog">Blog</Link>
+                                                {/* <ul className="sub-menu">
                                                     <li><Link onClick={ClickHandler} href="/blog">Blog right sidebar</Link></li>
                                                     <li><Link onClick={ClickHandler} href="/blog-left-sidebar">Blog left sidebar</Link></li>
                                                     <li><Link onClick={ClickHandler} href="/blog-fullwidth">Blog fullwidth</Link></li>
                                                     <li className="menu-item-has-children">
-                                                        <Link onClick={ClickHandler} href="/">Blog details</Link>
+                                                        <Link onClick={ClickHandler} href="#blog">Blog details</Link>
                                                         <ul className="sub-menu">
                                                             <li><Link onClick={ClickHandler} href="/blog-single/Make-Someone’s">Blog details right sidebar</Link>
                                                             </li>
@@ -108,7 +99,7 @@ export default class Header extends Component {
                                                                 fullwidth</Link></li>
                                                         </ul>
                                                     </li>
-                                                </ul>
+                                                </ul> */}
                                             </li>
                                             <li><Link onClick={ClickHandler} href="/contact">Contact</Link></li>
                                         </ul>
@@ -119,7 +110,7 @@ export default class Header extends Component {
                                         <div className="close-form">
                                             <Link onClick={ClickHandler} className="theme-btn" href="/donate">Donate Now</Link>
                                         </div>
-                                        <div className="header-search-form-wrapper">
+                                        {/* <div className="header-search-form-wrapper">
                                             <div className="cart-search-contact">
                                                 <button onClick={this.searchHandler} className="search-toggle-btn"><i
                                                     className={`${isSearchShow ? 'ti-close' : 'ti-search'}`}></i></button>
@@ -134,7 +125,7 @@ export default class Header extends Component {
                                                     </form>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                             </div>

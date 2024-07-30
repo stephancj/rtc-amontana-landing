@@ -1319,7 +1319,7 @@ h2.hidden {
 --------------------------------------------------------------*/
 /*-- 2.1 topbar --*/
 .topbar {
-  background: #191933;
+  background: #D22064;
   padding: 0 130px;
 }
 
@@ -2444,7 +2444,7 @@ h2.hidden {
 .wpo-hero-section-6,
 .wpo-hero-section-7 {
     height: 500px;
-    background: #ebfcfa;
+    background: #f6ecd6;
     border-bottom: 0;
   }
 }
@@ -2472,7 +2472,7 @@ h2.hidden {
   width: 986px;
   height: 986px;
   content: "";
-  background: #ebfcfa;
+  background: #f6ecd6;
   border-radius: 50%;
   z-index: -1;
 }
