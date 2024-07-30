@@ -11,6 +11,8 @@ import hero3 from '/public/images/slider/heroRTCA1.jpg'
 
 
 const Hero =() => {
+    const yearsOfService = new Date().getFullYear() - 1998
+
     return (
         <section className="wpo-hero-section-1">
             <div className="container-fluid">
@@ -50,8 +52,8 @@ const Hero =() => {
                                                 <i className="fi flaticon-salary"></i>
                                             </div>
                                             <div className="wpo-total-project-text">
-                                                <h3>252+</h3>
-                                                <p>Total Projects</p>
+                                                <h3>{yearsOfService}</h3>
+                                                <p>Années de Services</p>
                                             </div>
                                         </div>
                                         <div className="project-shape">

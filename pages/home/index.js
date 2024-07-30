@@ -28,7 +28,7 @@ const HomePage = (props) => {
             <Testimonial/>
             <CtaSection vImg={vimg} cTitle={'Lets Change The World With Humanity'}/>
             <EventSection/>
-            <BlogSection/>
+            <BlogSection id="blog" />
             <PartnerSection/>
             <Footer/>
             <Scrollbar />

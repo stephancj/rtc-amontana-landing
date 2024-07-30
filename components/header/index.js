@@ -83,13 +83,13 @@ export default class Header extends Component {
                                                 </ul>
                                             </li>
                                             <li className="menu-item-has-children">
-                                                <Link onClick={ClickHandler} href="/blog">Blog</Link>
-                                                <ul className="sub-menu">
+                                                <Link onClick={ClickHandler} href="/#blog">Blog</Link>
+                                                {/* <ul className="sub-menu">
                                                     <li><Link onClick={ClickHandler} href="/blog">Blog right sidebar</Link></li>
                                                     <li><Link onClick={ClickHandler} href="/blog-left-sidebar">Blog left sidebar</Link></li>
                                                     <li><Link onClick={ClickHandler} href="/blog-fullwidth">Blog fullwidth</Link></li>
                                                     <li className="menu-item-has-children">
-                                                        <Link onClick={ClickHandler} href="/">Blog details</Link>
+                                                        <Link onClick={ClickHandler} href="#blog">Blog details</Link>
                                                         <ul className="sub-menu">
                                                             <li><Link onClick={ClickHandler} href="/blog-single/Make-Someone’s">Blog details right sidebar</Link>
                                                             </li>
@@ -99,7 +99,7 @@ export default class Header extends Component {
                                                                 fullwidth</Link></li>
                                                         </ul>
                                                     </li>
-                                                </ul>
+                                                </ul> */}
                                             </li>
                                             <li><Link onClick={ClickHandler} href="/contact">Contact</Link></li>
                                         </ul>
