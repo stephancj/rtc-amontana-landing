@@ -3,7 +3,7 @@ import Link from 'next/link'
 import BlogSidebar from '../BlogSidebar'
 import VideoModal from '../../components/ModalVideo'
 
-import blogs from '../../api/events'
+import blogs from '../../api/blogs'
 import Image from 'next/image';
 
 
