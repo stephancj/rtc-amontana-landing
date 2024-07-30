@@ -66,7 +66,7 @@ const Service = (props) => {
                             <div className="wpo-features-item" style={{backgroundColor: service.backgroundColor}}>
                                 <div className="wpo-features-icon">
                                     <div className="icon">
-                                        <Image src={service.logo} alt=""/>
+                                        <Image src={service.logo} alt={service.title}/>
                                     </div>
                                 </div>
                                 <div className="wpo-features-text">
