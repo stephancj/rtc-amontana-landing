@@ -15,7 +15,7 @@ const CtaSection = (props) => {
                         <div className="wpo-cta-section">
                             <div className="wpo-cta-content">
                                 <h2>{props.cTitle}</h2>
-                                <Link href="/volunteer">Become A Volunteer</Link>
+                                <Link href="/volunteer">Rejoignez-nous</Link>
                             </div>
                             <div className="volunteer-img">
                                 <Image src={props.vImg} alt=""/>

@@ -6,7 +6,7 @@ import Image from 'next/image'
 const CauseSection = (props) => {
     const ClickHandler = () =>{
         window.scrollTo(10, 0);
-     }
+    }
 
     return(
 

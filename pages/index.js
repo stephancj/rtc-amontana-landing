@@ -26,7 +26,7 @@ const HomePage = (props) => {
             <CauseSection/>
             <TeamSection/>
             {/* <Testimonial/> */}
-            <CtaSection vImg={vimg} cTitle={'Lets Change The World With Humanity'}/>
+            <CtaSection vImg={vimg} cTitle={'Rejoignez-nous, transformez des vies, vivez la magie'}/>
             <EventSection/>
             <BlogSection/>
             <PartnerSection/>
