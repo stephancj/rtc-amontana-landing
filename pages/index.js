@@ -23,12 +23,12 @@ const HomePage = (props) => {
             <Hero />
             <About/>
             <Service Fclass={'wpo-features-section-s2'} vclassClass={'v1'}/>
+            <BlogSection/>
             <CauseSection/>
+            {/* <EventSection/> */}
             <TeamSection/>
             {/* <Testimonial/> */}
             <CtaSection vImg={vimg} cTitle={'Rejoignez-nous, transformez des vies, vivez la magie'}/>
-            <EventSection/>
-            <BlogSection/>
             <PartnerSection/>
             <Footer/>
             <Scrollbar />

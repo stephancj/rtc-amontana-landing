@@ -6,16 +6,16 @@ import Image from 'next/image'
 const EventSection = (props) => {
     const ClickHandler = () =>{
         window.scrollTo(10, 0);
-     }
+    }
 
     return(
-        <div className={`wpo-event-area ${props.evCLass}`}>
+        <div className={`wpo-event-area section-padding ${props.evCLass}`}>
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-lg-6">
                         <div className="wpo-section-title">
-                            <span>Events</span>
-                            <h2>Fundraising Events</h2>
+                            <span>Services</span>
+                            <h2>La magie de nos actions</h2>
                             <p>There are many variations of passages of Lorem Ipsum available, but the majority have
                                 suffered alteration in some form,</p>
                         </div>
@@ -29,6 +29,7 @@ const EventSection = (props) => {
                                     <div className="wpo-event-item">
                                         <div className="wpo-event-img">
                                             <Image src={event.eImg} alt=""/>
+                                            {/* <span className="thumb">{event.thumb}</span> */}
                                         </div>
                                         <div className="wpo-event-content">
                                             <div className="wpo-event-text-top">

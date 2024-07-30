@@ -65,8 +65,8 @@ const TeamSection = () => {
                 <div className="row justify-content-center">
                     <div className="col-lg-6">
                         <div className="wpo-section-title">
-                            <span>Expert Team</span>
-                            <h2>Meet Our Volunteer Team</h2>
+                            <span>Membres</span>
+                            <h2>Découvrez nos volontaires</h2>
                             <p>There are many variations of passages of Lorem Ipsum available, but the majority have
                                 suffered alteration in some form,</p>
                         </div>

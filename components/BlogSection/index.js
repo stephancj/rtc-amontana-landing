@@ -16,8 +16,8 @@ const BlogSection = (props) => {
                 <div className="row justify-content-center">
                     <div className="col-lg-6">
                         <div className="wpo-section-title">
-                            <span>Our Blog</span>
-                            <h2>Latest News & Update</h2>
+                            <span>Evénements</span>
+                            <h2>Nos dernières actualités</h2>
                             <p>There are many variations of passages of Lorem Ipsum available, but the majority have
                                 suffered alteration in some form,</p>
                         </div>
@@ -33,9 +33,10 @@ const BlogSection = (props) => {
                                     </div>
                                     <div className="wpo-blog-content">
                                         <div className="wpo-blog-content-top">
+                                            <span>{blog.create_at}</span>
                                             <h2><Link onClick={ClickHandler} href='/blog-single/[slug]' as={`/blog-single/${blog.slug}`}>{blog.title}</Link></h2>
                                         </div>
-                                        <div className="wpo-blog-content-btm">
+                                        {/* <div className="wpo-blog-content-btm">
                                             <div className="wpo-blog-content-btm-left">
                                                 <div className="wpo-blog-content-btm-left-img">
                                                     <Image src={blog.authorImg} alt=""/>
@@ -47,7 +48,7 @@ const BlogSection = (props) => {
                                             <div className="wpo-blog-content-btm-right">
                                                 <span><i className="fi flaticon-chat-comment-oval-speech-bubble-with-text-lines"></i> {blog.comment}</span>
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                             </div>

@@ -34,8 +34,9 @@ const CauseSection = (props) => {
                                     </div>
                                     <div className="wpo-campaign-content">
                                         <div className="wpo-campaign-text-top">
+                                            <span>{Cause.date}</span>
                                             <h2><Link onClick={ClickHandler} href="/cause-single/[slug]" as={`/cause-single/${Cause.slug}`}>{Cause.cTitle}</Link></h2>
-                                            <div className="progress-section">
+                                            {/* <div className="progress-section">
                                                 <div className="process">
                                                     <div className="progress">
                                                         <div className="progress-bar" style={{width: `${Cause.process}%`}}>
@@ -43,12 +44,12 @@ const CauseSection = (props) => {
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <ul>
+                                            </div> */}
+                                            {/* <ul>
                                                 <li><span>Goal:</span> ${Cause.Goal}</li>
                                                 <li><span>Raised:</span> ${Cause.Raised}</li>
-                                            </ul>
-                                            <div className="campaign-btn">
+                                            </ul> */}
+                                            {/* <div className="campaign-btn">
                                                 <ul>
                                                     <li>
                                                         <span><Image src={Cause.authorImg} alt=""/></span>
@@ -56,7 +57,7 @@ const CauseSection = (props) => {
                                                     </li>
                                                     <li><Link onClick={ClickHandler} className="e-btn" href="/donate">Donate Now</Link></li>
                                                 </ul>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
                                 </div>
