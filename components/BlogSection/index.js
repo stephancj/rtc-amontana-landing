@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useEffect } from 'react'
 import { getAllEvents } from '../../services/events.service'
 import { FILE_URL } from '../../utils/constants'
+import { formatDateTime } from '../../utils/utils'
 
 const BlogSection = (props) => {
     const [events, setEvents] = React.useState([]);
@@ -48,7 +49,7 @@ const BlogSection = (props) => {
                                     </div>
                                     <div className="wpo-blog-content">
                                         <div className="wpo-blog-content-top">
-                                            <span>{event.create_at}</span>
+                                            <span>{formatDateTime(event.date)}</span>
                                             <h2><Link onClick={ClickHandler} href='/blog-single/[slug]' as={`/blog-single/${event.slug}`}>{event.title}</Link></h2>
                                         </div>
                                         {/* <div className="wpo-blog-content-btm">

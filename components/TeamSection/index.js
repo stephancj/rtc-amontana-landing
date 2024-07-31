@@ -14,7 +14,7 @@ const TeamSection = () => {
 
     // const alphabeticalOrederedTeams = Teams.sort((a, b) => a.name.localeCompare(b.name))
 
-    var settings = {
+    const settings = {
         dots: true,
         arrows: false,
         speed: 1000,
@@ -87,8 +87,8 @@ const TeamSection = () => {
                 <div className="wpo-team-wrap">
                     <div className="team-slider">
                         <Slider {...settings}>
-                            {members.map((Team, tm) => (
-                                <div className="wpo-team-item" key={tm}>
+                            {members.map((Team, index) => (
+                                <div className="wpo-team-item" key={index}>
                                     <div className="wpo-team-img">
                                         <Image 
                                             src={FILE_URL(Team.collectionId, Team.id, Team.image)} 

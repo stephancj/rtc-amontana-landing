@@ -2,11 +2,24 @@ import React from 'react'
 import Link from 'next/link'
 import Causes from '../../api/cause'
 import Image from 'next/image'
+import { getAllActions } from '../../services/actions.service'
+import { useEffect } from 'react'
+import { FILE_URL } from '../../utils/constants'
+import { formatDateTime } from '../../utils/utils'
 
 const CauseSection = (props) => {
+    const [actions, setActions] = React.useState([]);
+
     const ClickHandler = () =>{
         window.scrollTo(10, 0);
     }
+
+    useEffect(() => {
+        (async () => {
+            const actions = await getAllActions();
+            setActions(actions);
+        })();
+    }, []);
 
     return(
 
@@ -24,18 +37,26 @@ const CauseSection = (props) => {
                 </div>
                 <div className="wpo-campaign-wrap">
                     <div className="row">
-                    {Causes.slice(0, 3).map((Cause, citem) => (
-                        <div className="col-lg-4 col-md-6 col-12" key={citem}>
+                    {actions.slice(0, 3).map((action, index) => (
+                        <div className="col-lg-4 col-md-6 col-12" key={index}>
                             <div className="wpo-campaign-single">
                                 <div className="wpo-campaign-item">
                                     <div className="wpo-campaign-img">
-                                        <Image src={Cause.cImg} alt=""/>
-                                        <span className="thumb">{Cause.thumb}</span>
+                                        <Image 
+                                            src={FILE_URL(action.collectionId, action.id, action.image)} 
+                                            alt={action.name}
+                                            width={1000}
+                                            height={1000}
+                                        />
+                                        <span className="thumb">
+                                            {action.expand.aof[0].name}
+                                            {/* <Image src={FILE_URL(action.expand.aof[0].collectionId, action.expand.aof[0].id, action.expand.aof[0].logo)} alt={action.expand.aof[0].name} width={30} height={30}/> */}
+                                        </span>
                                     </div>
                                     <div className="wpo-campaign-content">
                                         <div className="wpo-campaign-text-top">
-                                            <span>{Cause.date}</span>
-                                            <h2><Link onClick={ClickHandler} href="/cause-single/[slug]" as={`/cause-single/${Cause.slug}`}>{Cause.cTitle}</Link></h2>
+                                            <span>{formatDateTime(action.date)}</span>
+                                            <h2><Link onClick={ClickHandler} href="/cause-single/[slug]" as={`/cause-single/${action.name}`}>{action.title}</Link></h2>
                                             {/* <div className="progress-section">
                                                 <div className="process">
                                                     <div className="progress">
