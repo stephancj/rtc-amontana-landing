@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect } from 'react'
 import { getAllEvents } from '../../services/events.service'
+import { FILE_URL } from '../../utils/constants'
 
 const BlogSection = (props) => {
     const [events, setEvents] = React.useState([]);
@@ -38,7 +39,12 @@ const BlogSection = (props) => {
                             <div className="col col-lg-4 col-md-6 col-12" key={eItem}>
                                 <div className="wpo-blog-item">
                                     <div className="wpo-blog-img">
-                                        <Image src={`https://rtc-amontana.pockethost.io/api/files/${event.collectionId}/${event.id}/${event.image}`} alt={event.title} width={1000} height={1000}/>
+                                        <Image 
+                                            src={FILE_URL(event.collectionId, event.id, event.image)} 
+                                            alt={event.title} 
+                                            width={1000} 
+                                            height={1000}
+                                        />
                                     </div>
                                     <div className="wpo-blog-content">
                                         <div className="wpo-blog-content-top">

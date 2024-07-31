@@ -1,10 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
-import Services from '../../api/service'
 import Slider from "react-slick"
 import Image from 'next/image'
+import { getAllAreasOfFocus } from '../../services/areasOfFocus.service'
+import { useEffect } from 'react'
+import { FILE_URL } from '../../utils/constants'
 
 const Service = (props) => {
+    const [areasOfFocus, setAreasOfFocus] = React.useState([]);
+
     const ClickHandler = () =>{
         window.scrollTo(10, 0);
     }
@@ -55,6 +59,13 @@ const Service = (props) => {
         ]
     };
 
+    useEffect(() => {
+        (async () => {
+            const aofs = await getAllAreasOfFocus();
+            setAreasOfFocus(aofs);
+        })();
+    }, []);
+
     return(
 
         <section className={`${props.Fclass} section-padding  ${props.vclassClass}`}>
@@ -71,19 +82,24 @@ const Service = (props) => {
                 </div>
                 <div className="row">
                     <Slider {...settings}>
-                        {Services.map((service, sitem) => (
-                        <div className="col col-xl-3 col-lg-6 col-sm-6 col-12 slider-item" key={sitem}>
-                            <div className="wpo-features-item" style={{backgroundColor: service.backgroundColor}}>
+                        {areasOfFocus.map((aof, index) => (
+                        <div className="col col-xl-3 col-lg-6 col-sm-6 col-12 slider-item" key={index}>
+                            <div className="wpo-features-item" style={{backgroundColor: aof.backgroundColor}}>
                                 <div className="wpo-features-icon">
                                     <div className="icon">
-                                        <Image src={service.logo} alt={service.title}/>
+                                        <Image 
+                                            src={FILE_URL(aof.collectionId, aof.id, aof.logo)} 
+                                            alt={aof.name}
+                                            width={1000}
+                                            height={1000}
+                                        />
                                     </div>
                                 </div>
                                 <div className="wpo-features-text">
                                     <h2>
                                         {/* href='/service/[slug]' as={`/service/${service.slug}`} */}
                                         <Link href=''> 
-                                            {service.title}
+                                            {aof.name}
                                         </Link>
                                     </h2>
                                 </div>

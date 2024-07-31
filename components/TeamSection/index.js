@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from "next/image";
 import { useEffect } from "react";
 import { getAllMembers } from "../../services/members.service";
+import { FILE_URL } from "../../utils/constants";
 
 
 const TeamSection = () => {
@@ -90,7 +91,7 @@ const TeamSection = () => {
                                 <div className="wpo-team-item" key={tm}>
                                     <div className="wpo-team-img">
                                         <Image 
-                                            src={`https://rtc-amontana.pockethost.io/api/files/${Team.collectionId}/${Team.id}/${Team.image}`} 
+                                            src={FILE_URL(Team.collectionId, Team.id, Team.image)} 
                                             alt={Team.fullname} 
                                             width={1000} 
                                             height={1000}
