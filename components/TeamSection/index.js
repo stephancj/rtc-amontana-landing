@@ -3,11 +3,15 @@ import Teams from '../../api/team'
 import Slider from "react-slick";
 import Link from 'next/link'
 import Image from "next/image";
+import { useEffect } from "react";
+import { getAllMembers } from "../../services/members.service";
 
 
 const TeamSection = () => {
 
-    const alphabeticalOrederedTeams = Teams.sort((a, b) => a.name.localeCompare(b.name))
+    const [members, setMembers] = React.useState([]);
+
+    // const alphabeticalOrederedTeams = Teams.sort((a, b) => a.name.localeCompare(b.name))
 
     var settings = {
         dots: true,
@@ -59,6 +63,13 @@ const TeamSection = () => {
         window.scrollTo(10, 0);
     }
 
+    useEffect(() => {
+        (async () => {
+            const membersList = await getAllMembers();
+            setMembers(membersList);
+        })();
+    }, []);
+
     return (
         <div className="wpo-team-area section-padding">
             <div className="container">
@@ -75,14 +86,19 @@ const TeamSection = () => {
                 <div className="wpo-team-wrap">
                     <div className="team-slider">
                         <Slider {...settings}>
-                            {alphabeticalOrederedTeams.map((Team, tm) => (
+                            {members.map((Team, tm) => (
                                 <div className="wpo-team-item" key={tm}>
                                     <div className="wpo-team-img">
-                                        <Image src={Team.tImg} alt="" />
+                                        <Image 
+                                            src={`https://rtc-amontana.pockethost.io/api/files/${Team.collectionId}/${Team.id}/${Team.image}`} 
+                                            alt={Team.fullname} 
+                                            width={1000} 
+                                            height={1000}
+                                        />
                                     </div>
                                     <div className="wpo-team-content">
-                                        <h2><Link onClick={ClickHandler} href='/team-single/[slug]' as={`/team-single/${Team.slug}`}>{Team.name}</Link></h2>
-                                        <span>{Team.title}</span>
+                                        <h2><Link onClick={ClickHandler} href='/team-single/[slug]' as={`/team-single/${Team.fullname}`}>{Team.fullname}</Link></h2>
+                                        <span>{Team.function}</span>
                                     </div>
                                 </div>
                             ))}

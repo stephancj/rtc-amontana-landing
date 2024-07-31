@@ -2,7 +2,7 @@ import React, { use } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect } from 'react'
-import { getAllEvents } from '../../api/events'
+import { getAllEvents } from '../../services/events.service'
 
 const BlogSection = (props) => {
     const [events, setEvents] = React.useState([]);
