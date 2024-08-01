@@ -6,44 +6,44 @@ const menus = [
     {
         id: 1,
         title: 'Home',
-        link: '/home',
-        submenu: [
-            {
-                id: 11,
-                title: 'Home Charity',
-                link: '/home'
-            },
-            {
-                id: 12,
-                title: 'Home Education',
-                link: '/home2'
-            },
-            {
-                id: 13,
-                title: 'Home Wildlife',
-                link: '/home3'
-            },
-            {
-                id: 14,
-                title: 'Home Ocean Polution',
-                link: '/home4'
-            },
-            {
-                id: 15,
-                title: 'Home World Pandemic',
-                link: '/home5'
-            },
-            {
-                id: 16,
-                title: 'Home Nature',
-                link: '/home6'
-            },
-            {
-                id: 17,
-                title: 'Home Nature S2',
-                link: '/home7'
-            },
-        ]
+        link: '/',
+        // submenu: [
+        //     {
+        //         id: 11,
+        //         title: 'Home Charity',
+        //         link: '/home'
+        //     },
+        //     {
+        //         id: 12,
+        //         title: 'Home Education',
+        //         link: '/home2'
+        //     },
+        //     {
+        //         id: 13,
+        //         title: 'Home Wildlife',
+        //         link: '/home3'
+        //     },
+        //     {
+        //         id: 14,
+        //         title: 'Home Ocean Polution',
+        //         link: '/home4'
+        //     },
+        //     {
+        //         id: 15,
+        //         title: 'Home World Pandemic',
+        //         link: '/home5'
+        //     },
+        //     {
+        //         id: 16,
+        //         title: 'Home Nature',
+        //         link: '/home6'
+        //     },
+        //     {
+        //         id: 17,
+        //         title: 'Home Nature S2',
+        //         link: '/home7'
+        //     },
+        // ]
     },
 
     {

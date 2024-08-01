@@ -77,7 +77,7 @@ const VolunteerPage =() => {
                     </div>
                 </div>
             </div>
-            <TeamSection/>
+            {/* <TeamSection/> */}
             <Footer/>
             <Scrollbar/>
         </Fragment>

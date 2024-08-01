@@ -11,7 +11,7 @@ const CausePage =() => {
         <Fragment>
             <Navbar2 Logo={Logo}/>
             <PageTitle pageTitle={'Case Stadies'} pagesub={'Resent Case Studies'}/> 
-            <CauseSection/>
+            {/* <CauseSection/> */}
             <Footer/>
             <Scrollbar/>
         </Fragment>

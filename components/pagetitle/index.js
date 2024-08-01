@@ -4,14 +4,17 @@ import Image from 'next/image';
 const PageTitle = (props) => {
     return (
         <div className="wpo-breadcumb-area">
-            <div className="background-image">
+            {
+                props.backgroundImage &&
+                <div className="background-image">
                 <Image 
                     src={props.backgroundImage} 
                     fill 
                     alt="Cover Image"
-                    priority
+                    pr
                 />
-            </div>
+                </div>
+            }
             <div className="container">
                 <div className="row">
                     <div className="col-12">
