@@ -8,11 +8,7 @@ import { getAllMembers } from "../../services/members.service";
 import { FILE_URL } from "../../utils/constants";
 
 
-const TeamSection = () => {
-
-    const [members, setMembers] = React.useState([]);
-
-    // const alphabeticalOrederedTeams = Teams.sort((a, b) => a.name.localeCompare(b.name))
+const TeamSection = (props) => {
 
     const settings = {
         dots: true,
@@ -64,13 +60,6 @@ const TeamSection = () => {
         window.scrollTo(10, 0);
     }
 
-    useEffect(() => {
-        (async () => {
-            const membersList = await getAllMembers();
-            setMembers(membersList);
-        })();
-    }, []);
-
     return (
         <div className="wpo-team-area section-padding">
             <div className="container">
@@ -87,7 +76,7 @@ const TeamSection = () => {
                 <div className="wpo-team-wrap">
                     <div className="team-slider">
                         <Slider {...settings}>
-                            {members.map((Team, index) => (
+                            {props.members.map((Team, index) => (
                                 <div className="wpo-team-item" key={index}>
                                     <div className="wpo-team-img">
                                         <Image 

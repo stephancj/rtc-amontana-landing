@@ -7,18 +7,10 @@ import { FILE_URL } from '../../utils/constants'
 import { formatDateTime } from '../../utils/utils'
 
 const BlogSection = (props) => {
-    const [events, setEvents] = React.useState([]);
-    
+
     const ClickHandler = () =>{
         window.scrollTo(10, 0);
     }
-
-    useEffect(() => {
-        (async () => {
-            const eventsList = await getAllEvents();
-            setEvents(eventsList);
-        })();
-    }, []);
 
     return(
 
@@ -36,7 +28,7 @@ const BlogSection = (props) => {
                 </div>
                 <div className="wpo-blog-items">
                     <div className="row">
-                        {events.slice(0,3).map((event, eItem) => (
+                        {props.events.slice(0,3).map((event, eItem) => (
                             <div className="col col-lg-4 col-md-6 col-12" key={eItem}>
                                 <div className="wpo-blog-item">
                                     <div className="wpo-blog-img">

@@ -8,18 +8,10 @@ import { FILE_URL } from '../../utils/constants'
 import { formatDateTime } from '../../utils/utils'
 
 const CauseSection = (props) => {
-    const [actions, setActions] = React.useState([]);
 
     const ClickHandler = () =>{
         window.scrollTo(10, 0);
     }
-
-    useEffect(() => {
-        (async () => {
-            const actions = await getAllActions();
-            setActions(actions);
-        })();
-    }, []);
 
     return(
 
@@ -37,7 +29,7 @@ const CauseSection = (props) => {
                 </div>
                 <div className="wpo-campaign-wrap">
                     <div className="row">
-                    {actions.slice(0, 3).map((action, index) => (
+                    {props.actions.slice(0, 3).map((action, index) => (
                         <div className="col-lg-4 col-md-6 col-12" key={index}>
                             <div className="wpo-campaign-single">
                                 <div className="wpo-campaign-item">
