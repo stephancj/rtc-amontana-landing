@@ -42,7 +42,9 @@ const BlogSection = (props) => {
                                     <div className="wpo-blog-content">
                                         <div className="wpo-blog-content-top">
                                             <span>{formatDateTime(event.date)}</span>
-                                            <h2><Link onClick={ClickHandler} href='/blog-single/[slug]' as={`/blog-single/${event.slug}`}>{event.title}</Link></h2>
+                                            <h2>
+                                                <Link onClick={ClickHandler} href='/events/[id]/details' as={`/events/${event.id}/details`}>{event.title}</Link>
+                                            </h2>
                                         </div>
                                         {/* <div className="wpo-blog-content-btm">
                                             <div className="wpo-blog-content-btm-left">
