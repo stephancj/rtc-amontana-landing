@@ -9,16 +9,19 @@ import Image from "next/image";
 import gl1 from "/public/images/blog/img-3.jpg";
 import gl2 from "/public/images/blog/img-2.jpg";
 import Logo from "/public/images/logo.png";
-import { getEvent } from "../../../services/events.service";
+import { getEvent, getNextEvent, getPreviousEvent } from "../../../services/events.service";
 import { formatDateTime } from "../../../utils/utils";
-import { FILE_URL } from "../../../utils/constants";
+import { FILE_URL, NEXT_PUBLIC_URL, SHARE_TO_FACEBOOK, SHARE_TO_LINKEDIN, SHARE_TO_THREADS, SHARE_TO_X } from "../../../utils/constants";
 import { CircularProgress } from "@mui/material";
 import Slider from "react-slick";
+
 
 const EventPage = () => {
 const router = useRouter();
 const { id } = router.query;
 const [event, setEvent] = useState(null);
+const [previousEvent, setPreviousEvent] = useState(null);
+const [nextEvent, setNextEvent] = useState(null);
 const [isLoading, setIsLoading] = useState(true);
 
 const settings = {
@@ -27,7 +30,7 @@ const settings = {
     speed: 1000,
     slidesToShow: 2,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     responsive: [
         {
             breakpoint: 1500,
@@ -53,14 +56,14 @@ const settings = {
         {
             breakpoint: 767,
             settings: {
-                slidesToShow: 2,
+                slidesToShow: 1,
                 slidesToScroll: 1
             }
         },
         {
             breakpoint: 480,
             settings: {
-                slidesToShow: 2,
+                slidesToShow: 1,
                 slidesToScroll: 1
             }
         }
@@ -73,7 +76,11 @@ useEffect(() => {
     const fetchEvent = async () => {
         try {
         const event = await getEvent(id);
+        const previousEvent = await getPreviousEvent(event.date);
+        const nextEvent = await getNextEvent(event.date);
         setEvent(event);
+        setPreviousEvent(previousEvent);
+        setNextEvent(nextEvent);
         } catch (error) {
         console.error("Failed to fetch event:", error);
         } finally {
@@ -135,24 +142,18 @@ useEffect(() => {
                                             <div className="gallery">
                                                 <Slider {...settings} className="sliderImage">
                                                     {event?.gallery.map((image, index) => (
-                                                        // <div index={index}>
-                                                            <div>
-                                                                <Image 
-                                                                    className="eventImage"
-                                                                    index={index}
-                                                                    src={`${FILE_URL(event?.collectionId, event?.id, image)}?token=`} 
-                                                                    height={500}
-                                                                    width={500}
-                                                                    alt={image} 
-                                                                />
-                                                            </div>
-                                                        // </div>
+                                                        <div>
+                                                            <Image 
+                                                                className="eventImage"
+                                                                index={index}
+                                                                src={`${FILE_URL(event?.collectionId, event?.id, image)}?token=`} 
+                                                                height={500}
+                                                                width={500}
+                                                                alt={image} 
+                                                            />
+                                                        </div>
                                                     ))}
                                                 </Slider>
-                                                
-                                                {/* <div>
-                                                    <Image src={gl2} alt="" />
-                                                </div> */}
                                             </div>
                                         </div>
 
@@ -161,16 +162,16 @@ useEffect(() => {
                                                 <span>Partager sur: </span>
                                                 <ul>
                                                 <li>
-                                                    <Link href="/">facebook</Link>
+                                                    <Link href={SHARE_TO_FACEBOOK(`${NEXT_PUBLIC_URL}${router.asPath}`)} target="_blank">facebook</Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/">X(Twitter)</Link>
+                                                    <Link href={SHARE_TO_X(`${NEXT_PUBLIC_URL}${router.asPath}`)} target="_blank">X(Twitter)</Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/">threads</Link>
+                                                    <Link href={SHARE_TO_THREADS(`${NEXT_PUBLIC_URL}${router.asPath}`)} target="_blank">threads</Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/">linkedin</Link>
+                                                    <Link href={SHARE_TO_LINKEDIN(`${NEXT_PUBLIC_URL}${router.asPath}`)} target="_blank">linkedin</Link>
                                                 </li>
                                                 </ul>
                                             </div>
@@ -180,20 +181,18 @@ useEffect(() => {
                                             <div className="previous-post">
                                                 <Link href="/">
                                                 <span className="post-control-link">
-                                                    Previous Post
+                                                    Evénement précédent
                                                 </span>
                                                 <span className="post-name">
-                                                    At vero eos et accusamus et iusto odio dignissimos
-                                                    ducimus qui blanditiis praesentium.
+                                                {previousEvent ? previousEvent?.title : 'Pas d\'évenement antérieure'}
                                                 </span>
                                                 </Link>
                                             </div>
                                             <div className="next-post">
                                                 <Link href="/">
-                                                    <span className="post-control-link">Next Post</span>
+                                                    <span className="post-control-link">Evénement suivant</span>
                                                     <span className="post-name">
-                                                        Dignissimos ducimus qui blanditiis praesentiu
-                                                        deleniti atque corrupti quos dolores
+                                                        {nextEvent ? nextEvent?.title : 'Vous êtes à jour sur notre actualité'}
                                                     </span>
                                                 </Link>
                                             </div>
