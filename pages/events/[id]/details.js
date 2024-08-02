@@ -13,12 +13,59 @@ import { getEvent } from "../../../services/events.service";
 import { formatDateTime } from "../../../utils/utils";
 import { FILE_URL } from "../../../utils/constants";
 import { CircularProgress } from "@mui/material";
+import Slider from "react-slick";
 
 const EventPage = () => {
 const router = useRouter();
 const { id } = router.query;
 const [event, setEvent] = useState(null);
 const [isLoading, setIsLoading] = useState(true);
+
+const settings = {
+    dots: false,
+    arrows: false,
+    speed: 1000,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: true,
+    responsive: [
+        {
+            breakpoint: 1500,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+            }
+        },
+        {
+            breakpoint: 1200,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 991,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 767,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        }
+    ]
+};
 
 useEffect(() => {
     if (id) {
@@ -53,97 +100,108 @@ useEffect(() => {
                 </div>
             ) : (
                 <Fragment>
-                <Navbar Logo={Logo} />
-                <PageTitle
-                    pageTitle={event?.title || "Événement"}
-                    pagesub="Actualités"
-                    backgroundImage={FILE_URL(
-                    event?.collectionId,
-                    event?.id,
-                    event?.image
-                    )}
-                />
-                <section className="wpo-blog-single-section section-padding">
-                    <div className="container">
-                    <div className="row">
-                        <div className="col col-lg-10 offset-lg-1">
-                        <div className="wpo-blog-content">
-                            <div className="post format-standard-image">
-                            <div className="entry-meta">
-                                <ul>
-                                <li>
-                                    <i className="fi flaticon-calendar"></i>{" "}
-                                    {formatDateTime(event?.date)}
-                                </li>
-                                <li>
-                                    <i className="fi flaticon-location"></i>{" "}
-                                    {event?.location}
-                                </li>
-                                </ul>
-                            </div>
-                            <h2>{event?.title}</h2>
-                            <p>{event?.description}</p>
-                            <blockquote>{event?.description}</blockquote>
+                    <Navbar Logo={Logo} />
+                    <PageTitle
+                        pageTitle={event?.title || "Événement"}
+                        pagesub="Actualités"
+                        backgroundImage={FILE_URL(
+                        event?.collectionId,
+                        event?.id,
+                        event?.image
+                        )}
+                    />
+                    <section className="wpo-blog-single-section section-padding">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col col-lg-10 offset-lg-1">
+                                    <div className="wpo-blog-content">
+                                        <div className="post format-standard-image">
+                                            <div className="entry-meta">
+                                                <ul>
+                                                    <li>
+                                                        <i className="fi flaticon-calendar"></i>{" "}
+                                                        {formatDateTime(event?.date)}
+                                                    </li>
+                                                    <li>
+                                                        <i className="fi flaticon-location"></i>{" "}
+                                                        {event?.location}
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <h2>{event?.title}</h2>
+                                            <p>{event?.description}</p>
+                                            <blockquote>{event?.description}</blockquote>
 
-                            <div className="gallery">
-                                <div>
-                                <Image src={gl1} alt="" />
+                                            <div className="gallery">
+                                                <Slider {...settings}>
+                                                    {event?.gallery.map((image, index) => (
+                                                        // <div index={index}>
+                                                            <Image 
+                                                                index={index}
+                                                                src={`${FILE_URL(event?.collectionId, event?.id, image)}?token=`} 
+                                                                width={100}
+                                                                height={100}
+                                                                alt={image} 
+                                                            />
+                                                        // </div>
+                                                    ))}
+                                                </Slider>
+                                                
+                                                {/* <div>
+                                                    <Image src={gl2} alt="" />
+                                                </div> */}
+                                            </div>
+                                        </div>
+
+                                        <div className="tag-share-s2 clearfix">
+                                            <div className="tag">
+                                                <span>Partager sur: </span>
+                                                <ul>
+                                                <li>
+                                                    <Link href="/">facebook</Link>
+                                                </li>
+                                                <li>
+                                                    <Link href="/">X(Twitter)</Link>
+                                                </li>
+                                                <li>
+                                                    <Link href="/">threads</Link>
+                                                </li>
+                                                <li>
+                                                    <Link href="/">linkedin</Link>
+                                                </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div className="more-posts">
+                                            <div className="previous-post">
+                                                <Link href="/">
+                                                <span className="post-control-link">
+                                                    Previous Post
+                                                </span>
+                                                <span className="post-name">
+                                                    At vero eos et accusamus et iusto odio dignissimos
+                                                    ducimus qui blanditiis praesentium.
+                                                </span>
+                                                </Link>
+                                            </div>
+                                            <div className="next-post">
+                                                <Link href="/">
+                                                    <span className="post-control-link">Next Post</span>
+                                                    <span className="post-name">
+                                                        Dignissimos ducimus qui blanditiis praesentiu
+                                                        deleniti atque corrupti quos dolores
+                                                    </span>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
-                                <Image src={gl2} alt="" />
-                                </div>
-                            </div>
-                            </div>
-
-                            <div className="tag-share-s2 clearfix">
-                            <div className="tag">
-                                <span>Partager sur: </span>
-                                <ul>
-                                <li>
-                                    <Link href="/">facebook</Link>
-                                </li>
-                                <li>
-                                    <Link href="/">X(Twitter)</Link>
-                                </li>
-                                <li>
-                                    <Link href="/">threads</Link>
-                                </li>
-                                <li>
-                                    <Link href="/">linkedin</Link>
-                                </li>
-                                </ul>
-                            </div>
-                            </div>
-
-                            <div className="more-posts">
-                            <div className="previous-post">
-                                <Link href="/">
-                                <span className="post-control-link">
-                                    Previous Post
-                                </span>
-                                <span className="post-name">
-                                    At vero eos et accusamus et iusto odio dignissimos
-                                    ducimus qui blanditiis praesentium.
-                                </span>
-                                </Link>
-                            </div>
-                            <div className="next-post">
-                                <Link href="/">
-                                <span className="post-control-link">Next Post</span>
-                                <span className="post-name">
-                                    Dignissimos ducimus qui blanditiis praesentiu
-                                    deleniti atque corrupti quos dolores
-                                </span>
-                                </Link>
-                            </div>
                             </div>
                         </div>
-                        </div>
-                    </div>
-                    </div>
-                </section>
-                <Footer />
-                <Scrollbar />
+                    </section>
+                    <Footer />
+                    <Scrollbar />
                 </Fragment>
             )}
         </div>
