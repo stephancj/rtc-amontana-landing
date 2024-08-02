@@ -27,7 +27,7 @@ const settings = {
     speed: 1000,
     slidesToShow: 2,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     responsive: [
         {
             breakpoint: 1500,
@@ -133,15 +133,16 @@ useEffect(() => {
                                             <blockquote>{event?.description}</blockquote>
 
                                             <div className="gallery">
-                                                <Slider {...settings}>
+                                                <Slider {...settings} className="sliderImage">
                                                     {event?.gallery.map((image, index) => (
                                                         // <div index={index}>
-                                                            <div className="eventImage">
+                                                            <div>
                                                                 <Image 
+                                                                    className="eventImage"
                                                                     index={index}
                                                                     src={`${FILE_URL(event?.collectionId, event?.id, image)}?token=`} 
-                                                                    width={800}
-                                                                    height={800}
+                                                                    height={500}
+                                                                    width={500}
                                                                     alt={image} 
                                                                 />
                                                             </div>

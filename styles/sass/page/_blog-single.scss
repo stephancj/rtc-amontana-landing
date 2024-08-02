@@ -171,22 +171,21 @@
 
 		}
 
+		//gallery slider
 		.gallery {
 			overflow: hidden;
 			margin: 40px -7.5px 0;
-
-			> Slider {
-				> div {
-					width: calc(50% - 15px);
-					float: left;
-					margin: 0 7.5px 15px;
-				}
+			> div {
+				width: calc(100% - 7.5px);
+				float: left;
+				margin: 10px 7.5px 15px;
 			}
 
-			Image{
-				width: 100%;
+			.eventImage {
+				width: 98%;
 				object-fit: contain;
 			}
+
 		}
 	}
 
