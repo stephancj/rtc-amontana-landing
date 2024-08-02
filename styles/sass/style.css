@@ -9550,12 +9550,12 @@ wpo-hero-section-6
   overflow: hidden;
   margin: 40px -7.5px 0;
 }
-.wpo-blog-single-section .post .gallery > div {
+.wpo-blog-single-section .post .gallery div {
   width: calc(50% - 15px);
   float: left;
   margin: 0 7.5px 15px;
 }
-.wpo-blog-single-section .post .gallery img {
+.wpo-blog-single-section .post .gallery Image {
   width: 100%;
 }
 .wpo-blog-single-section .tag-share, .wpo-blog-single-section .tag-share-s2 {

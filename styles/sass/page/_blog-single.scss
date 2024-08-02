@@ -175,14 +175,17 @@
 			overflow: hidden;
 			margin: 40px -7.5px 0;
 
-			> div {
-				width: calc(50% - 15px);
-				float: left;
-				margin: 0 7.5px 15px;
+			> Slider {
+				> div {
+					width: calc(50% - 15px);
+					float: left;
+					margin: 0 7.5px 15px;
+				}
 			}
 
-			img{
+			Image{
 				width: 100%;
+				object-fit: contain;
 			}
 		}
 	}

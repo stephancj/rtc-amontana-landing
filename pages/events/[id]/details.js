@@ -136,13 +136,15 @@ useEffect(() => {
                                                 <Slider {...settings}>
                                                     {event?.gallery.map((image, index) => (
                                                         // <div index={index}>
-                                                            <Image 
-                                                                index={index}
-                                                                src={`${FILE_URL(event?.collectionId, event?.id, image)}?token=`} 
-                                                                width={100}
-                                                                height={100}
-                                                                alt={image} 
-                                                            />
+                                                            <div className="eventImage">
+                                                                <Image 
+                                                                    index={index}
+                                                                    src={`${FILE_URL(event?.collectionId, event?.id, image)}?token=`} 
+                                                                    width={800}
+                                                                    height={800}
+                                                                    alt={image} 
+                                                                />
+                                                            </div>
                                                         // </div>
                                                     ))}
                                                 </Slider>
