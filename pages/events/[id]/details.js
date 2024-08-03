@@ -6,10 +6,8 @@ import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/footer";
 import Scrollbar from "../../../components/scrollbar";
 import Image from "next/image";
-import gl1 from "/public/images/blog/img-3.jpg";
-import gl2 from "/public/images/blog/img-2.jpg";
 import Logo from "/public/images/logo.png";
-import { getEvent, getNextEvent, getPreviousEvent } from "../../../services/events.service";
+import { getAllEvents } from "../../../services/events.service";
 import { formatDateTime } from "../../../utils/utils";
 import { FILE_URL, NEXT_PUBLIC_URL, SHARE_TO_FACEBOOK, SHARE_TO_LINKEDIN, SHARE_TO_THREADS, SHARE_TO_X } from "../../../utils/constants";
 import { CircularProgress } from "@mui/material";
@@ -19,6 +17,7 @@ import Slider from "react-slick";
 const EventPage = () => {
 const router = useRouter();
 const { id } = router.query;
+const [allEvents, setAllEvents] = useState([]);
 const [event, setEvent] = useState(null);
 const [previousEvent, setPreviousEvent] = useState(null);
 const [nextEvent, setNextEvent] = useState(null);
@@ -75,12 +74,9 @@ useEffect(() => {
     // Vérifier que l'id est défini avant de faire l'appel à l'API
     const fetchEvent = async () => {
         try {
-        const event = await getEvent(id);
-        const previousEvent = await getPreviousEvent(event.date);
-        const nextEvent = await getNextEvent(event.date);
-        setEvent(event);
-        setPreviousEvent(previousEvent);
-        setNextEvent(nextEvent);
+        const allEvents = await getAllEvents();
+        setAllEvents(allEvents);
+
         } catch (error) {
         console.error("Failed to fetch event:", error);
         } finally {
@@ -90,7 +86,21 @@ useEffect(() => {
 
     fetchEvent();
     }
-}, [id]); // Dépendance sur l'id pour recharger les données quand il change
+}, [id]);// Dépendance sur l'id pour recharger les données quand il change
+
+useEffect(() => {
+    if (allEvents.length > 0) {
+    const event = allEvents.find((event) => event.id === id);
+    const eventIndex = allEvents.findIndex((event) => event.id === id);
+    console.log('eventIndex', eventIndex);
+    setEvent(event);
+    const previousEvent = allEvents[eventIndex + 1] || null;
+
+    setPreviousEvent(previousEvent);
+    const nextEvent = allEvents[eventIndex - 1] || null;    
+    setNextEvent(nextEvent);
+    }
+}, [allEvents]);
 
     return (
         <div>
@@ -142,10 +152,9 @@ useEffect(() => {
                                             <div className="gallery">
                                                 <Slider {...settings} className="sliderImage">
                                                     {event?.gallery.map((image, index) => (
-                                                        <div>
+                                                        <div key={index}>
                                                             <Image 
                                                                 className="eventImage"
-                                                                index={index}
                                                                 src={`${FILE_URL(event?.collectionId, event?.id, image)}?token=`} 
                                                                 height={500}
                                                                 width={500}
@@ -179,7 +188,10 @@ useEffect(() => {
 
                                         <div className="more-posts">
                                             <div className="previous-post">
-                                                <Link href="/">
+                                                <Link 
+                                                    href={previousEvent!==null ? '/events/[id]/details' : '#'}
+                                                    as={previousEvent!==null ? `/events/${previousEvent?.id}/details` : '#'}
+                                                >
                                                 <span className="post-control-link">
                                                     Evénement précédent
                                                 </span>
@@ -189,7 +201,10 @@ useEffect(() => {
                                                 </Link>
                                             </div>
                                             <div className="next-post">
-                                                <Link href="/">
+                                                <Link 
+                                                    href={nextEvent!==null ? '/events/[id]/details' : '#'} 
+                                                    as={nextEvent!==null ? `/events/${nextEvent?.id}/details` : '#'}
+                                                >
                                                     <span className="post-control-link">Evénement suivant</span>
                                                     <span className="post-name">
                                                         {nextEvent ? nextEvent?.title : 'Vous êtes à jour sur notre actualité'}
