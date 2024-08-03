@@ -8,9 +8,9 @@ import timg7 from "/public/images/team/7.jpg";
 import timg8 from "/public/images/team/8.jpg";
 import timg9 from "/public/images/team/9.jpg";
 import timg10 from "/public/images/team/10.jpg";
-import stephan from "/public/images/team/stephan.jpg";
-import ando from "/public/images/team/ando.jpg";
-import fitia from "/public/images/team/fitia.jpg";
+// import stephan from "/public/images/team/stephan.jpg";
+// import ando from "/public/images/team/ando.jpg";
+// import fitia from "/public/images/team/fitia.jpg";
 
 const Teams = [
   {
@@ -22,7 +22,7 @@ const Teams = [
   },
   {
     id: "2",
-    tImg: ando,
+    tImg: timg1,
     name: "Ando Rajaonarivelo",
     slug: "Ando-Rajaonarivelo",
     title: "Responsable actions",
@@ -50,7 +50,7 @@ const Teams = [
   },
   {
     id: "6",
-    tImg: stephan,
+    tImg: timg1,
     name: "Stéphan Christian",
     slug: "Stéphan-Christian",
     title: "Vice-président & Sécrétaire",
@@ -78,7 +78,7 @@ const Teams = [
   },
   {
     id: "10",
-    tImg: fitia,
+    tImg: timg1,
     name: "Fitia Ramanitrarivo",
     slug: "Fitia-Ramanitrarivo",
     title: "Contact programme pour les jeunes",
