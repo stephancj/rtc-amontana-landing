@@ -11,13 +11,13 @@ import rhimg from '/public/images/service-single/9.jpg'
 import wimg1 from '/public/images/service-single/w1.jpg'
 import wimg2 from '/public/images/service-single/w2.jpg'
 
-import aof1 from '/public/images/area-of-focus/logos/AOF_peace_color_no_title.png'
-import aof2 from '/public/images/area-of-focus/logos/AOF_disease_color_no_title.png'
-import aof3 from '/public/images/area-of-focus/logos/AOF_water_color_no_title.png'
-import aof4 from '/public/images/area-of-focus/logos/AOF_maternal_color_no_title.png'
-import aof5 from '/public/images/area-of-focus/logos/AOF_education_color_no_title.png'
-import aof6 from '/public/images/area-of-focus/logos/AOF_economic_color_no_title.png'
-import aof7 from '/public/images/area-of-focus/logos/AOF_environment_color_no_title.png'
+// import aof1 from '/public/images/area-of-focus/logos/AOF_peace_color_no_title.png'
+// import aof2 from '/public/images/area-of-focus/logos/AOF_disease_color_no_title.png'
+// import aof3 from '/public/images/area-of-focus/logos/AOF_water_color_no_title.png'
+// import aof4 from '/public/images/area-of-focus/logos/AOF_maternal_color_no_title.png'
+// import aof5 from '/public/images/area-of-focus/logos/AOF_education_color_no_title.png'
+// import aof6 from '/public/images/area-of-focus/logos/AOF_economic_color_no_title.png'
+// import aof7 from '/public/images/area-of-focus/logos/AOF_environment_color_no_title.png'
 
 import ocimg from '/public/images/service-single/10.jpg'
 import ocimg2 from '/public/images/service-single/11.jpg'
@@ -56,7 +56,7 @@ const Services = [
         simg1:himg1,
         simg2:himg2,
         simg3:himg3,
-        logo: aof1,
+        logo: himg1,
         backgroundColor: '#D4E9FA',
     },
     {
@@ -68,7 +68,7 @@ const Services = [
         simg1:cimg,
         simg2:himg2,
         simg3:himg3,
-        logo: aof2,
+        logo: himg1,
         backgroundColor: '#F8D7D6',
     },
     {
@@ -80,7 +80,7 @@ const Services = [
         simg1:mimg,
         simg2:himg2,
         simg3:himg3,
-        logo: aof3,
+        logo: himg1,
         backgroundColor: '#DDF3FB',
     },
     {
@@ -92,7 +92,7 @@ const Services = [
         simg1:eimg,
         simg2:himg2,
         simg3:himg3,
-        logo: aof4,
+        logo: himg1,
         backgroundColor: '#ECE4F7',
     },
     {
@@ -104,7 +104,7 @@ const Services = [
         simg1:seimg,
         simg2:wimg1,
         simg3:wimg2,
-        logo: aof5,
+        logo: himg1,
         backgroundColor: '#F6E1D3',
     },
     {
@@ -116,7 +116,7 @@ const Services = [
         simg1:ptimg,
         simg2:wimg1,
         simg3:wimg2,
-        logo: aof6,
+        logo: himg1,
         backgroundColor: '#D4FBFD',
     },
     {
@@ -128,7 +128,7 @@ const Services = [
         simg1:rhimg,
         simg2:wimg1,
         simg3:wimg2,
-        logo: aof7,
+        logo: himg1,
         backgroundColor: '#D6FBE8',
     }
 ]
