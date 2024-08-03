@@ -147,7 +147,7 @@ useEffect(() => {
                                             </div>
                                             <h2>{event?.title}</h2>
                                             <p>{event?.description}</p>
-                                            <blockquote>{event?.description}</blockquote>
+                                            <blockquote>{event?.quote}</blockquote>
 
                                             <div className="gallery">
                                                 <Slider {...settings} className="sliderImage">
