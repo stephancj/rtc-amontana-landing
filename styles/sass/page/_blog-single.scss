@@ -175,19 +175,19 @@
 
 		//gallery slider
 		.gallery {
-			overflow: hidden;
-			margin: 40px -7.5px 0;
+			overflow: hidden !important;
+			margin: 40px -7.5px 0 !important;
 			> div {
-				width: calc(100% - 7.5px);
-				float: left;
-				margin: 10px 7.5px 15px;
+				width: calc(100% - 7.5px) !important;
+				float: left !important;
+				margin: 10px 7.5px 15px !important;
 			}
 
 			.eventImage {
-				width: 98%;
-				border-radius: 10px 10px 10px 10px;
-				object-fit: cover;
-				height: 307.27px;
+				width: 98% !important;
+				border-radius: 10px 10px 10px 10px !important;
+				object-fit: cover !important;
+				height: 307.27px! important;
 			}
 
 		}

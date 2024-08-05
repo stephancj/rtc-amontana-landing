@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { useRouter } from 'next/router'
 import Causes from '../../api/cause'
-import Navbar2 from '../../components/Navbar2';
+import Navbar from '../../components/Navbar';
 import PageTitle from '../../components/pagetitle'
 import Scrollbar from '../../components/scrollbar'
 import Footer from '../../components/footer';
@@ -20,7 +20,7 @@ const TeamSinglePage = (props) => {
 
     return (
         <Fragment>
-            <Navbar2 Logo={Logo} />
+            <Navbar Logo={Logo} />
             <PageTitle pageTitle={CauseDetails?.cTitle} pagesub={'Case Single'} />
             <div className="wpo-case-details-area section-padding">
                 <div className="container">

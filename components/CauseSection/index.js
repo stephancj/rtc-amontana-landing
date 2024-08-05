@@ -1,9 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import Causes from '../../api/cause'
 import Image from 'next/image'
-import { getAllActions } from '../../services/actions.service'
-import { useEffect } from 'react'
 import { FILE_URL } from '../../utils/constants'
 import { formatDateTime } from '../../utils/utils'
 
@@ -48,7 +45,7 @@ const CauseSection = (props) => {
                                     <div className="wpo-campaign-content">
                                         <div className="wpo-campaign-text-top">
                                             <span>{formatDateTime(action.date)}</span>
-                                            <h2><Link onClick={ClickHandler} href="/cause-single/[slug]" as={`/cause-single/${action.name}`}>{action.title}</Link></h2>
+                                            <h2><Link onClick={ClickHandler} href="/actions/[id]/details" as={`/actions/${action.id}/details`}>{action.title}</Link></h2>
                                             {/* <div className="progress-section">
                                                 <div className="process">
                                                     <div className="progress">
