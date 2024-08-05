@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }) {
     <div>
       <Component {...pageProps} />
       <ToastContainer />
-      <nexGoogleAnalytics gaId="G-8VNPWXF8HV" />
+      <GoogleAnalytics gaId="G-8VNPWXF8HV" />
     </div>
 
   )
