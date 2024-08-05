@@ -4,8 +4,6 @@ import Link from  'next/link'
 import Image from 'next/image'
 import { formatDateTime } from '../../utils/utils';
 import { FILE_URL } from '../../utils/constants';
-import { Modal } from '@mui/material';
-import zIndex from '@mui/material/styles/zIndex';
 
 const ActionSidebar = (props) => {
     const relatedActions = props.relatedActions
