@@ -1,23 +1,45 @@
 import React, {Fragment} from 'react';
-import Navbar2 from '../../components/Navbar2';
+import Navbar from '../../components/Navbar';
 import PageTitle from '../../components/pagetitle'
 import Footer from '../../components/footer'
 import Scrollbar from '../../components/scrollbar'
 import Logo from '/public/images/logo.png'
-import TeamSection from '../../components/TeamSection';
 
 import vImg from '/public/images/volunteer.jpg'
 import Image from 'next/image';
+import { BASIN_URL } from '../../utils/constants';
+import { toast } from 'react-toastify';
 
 const VolunteerPage =() => {
+    const [file, setFile] = React.useState(null)
+    const [sending, setSending] = React.useState(false);
+
+    const form = document.getElementById('contact-form-main')
 
     const SubmitHandler = (e) => {
+        setSending(true)
         e.preventDefault()
+        let formData = new FormData(form)
+        formData.append('file', file)
+
+        fetch(BASIN_URL, {
+            method: 'POST',
+            body: formData
+        }).then(response => {
+            if(response.ok){
+                setSending(false)
+                form.reset()
+                toast.success('Votre message a été envoyé avec succès. Nous vous donnerons un retour dans les plus brefs délais.')
+            } else {
+                setSending(false)
+                toast.error('Erreur lors de l\'envoi du message. Veuillez réessayer plus tard.')
+            }
+        })
     }
 
     return(
         <Fragment>
-            <Navbar2 Logo={Logo}/>
+            <Navbar Logo={Logo}/>
             <PageTitle pageTitle={'Volunteer'} pagesub={'Volunteer'}/> 
             <div className="volunteer-area">
                 <div className="volunteer-wrap">
@@ -37,9 +59,10 @@ const VolunteerPage =() => {
                                         <form 
                                             className="contact-validation-active" 
                                             id="contact-form-main" 
-                                            action="https://usebasin.com/f/6ad3ce166881"
-                                            enctype="multipart/form-data"
-                                            method="POST"
+                                            // action={BASIN_URL}
+                                            // enctype="multipart/form-data"
+                                            // method="POST"
+                                            onSubmit={SubmitHandler}
                                         >
                                             <div className="row">
                                                 <div className="col-lg-6 col-md-6 col-sm-6 col-12 form-group">
@@ -52,27 +75,22 @@ const VolunteerPage =() => {
                                                 </div>
                                                 <div className="col-lg-6 col-md-6 col-sm-6 col-12 form-group">
                                                     <input type="text" className="form-control" name="objet" id="objet"
-                                                        placeholder="objet"/>
+                                                        placeholder="Objet"/>
                                                 </div>
-                                                <div className="col-lg-6 col-md-6 col-sm-6 col-12 form-group form-group-in">
-                                                    <label htmlFor="file">Votre CV</label>
-                                                    <input id="file" type="file" className="form-control" name="file"/>
+                                                <div className="col-lg-6 col-md-6 col-sm-6 col-12 form-group form-group-in" >
+                                                    <label htmlFor="file">{`${file?.name || 'Importez votre CV ici'}`}</label>
+                                                    <input id="file" type="file" className="form-control" name="file" onChange={()=>{
+                                                        setFile(document.getElementById('file').files[0])
+                                                    }}/>
                                                     <i className="ti-cloud-up"></i>
                                                 </div>
                                                 <div className="col-lg-12 col-12 form-group">
                                                     <textarea className="form-control" name="note" id="note"
-                                                        placeholder="Motivation et breve description"></textarea>
+                                                        placeholder="Votre Motivation et brève description"></textarea>
                                                 </div>
                                                 <div className="submit-area col-lg-12 col-12">
-                                                    <button type="submit" className="theme-btn submit-btn">Envoyer</button>
-                                                    <div id="loader">
-                                                        <i className="ti-reload"></i>
-                                                    </div>
+                                                    <button type="submit" className="theme-btn submit-btn">{sending ? 'Envoie en cours...' : 'Envoyer'}</button>
                                                 </div>
-                                            </div>
-                                            <div className="clearfix error-handling-messages">
-                                                <div id="success">Merci</div>
-                                                <div id="error"> Erreur lors de l'envoi du message. Veuillez réessayer plus tard.</div>
                                             </div>
                                         </form>
                                     </div>
@@ -82,7 +100,6 @@ const VolunteerPage =() => {
                     </div>
                 </div>
             </div>
-            {/* <TeamSection/> */}
             <Footer/>
             <Scrollbar/>
         </Fragment>

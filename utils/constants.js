@@ -1,6 +1,7 @@
 export const API_BASE_URL = 'https://rtc-amontana.pockethost.io';
 export const NEXT_PUBLIC_URL = 'http://localhost:3000';
 export const FILE_URL = (collectionId, id, filename) => `${API_BASE_URL}/api/files/${collectionId}/${id}/${filename}`;
+export const BASIN_URL = 'https://usebasin.com/f/6ad3ce166881';
 
 
 export const SHARE_TO_FACEBOOK = (url) => `https://www.facebook.com/sharer.php?u=${url}`;
