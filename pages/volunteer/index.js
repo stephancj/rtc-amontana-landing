@@ -45,8 +45,8 @@ const VolunteerPage =() => {
                                                         placeholder="Email"/>
                                                 </div>
                                                 <div className="col-lg-6 col-md-6 col-sm-6 col-12 form-group">
-                                                    <input type="text" className="form-control" name="motivation" id="subject"
-                                                        placeholder="Motivation"/>
+                                                    <input type="text" className="form-control" name="objet" id="objet"
+                                                        placeholder="objet"/>
                                                 </div>
                                                 <div className="col-lg-6 col-md-6 col-sm-6 col-12 form-group form-group-in">
                                                     <label htmlFor="file">Votre CV</label>
@@ -55,7 +55,7 @@ const VolunteerPage =() => {
                                                 </div>
                                                 <div className="col-lg-12 col-12 form-group">
                                                     <textarea className="form-control" name="note" id="note"
-                                                        placeholder="Case Description..."></textarea>
+                                                        placeholder="Motivation et breve description"></textarea>
                                                 </div>
                                                 <div className="submit-area col-lg-12 col-12">
                                                     <button type="submit" className="theme-btn submit-btn">Envoyer</button>
