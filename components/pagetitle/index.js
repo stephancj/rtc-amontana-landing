@@ -1,16 +1,26 @@
-import React from 'react'
-import Link from 'next/link'
+import React from 'react';
+import Image from 'next/image';
 
 const PageTitle = (props) => {
-    return(
+    return (
         <div className="wpo-breadcumb-area">
+            {
+                props.backgroundImage &&
+                <div className="background-image">
+                <Image 
+                    src={props.backgroundImage} 
+                    fill 
+                    alt="Cover Image"
+                    pr
+                />
+                </div>
+            }
             <div className="container">
                 <div className="row">
                     <div className="col-12">
                         <div className="wpo-breadcumb-wrap">
                             <h2>{props.pageTitle}</h2>
                             <ul>
-                                <li><Link href="/home">Home</Link></li>
                                 <li><span>{props.pagesub}</span></li>
                             </ul>
                         </div>
@@ -18,7 +28,7 @@ const PageTitle = (props) => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default PageTitle;

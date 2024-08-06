@@ -43,19 +43,17 @@ import blogSingleImg13 from "/public/images/blog/13.jpg";
 import blogSingleImg14 from "/public/images/blog/14.jpg";
 import blogSingleImg15 from "/public/images/blog/15.jpg";
 
-
-
 const blogs = [
     {
         id: '1',
-        title: 'Giving The Poor Is A Great Satisfiction Of heart.',
+        title: 'Passation de collier présidentiel.',
         slug:'Great-Satisfiction',
         screens: blogImg1,
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem beatae errodio.',
         author: 'Jenefer Willy',
         authorTitle:'volunteer',
         authorImg:blogAvaterImg1,
-        create_at: '14 AUG,21',
+        create_at: '11 Juillet 2024',
         blogSingleImg:blogSingleImg1, 
         comment:'35',
         blClass:'format-standard-image',
@@ -257,4 +255,5 @@ const blogs = [
         blClass:'format-video',
     },
 ];
+
 export default blogs;

@@ -83,6 +83,8 @@
 	.entry-media{
 		img{
 			width: 100%;
+			height: 500px;
+			object-fit:contain;
 		}
 	}
 
@@ -141,6 +143,7 @@
 			text-align: center;
 			position: relative;
 			text-decoration: underline;
+			border-radius: 10px 10px 10px 10px;
 
 			@include media-query(767px) {
 				padding: 55px 25px;
@@ -160,6 +163,7 @@
 				height: 60px;
 				line-height: 60px;
 				border:2px solid $section-bg-color;
+
 				background: $white;
 				color: $theme-primary-color;
 				border-radius: 50%;
@@ -169,19 +173,23 @@
 
 		}
 
+		//gallery slider
 		.gallery {
-			overflow: hidden;
-			margin: 40px -7.5px 0;
-
+			overflow: hidden !important;
+			margin: 40px -7.5px 0 !important;
 			> div {
-				width: calc(50% - 15px);
-				float: left;
-				margin: 0 7.5px 15px;
+				width: calc(100% - 7.5px) !important;
+				float: left !important;
+				margin: 10px 7.5px 15px !important;
 			}
 
-			img{
-				width: 100%;
+			.eventImage {
+				width: 98% !important;
+				border-radius: 10px 10px 10px 10px !important;
+				object-fit: cover !important;
+				height: 307.27px! important;
 			}
+
 		}
 	}
 
@@ -352,6 +360,7 @@
 	.more-posts {
 		overflow: hidden;
 	    border: 1px solid $border-color-s2;
+		border-radius: 10px 10px 10px 10px;
 	    padding: 0 25px;
 
 		> div {
@@ -380,6 +389,7 @@
 		.next-post {
 			text-align: right;
 		    border-left: 1px solid $border-color-s2;
+			border-radius: 0 0 0 0;
 		    padding-left: 15px;
 		    padding-right: 5px;
 

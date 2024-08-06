@@ -40,7 +40,7 @@ export default class Header extends Component {
                                 </div>
                                 <div className="col-lg-3 col-md-6 col-6">
                                     <div className="navbar-header">
-                                        <Link onClick={ClickHandler} className="navbar-brand" href="/home"><Image src={this.props.Logo}
+                                        <Link onClick={ClickHandler} className="navbar-brand" href="/"><Image src={this.props.Logo}
                                             alt="" /></Link>
                                     </div>
                                 </div>
@@ -49,17 +49,17 @@ export default class Header extends Component {
                                         <button className="menu-close"><i className="ti-close"></i></button>
                                         <ul className="nav navbar-nav mb-2 mb-lg-0">
                                             <li className="menu-item-has-children">
-                                                <Link onClick={ClickHandler} href="/">Home</Link>
+                                                <Link onClick={ClickHandler} href="/">Accueil</Link>
                                             </li>
                                             <li className="menu-item-has-children">
-                                                <Link href="/cause">Cause</Link>
+                                                <Link href="/cause">A propos</Link>
                                                 <ul className="sub-menu">
                                                     <li><Link onClick={ClickHandler} href="/cause">Cause</Link></li>
                                                     <li><Link onClick={ClickHandler} href="/cause-single/Poor-Children">Cause Single</Link></li>
                                                 </ul>
                                             </li>
                                             <li className="menu-item-has-children">
-                                                <Link href="/">Events</Link>
+                                                <Link href="/">Causes</Link>
                                                 <ul className="sub-menu">
                                                     <li><Link onClick={ClickHandler} href="/event">Events</Link></li>
                                                     <li><Link onClick={ClickHandler} href="/event-s2">Events S2</Link></li>
@@ -67,7 +67,7 @@ export default class Header extends Component {
                                                 </ul>
                                             </li>
                                             <li className="menu-item-has-children">
-                                                <Link href="/">Pages</Link>
+                                                <Link href="/">Actualités</Link>
                                                 <ul className="sub-menu">
                                                     <li><Link onClick={ClickHandler} href="/about">About</Link></li>
                                                     <li><Link onClick={ClickHandler} href="/service">Service</Link></li>
@@ -83,7 +83,7 @@ export default class Header extends Component {
                                                 </ul>
                                             </li>
                                             <li className="menu-item-has-children">
-                                                <Link onClick={ClickHandler} href="/#blog">Blog</Link>
+                                                <Link onClick={ClickHandler} href="/#blog">Actions</Link>
                                                 {/* <ul className="sub-menu">
                                                     <li><Link onClick={ClickHandler} href="/blog">Blog right sidebar</Link></li>
                                                     <li><Link onClick={ClickHandler} href="/blog-left-sidebar">Blog left sidebar</Link></li>
@@ -101,14 +101,14 @@ export default class Header extends Component {
                                                     </li>
                                                 </ul> */}
                                             </li>
-                                            <li><Link onClick={ClickHandler} href="/contact">Contact</Link></li>
+                                            <li><Link onClick={ClickHandler} href="/contact">Equipe</Link></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div className="col-lg-3 col-md-2 col-2">
                                     <div className="header-right">
                                         <div className="close-form">
-                                            <Link onClick={ClickHandler} className="theme-btn" href="/donate">Donate Now</Link>
+                                            <Link onClick={ClickHandler} className="theme-btn" href="/donate">Faire un don</Link>
                                         </div>
                                         {/* <div className="header-search-form-wrapper">
                                             <div className="cart-search-contact">

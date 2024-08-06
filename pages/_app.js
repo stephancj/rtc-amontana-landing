@@ -12,12 +12,14 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import 'photoswipe/dist/photoswipe.css'
 import '../styles/sass/style.scss'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 function MyApp({ Component, pageProps }) {
   return (
     <div>
       <Component {...pageProps} />
       <ToastContainer />
+      <GoogleAnalytics gaId="G-8VNPWXF8HV" />
     </div>
 
   )

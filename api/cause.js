@@ -1,4 +1,4 @@
-import cimg1 from '/public/images/campaign/education.jpg'
+import cimg1 from '/public/images/campaign/rtc-tsinjo-vetements.jpg'
 import cimg2 from '/public/images/campaign/eau.jpg'
 import cimg3 from '/public/images/campaign/medecine.jpg'
 
@@ -39,12 +39,13 @@ const Causes = [
         cImgSingle:cimgSingle,
         process:'65',
         thumb:'Education',
-        cTitle: 'Help To Build a Secure Life Of a Poor Children.',
+        cTitle: 'Don de vetements par le Rotaract CLub Tsinjo.',
         slug:'Poor-Children', 
         Goal:'3,000.00',
         Raised:'2,000.00',
         authorImg:author,
         authorName:'Laura Faiary',
+        date: '19 Juillet, 2024',
     },
     {
         id: '2',

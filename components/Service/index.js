@@ -1,8 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
-import Services from '../../api/service'
 import Slider from "react-slick"
 import Image from 'next/image'
+import { FILE_URL } from '../../utils/constants'
 
 const Service = (props) => {
     const ClickHandler = () =>{
@@ -15,7 +15,7 @@ const Service = (props) => {
         speed: 1000,
         slidesToShow: 4,
         slidesToScroll: 1,
-        autoplay: false,
+        autoplay: true,
         responsive: [
             {
                 breakpoint: 1500,
@@ -59,21 +59,36 @@ const Service = (props) => {
 
         <section className={`${props.Fclass} section-padding  ${props.vclassClass}`}>
             <div className="container">
+            <div className="row justify-content-center">
+                    <div className="col-lg-6">
+                        <div className="wpo-section-title">
+                            <span>We Love To Help Poor</span>
+                            <h2>Our Featured Campaigns</h2>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have
+                                suffered alteration in some form,</p>
+                        </div>
+                    </div>
+                </div>
                 <div className="row">
                     <Slider {...settings}>
-                        {Services.map((service, sitem) => (
-                        <div className="col col-xl-3 col-lg-6 col-sm-6 col-12 slider-item" key={sitem}>
-                            <div className="wpo-features-item" style={{backgroundColor: service.backgroundColor}}>
+                        {props.aofs.map((aof, index) => (
+                        <div className="col col-xl-3 col-lg-6 col-sm-6 col-12 slider-item" key={index}>
+                            <div className="wpo-features-item" style={{backgroundColor: aof.backgroundColor}}>
                                 <div className="wpo-features-icon">
                                     <div className="icon">
-                                        <Image src={service.logo} alt={service.title}/>
+                                        <Image 
+                                            src={FILE_URL(aof.collectionId, aof.id, aof.logo)} 
+                                            alt={aof.name}
+                                            width={1000}
+                                            height={1000}
+                                        />
                                     </div>
                                 </div>
                                 <div className="wpo-features-text">
                                     <h2>
                                         {/* href='/service/[slug]' as={`/service/${service.slug}`} */}
                                         <Link href=''> 
-                                            {service.title}
+                                            {aof.name}
                                         </Link>
                                     </h2>
                                 </div>

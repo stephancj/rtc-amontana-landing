@@ -3,13 +3,14 @@ import Teams from '../../api/team'
 import Slider from "react-slick";
 import Link from 'next/link'
 import Image from "next/image";
+import { useEffect } from "react";
+import { getAllMembers } from "../../services/members.service";
+import { FILE_URL } from "../../utils/constants";
 
 
-const TeamSection = () => {
+const TeamSection = (props) => {
 
-    const alphabeticalOrederedTeams = Teams.sort((a, b) => a.name.localeCompare(b.name))
-
-    var settings = {
+    const settings = {
         dots: true,
         arrows: false,
         speed: 1000,
@@ -65,8 +66,8 @@ const TeamSection = () => {
                 <div className="row justify-content-center">
                     <div className="col-lg-6">
                         <div className="wpo-section-title">
-                            <span>Expert Team</span>
-                            <h2>Meet Our Volunteer Team</h2>
+                            <span>Membres</span>
+                            <h2>Découvrez nos volontaires</h2>
                             <p>There are many variations of passages of Lorem Ipsum available, but the majority have
                                 suffered alteration in some form,</p>
                         </div>
@@ -75,14 +76,19 @@ const TeamSection = () => {
                 <div className="wpo-team-wrap">
                     <div className="team-slider">
                         <Slider {...settings}>
-                            {alphabeticalOrederedTeams.map((Team, tm) => (
-                                <div className="wpo-team-item" key={tm}>
+                            {props.members.map((Team, index) => (
+                                <div className="wpo-team-item" key={index}>
                                     <div className="wpo-team-img">
-                                        <Image src={Team.tImg} alt="" />
+                                        <Image 
+                                            src={FILE_URL(Team.collectionId, Team.id, Team.image)} 
+                                            alt={Team.fullname} 
+                                            width={1000} 
+                                            height={1000}
+                                        />
                                     </div>
                                     <div className="wpo-team-content">
-                                        <h2><Link onClick={ClickHandler} href='/team-single/[slug]' as={`/team-single/${Team.slug}`}>{Team.name}</Link></h2>
-                                        <span>{Team.title}</span>
+                                        <h2><Link onClick={ClickHandler} href='/team-single/[slug]' as={`/team-single/${Team.fullname}`}>{Team.fullname}</Link></h2>
+                                        <span>{Team.function}</span>
                                     </div>
                                 </div>
                             ))}

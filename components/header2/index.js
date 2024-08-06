@@ -45,7 +45,7 @@ export default class Header2 extends Component {
                                 </div>
                                 <div className="col-lg-3 col-md-6 col-6">
                                     <div className="navbar-header">
-                                        <Link onClick={ClickHandler} className="navbar-brand" href="/home"><Image src={this.props.Logo}
+                                        <Link onClick={ClickHandler} className="navbar-brand" href="/"><Image src={this.props.Logo}
                                             alt="" /></Link>
                                     </div>
                                 </div>
@@ -55,7 +55,7 @@ export default class Header2 extends Component {
                                         <ul className="nav navbar-nav mb-2 mb-lg-0">
                                             <li className="menu-item-has-children">
                                                 <Link onClick={ClickHandler} href="/">Home</Link>
-                                                <ul className="sub-menu">
+                                                {/* <ul className="sub-menu">
                                                     <li><Link onClick={ClickHandler} href="/home">Home Charity</Link></li>
                                                     <li><Link onClick={ClickHandler} href="/home2">Home Education</Link></li>
                                                     <li><Link onClick={ClickHandler} href="/home3">Home Wildlife</Link></li>
@@ -63,7 +63,7 @@ export default class Header2 extends Component {
                                                     <li><Link onClick={ClickHandler} href="/home5">Home World Pandemic</Link></li>
                                                     <li><Link onClick={ClickHandler} href="/home6">Home Nature</Link></li>
                                                     <li><Link onClick={ClickHandler} href="/home7">Home Nature S2</Link></li>
-                                                </ul>
+                                                </ul> */}
                                             </li>
                                             <li className="menu-item-has-children">
                                                 <Link href="/cause">Cause</Link>

@@ -1,6 +1,6 @@
 import React from 'react'
 import Link  from 'next/link'
-import Logo from '/public/images/Rotaract Logo_FR21_White.png'
+import Logo from '/public/images/Club-Rotaract_LogoLockup_FR21.png'
 import Projects from '../../api/projects'
 import Image from 'next/image'
 
