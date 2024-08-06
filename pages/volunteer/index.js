@@ -34,7 +34,13 @@ const VolunteerPage =() => {
                                 <div className="volunteer-contact">
                                     <div className="volunteer-contact-form">
                                         <h2>Rejoignez nos rangs et devenez membre</h2>
-                                        <form className="contact-validation-active" id="contact-form-main" action="https://usebasin.com/f/6ad3ce166881" method="POST">
+                                        <form 
+                                            className="contact-validation-active" 
+                                            id="contact-form-main" 
+                                            action="https://usebasin.com/f/6ad3ce166881"
+                                            enctype="multipart/form-data"
+                                            method="POST"
+                                        >
                                             <div className="row">
                                                 <div className="col-lg-6 col-md-6 col-sm-6 col-12 form-group">
                                                     <input type="text" className="form-control" name="fullname" id="name"
