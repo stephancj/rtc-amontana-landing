@@ -59,9 +59,6 @@ const VolunteerPage =() => {
                                         <form 
                                             className="contact-validation-active" 
                                             id="contact-form-main" 
-                                            // action={BASIN_URL}
-                                            // enctype="multipart/form-data"
-                                            // method="POST"
                                             onSubmit={SubmitHandler}
                                         >
                                             <div className="row">
