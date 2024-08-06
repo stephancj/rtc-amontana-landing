@@ -33,23 +33,23 @@ const VolunteerPage =() => {
                                 </div>
                                 <div className="volunteer-contact">
                                     <div className="volunteer-contact-form">
-                                        <h2>Become a Volunteer</h2>
-                                        <form onSubmit={SubmitHandler} className="contact-validation-active" id="contact-form-main">
+                                        <h2>Rejoignez nos rangs et devenez membre</h2>
+                                        <form onSubmit={SubmitHandler} className="contact-validation-active" id="contact-form-main" action="https://usebasin.com/f/6ad3ce166881" method="POST">
                                             <div className="row">
                                                 <div className="col-lg-6 col-md-6 col-sm-6 col-12 form-group">
-                                                    <input type="text" className="form-control" name="name" id="name"
-                                                        placeholder="First Name"/>
+                                                    <input type="text" className="form-control" name="fullname" id="name"
+                                                        placeholder="Nom complet"/>
                                                 </div>
                                                 <div className="col-lg-6 col-md-6 col-sm-6 col-12 form-group clearfix">
                                                     <input type="email" className="form-control" name="email" id="email"
                                                         placeholder="Email"/>
                                                 </div>
                                                 <div className="col-lg-6 col-md-6 col-sm-6 col-12 form-group">
-                                                    <input type="text" className="form-control" name="subject" id="subject"
-                                                        placeholder="Subject"/>
+                                                    <input type="text" className="form-control" name="motivation" id="subject"
+                                                        placeholder="Motivation"/>
                                                 </div>
                                                 <div className="col-lg-6 col-md-6 col-sm-6 col-12 form-group form-group-in">
-                                                    <label htmlFor="file">Upload Your CV</label>
+                                                    <label htmlFor="file">Votre CV</label>
                                                     <input id="file" type="file" className="form-control" name="file"/>
                                                     <i className="ti-cloud-up"></i>
                                                 </div>
@@ -58,16 +58,15 @@ const VolunteerPage =() => {
                                                         placeholder="Case Description..."></textarea>
                                                 </div>
                                                 <div className="submit-area col-lg-12 col-12">
-                                                    <button type="submit" className="theme-btn submit-btn">Send Message</button>
+                                                    <button type="submit" className="theme-btn submit-btn">Envoyer</button>
                                                     <div id="loader">
                                                         <i className="ti-reload"></i>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div className="clearfix error-handling-messages">
-                                                <div id="success">Thank you</div>
-                                                <div id="error"> Error occurred while sending email. Please try again later.
-                                                </div>
+                                                <div id="success">Merci</div>
+                                                <div id="error"> Erreur lors de l'envoi du message. Veuillez réessayer plus tard.</div>
                                             </div>
                                         </form>
                                     </div>

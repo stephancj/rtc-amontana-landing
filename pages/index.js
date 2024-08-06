@@ -73,8 +73,8 @@ const HomePage = (props) => {
             <TeamSection members={members} />
             {/* <Testimonial/> */}
             <CtaSection
-            vImg={vimg}
-            cTitle={"Rejoignez-nous, transformez des vies, vivez la magie"}
+                vImg={vimg}
+                cTitle={"Rejoignez-nous, transformez des vies, vivez la magie"}
             />
             <PartnerSection />
             <Footer />
