@@ -25,7 +25,7 @@ const About = (props) => {
                                     <div className="s-s2"></div>
                                 </div>
                                 <div className="wpo-ab-shape-2"><Image src={shape} alt=""/></div>
-                                <div className="wpo-total-raised">
+                                {/* <div className="wpo-total-raised">
                                     <div className="wpo-total-raised-wrap">
                                         <div className="wpo-total-raised-icon">
                                             <i className="fi flaticon-wallet-filled-money-tool"></i>
@@ -45,7 +45,7 @@ const About = (props) => {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

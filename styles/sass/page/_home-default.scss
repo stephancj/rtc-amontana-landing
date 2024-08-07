@@ -529,10 +529,12 @@
     .wpo-campaign-text-top {
         padding: 15px;
         padding-top: 22px;
+        min-height: 137.5px;
 
         @media(max-width:1400px) {
             padding: 15px 0;
-        }
+
+        }        
     }
 
     .wpo-campaign-content ul {
@@ -646,7 +648,7 @@
 
 .wpo-team-area,
 .wpo-team-area-s2 {
-    background: $section-bg-color;
+    // background: $section-bg-color;
 
     .team-slider.owl-carousel .owl-stage-outer {
         overflow: inherit;
@@ -1028,6 +1030,7 @@
 ===================================================*/
 
 .wpo-event-area {
+    background: $section-bg-color;
     padding-bottom: 120px;
 
     @media(max-width:991px) {
@@ -1089,6 +1092,7 @@
             padding: 15px;
             box-shadow: 0px 1px 15px 0px rgba(62, 65, 159, 0.15);
             border-radius: 15px;
+            background-color: white;
 
             @media(max-width:991px) {
                 margin-bottom: 30px;

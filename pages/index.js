@@ -69,7 +69,7 @@ const HomePage = (props) => {
             />
             <BlogSection events={events} />
             <CauseSection actions={actions}/>
-            {/* <EventSection/> */}
+            <EventSection/>
             <TeamSection members={members} />
             {/* <Testimonial/> */}
             <CtaSection

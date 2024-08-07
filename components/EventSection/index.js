@@ -14,7 +14,7 @@ const EventSection = (props) => {
                 <div className="row justify-content-center">
                     <div className="col-lg-6">
                         <div className="wpo-section-title">
-                            <span>Services</span>
+                            <span>Prochainement</span>
                             <h2>La magie de nos actions</h2>
                             <p>There are many variations of passages of Lorem Ipsum available, but the majority have
                                 suffered alteration in some form,</p>
