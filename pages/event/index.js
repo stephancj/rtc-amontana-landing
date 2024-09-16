@@ -11,7 +11,7 @@ const EventPage =() => {
         <Fragment>
             <Navbar2 Logo={Logo}/>
             <PageTitle pageTitle={'Events'} pagesub={'Events'}/> 
-            <EventSection evCLass={'section-padding'}/>
+            {/* <EventSection evCLass={'section-padding'}/> */}
             <Footer/>
             <Scrollbar/>
         </Fragment>
