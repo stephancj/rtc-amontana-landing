@@ -84,8 +84,8 @@ const PartnerSection = (props) => {
                 <div className="row justify-content-center">
                     <div className="col-lg-6">
                         <div className="wpo-section-title">
-                            <span>Who help us</span>
-                            <h2>Our Partners & Donors</h2>
+                            <span>Partenaires</span>
+                            <h2>Nos partenaires & donateurs</h2>
                             <p>There are many variations of passages of Lorem Ipsum available, but the majority have
                                 suffered alteration in some form,</p>
                         </div>

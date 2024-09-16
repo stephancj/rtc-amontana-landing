@@ -20,7 +20,7 @@ const Hero =() => {
                     <div className="col col-xs-6 col-lg-6">
                         <div className="wpo-hero-section-text">
                             <div className="wpo-hero-title-top">
-                                <span>Help The Poor Children</span>
+                                <span>Rotaract Club Antananarivo Amontana</span>
                             </div>
                             <div className="wpo-hero-title">
                                 <h2>La camaraderie par le service</h2>
