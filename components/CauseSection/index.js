@@ -17,8 +17,8 @@ const CauseSection = (props) => {
                 <div className="row justify-content-center">
                     <div className="col-lg-6">
                         <div className="wpo-section-title">
-                            <span>We Love To Help Poor</span>
-                            <h2>Our Featured Campaigns</h2>
+                            <span>Actions</span>
+                            <h2>Nos dernières initiatives</h2>
                             <p>There are many variations of passages of Lorem Ipsum available, but the majority have
                                 suffered alteration in some form,</p>
                         </div>

@@ -62,8 +62,8 @@ const Service = (props) => {
             <div className="row justify-content-center">
                     <div className="col-lg-6">
                         <div className="wpo-section-title">
-                            <span>We Love To Help Poor</span>
-                            <h2>Our Featured Campaigns</h2>
+                            <span>Causes</span>
+                            <h2>Nos axes stratégiques</h2>
                             <p>There are many variations of passages of Lorem Ipsum available, but the majority have
                                 suffered alteration in some form,</p>
                         </div>

@@ -5,7 +5,7 @@ import Link from 'next/link'
 const menus = [
     {
         id: 1,
-        title: 'Home',
+        title: 'Accueil',
         link: '/',
         // submenu: [
         //     {
@@ -48,7 +48,7 @@ const menus = [
 
     {
         id: 2,
-        title: 'Cause',
+        title: 'A propos',
         link: '/cause',
         submenu: [
             {
@@ -65,7 +65,7 @@ const menus = [
     },
     {
         id: 4,
-        title: 'Event',
+        title: 'Causes',
         link: '/event',
         submenu: [
             {
@@ -88,7 +88,7 @@ const menus = [
 
 {
     id: 3,
-        title: 'Pages',
+        title: 'Actualités',
         link: '/',
         submenu: [
             {
@@ -150,12 +150,12 @@ const menus = [
     },
     {
         id: 5,
-        title: 'Blog',
+        title: 'Actions',
         link: '/#blog',
     },
     {
         id: 88,
-        title: 'Contact',
+        title: 'Equipe',
         link: '/contact',
     }
     
