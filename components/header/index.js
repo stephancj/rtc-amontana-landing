@@ -38,13 +38,13 @@ export default class Header extends Component {
                                         <MobileMenu />
                                     </div>
                                 </div>
-                                <div className="col-lg-3 col-md-6 col-6">
+                                <div className="col-lg-2 col-md-6 col-6">
                                     <div className="navbar-header">
                                         <Link onClick={ClickHandler} className="navbar-brand" href="/"><Image src={this.props.Logo}
                                             alt="" /></Link>
                                     </div>
                                 </div>
-                                <div className="col-lg-6 col-md-1 col-1">
+                                <div className="col-lg-7 col-md-1 col-1">
                                     <div id="navbar" className="collapse navbar-collapse navigation-holder">
                                         <button className="menu-close"><i className="ti-close"></i></button>
                                         <ul className="nav navbar-nav mb-2 mb-lg-0">

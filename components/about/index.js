@@ -51,7 +51,7 @@ const About = (props) => {
                     </div>
                     <div className="col-lg-6 col-md-12 col-12">
                         <div className="wpo-about-text">
-                            <span>About Us</span>
+                            <span>A propos</span>
                             <h2>We Can Save More Lifes With Your Helping Hand.</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices

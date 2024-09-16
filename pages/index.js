@@ -20,24 +20,28 @@ import { getAllMembers } from "../services/members.service";
 import { getAllAreasOfFocus } from "../services/areasOfFocus.service";
 import { useEffect } from "react";
 import { CircularProgress } from "@mui/material";
+import { getAllUpcomingEvents } from "../services/upcomingEvents.service";
 
 const HomePage = (props) => {
     const [isLoading, setIsLoading] = React.useState(true);
     const [events, setEvents] = React.useState([]);
     const [actions, setActions] = React.useState([]);
+    const [upcomings, setUpcomings] = React.useState([]);
     const [members, setMembers] = React.useState([]);
     const [aofs, setAofs] = React.useState([]);
 
     const getAllData = async () => {
-        const [aofs, events, actions, members] = await Promise.all([
+        const [aofs, events, actions, upcomings,  members] = await Promise.all([
             getAllAreasOfFocus(),
             getAllEvents(),
             getAllActions(),
+            getAllUpcomingEvents(),
             getAllMembers()
         ]);
         setEvents(events);
         setActions(actions);
         setMembers(members);
+        setUpcomings(upcomings);
         setAofs(aofs);
         setIsLoading(false);
     };
@@ -69,7 +73,8 @@ const HomePage = (props) => {
             />
             <BlogSection events={events} />
             <CauseSection actions={actions}/>
-            <EventSection/>
+            {/* upcoming events and actions */}
+            <EventSection upcomings={upcomings}/>
             <TeamSection members={members} />
             {/* <Testimonial/> */}
             <CtaSection

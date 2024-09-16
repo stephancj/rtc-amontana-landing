@@ -12,6 +12,7 @@ import { formatDateTime } from "../../../utils/utils";
 import { FILE_URL, NEXT_PUBLIC_URL, SHARE_TO_FACEBOOK, SHARE_TO_LINKEDIN, SHARE_TO_THREADS, SHARE_TO_X } from "../../../utils/constants";
 import { CircularProgress } from "@mui/material";
 import Slider from "react-slick";
+import parse from "html-react-parser";
 
 
 const EventPage = () => {
@@ -147,7 +148,7 @@ useEffect(() => {
                                             </div>
                                             <h2>{event?.title}</h2>
                                             <div>
-                                                {parse(action?.description)}
+                                                {parse(`${event?.description}`)}
                                             </div>
                                             <blockquote>{event?.quote}</blockquote>
 

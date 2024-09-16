@@ -115,25 +115,22 @@ useEffect(() => {
 
 useEffect(() => {
     if (allActions.length > 0) {
-    const action = allActions.find((action) => action.id === id);
-    const actionIndex = allActions.findIndex((action) => action.id === id);
+        const action = allActions.find((action) => action.id === id);
+        const actionIndex = allActions.findIndex((action) => action.id === id);
 
-    setAction(action);
-    const previousAction = allActions[actionIndex + 1] || null;
+        setAction(action);
+        const previousAction = allActions[actionIndex + 1] || null;
 
-    setpreviousAction(previousAction);
-    const nextAction = allActions[actionIndex - 1] || null;    
-    setnextAction(nextAction);
+        setpreviousAction(previousAction);
+        const nextAction = allActions[actionIndex - 1] || null;    
+        setnextAction(nextAction);
 
-    const relatedActions = allActions.filter((action) => {
-        const hasSameAof = action.aof.some((aof) => action.aof.includes(aof));
-        return hasSameAof && action.id !== id;
-    });
+        const relatedActions = allActions.filter((action) => {
+            const hasSameAof = action.aof.some((aof) => action.aof.includes(aof));
+            return hasSameAof && action.id !== id;
+        });
 
-    console.log('relatedActions', relatedActions);
-    setRelatedActions(relatedActions);
-
-
+        setRelatedActions(relatedActions);
     }
 }, [allActions]);
 
