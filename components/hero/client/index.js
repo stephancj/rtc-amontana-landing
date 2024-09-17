@@ -5,9 +5,10 @@ import client1 from '/public/images/slider/client1.png'
 import client2 from '/public/images/slider/client2.png'
 import client3 from '/public/images/slider/client3.png'
 import client4 from '/public/images/slider/client4.png'
+import { FILE_URL } from "../../../utils/constants";
 
 
-const Clients = () => {
+const Clients = (props) => {
     var settings = {
         dots: false,
         arrows: false,
@@ -57,13 +58,18 @@ const Clients = () => {
         <div className="wpo-happy-client-img">
             <ul className="wpo-happy-client-slide">
                 <Slider {...settings}>
-                    <li><Image src={client1} alt="" /></li>
-                    <li><Image src={client2} alt="" /></li>
-                    <li><Image src={client3} alt="" /></li>
-                    <li><Image src={client4} alt="" /></li>
-                    <li><Image src={client2} alt="" /></li>
-                    <li><Image src={client1} alt="" /></li>
-                    <li><Image src={client3} alt="" /></li>
+                    {
+                        props.members.map((member, index) => (
+                            <li key={index}>
+                                <Image 
+                                    src={FILE_URL(member.collectionId, member.id, member.image)} 
+                                    width={500} 
+                                    height={500} 
+                                    alt={member.fullname} 
+                                />
+                            </li>
+                        ))
+                    }
                 </Slider>
             </ul>
         </div>

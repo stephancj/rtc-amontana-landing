@@ -64,7 +64,7 @@ const HomePage = (props) => {
         ) : (
         <div>
             <Navbar Logo={Logo} />
-            <Hero />
+            <Hero members={members}/>
             <About />
             <Service 
                 aofs={aofs}
