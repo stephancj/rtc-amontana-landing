@@ -10,7 +10,7 @@ import hero3 from '/public/images/slider/heroRTCA1.jpg'
 
 
 
-const Hero =() => {
+const Hero =(props) => {
     const yearsOfService = new Date().getFullYear() - 1998
 
     return (
@@ -42,7 +42,7 @@ const Hero =() => {
                                         <Image src={hero1} alt=""/>
                                     </div>
                                     <div className="wpo-happy-client">
-                                        <Clients/>
+                                        <Clients members={props.members}/>
                                     </div>
                                 </div>
                                 <div className="right-item">
