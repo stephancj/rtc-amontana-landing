@@ -5,14 +5,13 @@ import Navbar from '../../../components/Navbar';
 import PageTitle from '../../../components/pagetitle'
 import Scrollbar from '../../../components/scrollbar'
 import EventTabs from './alltab'
-import EventSidebar from './sidebar'
 import Footer from '../../../components/footer';
 import Logo from '/public/images/logo.png'
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { getAllUpcomingEvents } from '../../../services/upcomingEvents.service';
-import { CircularProgress } from '@mui/material';
 import parse from 'html-react-parser';
+import Loader from '../../../components/shared/loader/loader';
 
 const TeamSinglePage = (props) => {
     const router = useRouter();
@@ -64,7 +63,7 @@ const TeamSinglePage = (props) => {
                     height: "100vh",
                 }}
                 >
-                <CircularProgress />
+                <Loader />
                 </div>
             ) : (
                 <Fragment>
