@@ -22,7 +22,7 @@ const Footer = (props) =>{
                             <div className="logo widget-title">
                                 <Image src={Logo} alt="blog"/>
                             </div>
-                            <p>Welcome and open yourself to your truest love this year with us! With the Release Process</p>
+                            <p>Ensemble, construisons un avenir meilleur. Le Rotaract Club unit les jeunes pour servir leur communauté.</p>
                             <ul>
                                 <li>
                                     <Link href="https://www.facebook.com/profile.php?id=100064547237957" target='_blank'>
@@ -50,14 +50,15 @@ const Footer = (props) =>{
                     <div className="col col-lg-2 col-md-6 col-sm-12 col-12">
                         <div className="widget link-widget">
                             <div className="widget-title">
-                                <h3>Services </h3>
+                                <h3>Menu </h3>
                             </div>
                             <ul>
-                                <li><Link onClick={ClickHandler} href="/about">About Us</Link></li>
+                                <li><Link onClick={ClickHandler} href="/about">A propos</Link></li>
                                 <li><Link onClick={ClickHandler} href="/cause">Causes</Link></li>
-                                <li><Link onClick={ClickHandler} href="/blog">Latest News</Link></li>
-                                <li><Link onClick={ClickHandler} href="/contact">Contact us</Link></li>
-                                <li><Link onClick={ClickHandler} href="/event">Events</Link></li>
+                                <li><Link onClick={ClickHandler} href="/blog">Actualités</Link></li>
+                                <li><Link onClick={ClickHandler} href="/contact">Actions</Link></li>
+                                <li><Link onClick={ClickHandler} href="/event">Prochainement</Link></li>
+                                <li><Link onClick={ClickHandler} href="/gallery">Equipe</Link></li>
                             </ul>
                         </div>
                     </div>
@@ -67,7 +68,7 @@ const Footer = (props) =>{
                                 <h3>Contact </h3>
                             </div>
                             <div className="contact-ft">
-                                <p>Would you have any enquiries.Please feel free to contuct us</p>
+                                <p>Si vous avez des questions, n'hésitez pas à nous contacter</p>
                                 <ul>
                                     <li><i className="fi flaticon-mail"></i>amontana.rotaract@gmail.com</li>
                                     <li><i className="fi flaticon-phone-call"></i>+261 XX XX XXX XX</li>
@@ -80,7 +81,7 @@ const Footer = (props) =>{
                     <div className="col col-lg-3 col-md-6 col-sm-12 col-12">
                         <div className="widget instagram">
                             <div className="widget-title">
-                                <h3>Projects</h3>
+                                <h3>Actions et événements</h3>
                             </div>
                             <ul className="d-flex">
                                 {Projects.slice(0,6).map((project, pitem)=>(

@@ -23,11 +23,10 @@ const Hero =(props) => {
                                 <span>Rotaract Club Antananarivo Amontana</span>
                             </div>
                             <div className="wpo-hero-title">
-                                <h2>La camaraderie par le service</h2>
+                                <h2>Le service par la camaraderie</h2>
                             </div>
                             <div className="wpo-hero-subtitle">
-                                <p>We help local nonprofits access the funding, tools, training, and support they need
-                                    to become more.</p>
+                                <p>Ensemble, construisons un avenir meilleur. Le Rotaract Club unit les jeunes pour servir leur communauté.</p>
                             </div>
                             <div className="btns">
                                 <Link href="/volunteer" className="btn theme-btn-s2">Rejoignez-nous</Link>
@@ -53,7 +52,7 @@ const Hero =(props) => {
                                             </div>
                                             <div className="wpo-total-project-text">
                                                 <h3>{yearsOfService}</h3>
-                                                <p>Années de Services</p>
+                                                <p>années de services et d'espoir</p>
                                             </div>
                                         </div>
                                         <div className="project-shape">

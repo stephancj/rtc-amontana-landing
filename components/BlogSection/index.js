@@ -19,8 +19,7 @@ const BlogSection = (props) => {
                         <div className="wpo-section-title">
                             <span>Evénements</span>
                             <h2>Nos dernières actualités</h2>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                suffered alteration in some form,</p>
+                            <p>Le club organise ou participe à des événements marquants, dont des conférences, des ateliers et des rencontres interclubs.</p>
                         </div>
                     </div>
                 </div>

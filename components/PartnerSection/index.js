@@ -86,8 +86,7 @@ const PartnerSection = (props) => {
                         <div className="wpo-section-title">
                             <span>Partenaires</span>
                             <h2>Nos partenaires & donateurs</h2>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                suffered alteration in some form,</p>
+                            <p>Le club collabore avec des partenaires et donateurs dévoués qui partagent notre vision d'un monde meilleur. Leur soutien est essentiel pour la réussite de nos projets et initiatives. Ensemble, nous créons un impact positif et durable.</p>
                         </div>
                     </div>
                 </div>

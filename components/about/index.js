@@ -53,15 +53,18 @@ const About = (props) => {
                         <div className="wpo-about-text">
                             <span>A propos</span>
                             <h2>We Can Save More Lifes With Your Helping Hand.</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
-                                gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+                            <p>
+                                Le Rotaract Club Amontana est une association de jeunes professionnels et étudiants, affiliée à Rotary International. 
+                                Depuis 1997, nous sommes engagés dans des projets variés tels que des actions environnementales, des collectes de fonds, du soutien scolaire... 
+                                <br/>
+                                Notre objectif est de développer le leadership chez les jeunes et de les encourager à s'impliquer dans leur communauté. 
+                            </p>
                             <ul>
-                                <li>The standard chunk of Lorem Ipsum used since.</li>
-                                <li>Randomised words which don't look even slightly believable.</li>
-                                <li>Making this the first true generator on the Internet.</li>
+                                <li>Créer un impact positif et durable sur notre communauté.</li>
+                                <li>Former les futurs leaders de demain.</li>
+                                <li>Unir les jeunes autour de valeurs communes.</li>
                             </ul>
-                            <Link onClick={ClickHandler} className="theme-btn-s2" href="/about">More About</Link>
+                            <Link onClick={ClickHandler} className="theme-btn-s2" href="/about">Voir plus</Link>
                         </div>
                     </div>
                 </div>
