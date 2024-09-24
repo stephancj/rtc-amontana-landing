@@ -10,9 +10,9 @@ import Logo from "/public/images/logo.png";
 import { getAllEvents } from "../../../services/events.service";
 import { formatDateTime } from "../../../utils/utils";
 import { FILE_URL, NEXT_PUBLIC_URL, SHARE_TO_FACEBOOK, SHARE_TO_LINKEDIN, SHARE_TO_THREADS, SHARE_TO_X } from "../../../utils/constants";
-import { CircularProgress } from "@mui/material";
 import Slider from "react-slick";
 import parse from "html-react-parser";
+import Loader from "../../../components/shared/loader/loader";
 
 
 const EventPage = () => {
@@ -114,7 +114,7 @@ useEffect(() => {
                     height: "100vh",
                 }}
                 >
-                <CircularProgress />
+                <Loader />
                 </div>
             ) : (
                 <Fragment>
