@@ -19,8 +19,8 @@ import { getAllActions } from "../services/actions.service";
 import { getAllMembers } from "../services/members.service";
 import { getAllAreasOfFocus } from "../services/areasOfFocus.service";
 import { useEffect } from "react";
-import { CircularProgress } from "@mui/material";
 import { getAllUpcomingEvents } from "../services/upcomingEvents.service";
+import Loader from "../components/shared/loader/loader";
 
 const HomePage = (props) => {
     const [isLoading, setIsLoading] = React.useState(true);
@@ -59,7 +59,7 @@ const HomePage = (props) => {
                 justifyContent: "center", 
                 height: "100vh"}}
             >
-                <CircularProgress/>
+                <Loader />
             </div>
         ) : (
         <div>
