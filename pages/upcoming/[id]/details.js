@@ -7,11 +7,11 @@ import Scrollbar from '../../../components/scrollbar'
 import EventTabs from './alltab'
 import Footer from '../../../components/footer';
 import Logo from '/public/images/logo.png'
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { getAllUpcomingEvents } from '../../../services/upcomingEvents.service';
 import parse from 'html-react-parser';
 import Loader from '../../../components/shared/loader/loader';
+import { FILE_URL } from '../../../utils/constants';
 
 const TeamSinglePage = (props) => {
     const router = useRouter();
@@ -56,27 +56,24 @@ const TeamSinglePage = (props) => {
         <div>
             {isLoading ? (
                 <div
-                style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    height: "100vh",
-                }}
-                >
-                <Loader />
+                    style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        height: "100vh",
+                    }}
+                    >
+                    <Loader />
                 </div>
             ) : (
                 <Fragment>
                     <Navbar Logo={Logo} />
-                    <PageTitle pageTitle={eventDetails?.eTitle} pagesub={'Case Single'} />
+                    <PageTitle pageTitle={upcoming?.title} pagesub={'Prochainement'} backgroundImage={FILE_URL(upcoming?.collectionId, upcoming?.id, upcoming?.image)}/>
                     <div className="wpo-event-details-area section-padding">
                         <div className="container">
                             <div className="row">
                                 <div className="col col-lg-12">
                                     <div className="wpo-event-item">
-                                        <div className="wpo-event-img">
-                                            <Image src={eventDetails?.eImg} alt=""/>
-                                        </div>
                                         <div className="wpo-event-details-text">
                                             <h2>{upcoming?.title}</h2>
                                             <p>{parse(`${upcoming?.description}`)}</p>
