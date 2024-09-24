@@ -30,7 +30,7 @@ const Hero =(props) => {
                                     to become more.</p>
                             </div>
                             <div className="btns">
-                                <Link href="/about" className="btn theme-btn-s2">Rejoignez-nous</Link>
+                                <Link href="/volunteer" className="btn theme-btn-s2">Rejoignez-nous</Link>
                             </div>
                         </div>
                     </div>
