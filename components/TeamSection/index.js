@@ -68,8 +68,7 @@ const TeamSection = (props) => {
                         <div className="wpo-section-title">
                             <span>Membres</span>
                             <h2>Découvrez nos volontaires</h2>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                suffered alteration in some form,</p>
+                            <p>Notre club est fier de compter sur une équipe de membres engagés et passionnés. Chacun apporte son énergie, son expertise et son dévouement pour faire la différence au sein de notre communauté.</p>
                         </div>
                     </div>
                 </div>

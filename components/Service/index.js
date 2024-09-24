@@ -64,8 +64,7 @@ const Service = (props) => {
                         <div className="wpo-section-title">
                             <span>Causes</span>
                             <h2>Nos axes stratégiques</h2>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                suffered alteration in some form,</p>
+                            <p>Nous croyons en un monde où chaque individu a accès à une vie saine et à des opportunités d'épanouissement. C'est pourquoi nous nous engageons sur sept fronts :</p>
                         </div>
                     </div>
                 </div>

@@ -18,9 +18,8 @@ const CauseSection = (props) => {
                     <div className="col-lg-6">
                         <div className="wpo-section-title">
                             <span>Actions</span>
-                            <h2>Nos dernières initiatives</h2>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                suffered alteration in some form,</p>
+                            <h2>La magie de nos actions</h2>
+                            <p>Nous continuons de nous engager à travers diverses initiatives, allant des actions solidaires locales aux projets internationaux, pour avoir un impact positif et durable dans nos communautés.</p>
                         </div>
                     </div>
                 </div>

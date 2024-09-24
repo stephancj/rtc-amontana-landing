@@ -16,9 +16,8 @@ const EventSection = (props) => {
                     <div className="col-lg-6">
                         <div className="wpo-section-title">
                             <span>Prochainement</span>
-                            <h2>La magie de nos actions</h2>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                suffered alteration in some form,</p>
+                            <h2>Nos futurs événements</h2>
+                            <p>Ne manquez pas nos prochains ateliers, campagnes et rencontres qui promettent d’avoir un impact significatif. Restez connectés !</p>
                         </div>
                     </div>
                 </div>
