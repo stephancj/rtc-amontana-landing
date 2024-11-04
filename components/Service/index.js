@@ -57,7 +57,7 @@ const Service = (props) => {
 
     return(
 
-        <section className={`${props.Fclass} section-padding  ${props.vclassClass}`}>
+        <section className={`${props.Fclass} section-padding  ${props.vclassClass}`} id='causes'>
             <div className="container">
             <div className="row justify-content-center">
                     <div className="col-lg-6">

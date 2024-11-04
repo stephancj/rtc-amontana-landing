@@ -12,7 +12,7 @@ const BlogSection = (props) => {
 
     return(
 
-        <section className="wpo-blog-section section-padding" id='blog'>
+        <section className="wpo-blog-section section-padding" id='events'>
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-lg-6">

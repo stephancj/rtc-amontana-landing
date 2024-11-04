@@ -13,7 +13,7 @@ const About = (props) => {
 
 
     return(
-        <section className="wpo-about-section section-padding">
+        <section className="wpo-about-section section-padding" id='about'>
             <div className="container">
                 <div className="row align-items-center">
                     <div className="col-lg-6 col-md-12 col-12">
