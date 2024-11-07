@@ -2,7 +2,6 @@ import React, { Fragment, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import PageTitle from "../../../components/pagetitle";
-import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/footer";
 import Scrollbar from "../../../components/scrollbar";
 import Image from "next/image";
@@ -14,6 +13,7 @@ import Slider from "react-slick";
 import parse from 'html-react-parser';
 import ActionSidebar from '../sidebar';
 import Loader from "../../../components/shared/loader/loader";
+import Navbar2 from "../../../components/Navbar2";
 
 
 
@@ -149,7 +149,7 @@ useEffect(() => {
                 </div>
             ) : (
                 <Fragment>
-                    <Navbar Logo={Logo} />
+                    <Navbar2 Logo={Logo} />
                     <PageTitle
                         pageTitle={action?.title || "Événement"}
                         pagesub="Actions"

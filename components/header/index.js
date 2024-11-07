@@ -21,12 +21,12 @@ const Header = ({ topbarNone, hclass, Logo }) => {
             e.preventDefault();
             const currentPath = router.pathname;
             if (currentPath === '/') {
-                // const element = document.getElementById(id);
-                // if (element) {
-                //     element.scrollIntoView({ behavior: 'smooth' });
-                // } else {
-                //     window.location.hash = id;
-                // }
+                const element = document.getElementById(id);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    window.location.hash = id;
+                }
                 return
             } else {
                 router.push(`/?id=${id}`); // You can adjust this as needed
@@ -60,23 +60,23 @@ const Header = ({ topbarNone, hclass, Logo }) => {
                                             <Link href="/">Accueil</Link>
                                         </li>
                                         <li className="menu-item-has-children">
-                                            <Link href="/about">A propos</Link>
-                                            <ul className="sub-menu">
+                                            <Link href="/about" onClick={ClickHandler('about')}>A propos</Link>
+                                            {/* <ul className="sub-menu">
                                                 <li><Link href="/cause">Cause</Link></li>
                                                 <li><Link href="/cause-single/Poor-Children">Cause Single</Link></li>
-                                            </ul>
+                                            </ul> */}
                                         </li>
                                         <li className="menu-item-has-children">
-                                            <Link href="/causes">Causes</Link>
-                                            <ul className="sub-menu">
+                                            <Link href="/causes" onClick={ClickHandler('causes')}>Causes</Link>
+                                            {/* <ul className="sub-menu">
                                                 <li><Link href="/event">Events</Link></li>
                                                 <li><Link href="/event-s2">Events S2</Link></li>
                                                 <li><Link href="/event-single/Help-Children">Events Single</Link></li>
-                                            </ul>
+                                            </ul> */}
                                         </li>
                                         <li className="menu-item-has-children">
-                                            <Link href="/#events">Actualités</Link>
-                                            <ul className="sub-menu">
+                                            <Link href="/#events" onClick={ClickHandler('events')}>Actualités</Link>
+                                            {/* <ul className="sub-menu">
                                                 <li><Link href="/about">About</Link></li>
                                                 <li><Link href="/service">Service</Link></li>
                                                 <li><Link href="/service/Clean-Water">Service Single</Link></li>
@@ -88,12 +88,12 @@ const Header = ({ topbarNone, hclass, Logo }) => {
                                                 <li><Link href="/404">Error 404</Link></li>
                                                 <li><Link href="/login">Login</Link></li>
                                                 <li><Link href="/register">Sign Up</Link></li>
-                                            </ul>
+                                            </ul> */}
                                         </li>
                                         <li className="menu-item-has-children">
-                                            <Link href="/#actions">Actions</Link>
+                                            <Link href="/#actions" onClick={ClickHandler('actions')}>Actions</Link>
                                         </li>
-                                        <li><Link href="/team">Equipe</Link></li>
+                                        <li><Link href="/team" onClick={ClickHandler('team')}>Equipe</Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -102,22 +102,6 @@ const Header = ({ topbarNone, hclass, Logo }) => {
                                     <div className="close-form">
                                         <Link className="theme-btn" href="/donate">Faire un don</Link>
                                     </div>
-                                    {/* Uncomment if you want to include the search form */}
-                                    {/* <div className="header-search-form-wrapper">
-                                        <div className="cart-search-contact">
-                                            <button onClick={searchHandler} className="search-toggle-btn">
-                                                <i className={`${isSearchShow ? 'ti-close' : 'ti-search'}`}></i>
-                                            </button>
-                                            <div className={`header-search-form ${isSearchShow ? 'header-search-content-toggle' : ''}`}>
-                                                <form onSubmit={SubmitHandler}>
-                                                    <div>
-                                                        <input type="text" className="form-control" placeholder="Search here..." />
-                                                        <button type="submit"><i className="fi flaticon-search"></i></button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div> */}
                                 </div>
                             </div>
                         </div>

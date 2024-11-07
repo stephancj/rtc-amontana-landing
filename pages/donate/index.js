@@ -20,18 +20,22 @@ const DonatePage =() => {
     return(
         <Fragment>
             <Navbar2 Logo={Logo}/>
-            <PageTitle pageTitle={'Donate'} pagesub={'Donate'}/> 
+            <PageTitle pageTitle={'Dons'} pagesub={''}/> 
                 <div className="wpo-donation-page-area section-padding">
                     <div className="container">
                         <div className="row justify-content-center">
                             <div className="col-lg-8">
+                                {/* <div className="wpo-donate-header">
+                                    <h2>Faire un don</h2>
+                                </div> */}
+
                                 <div className="wpo-donate-header">
-                                    <h2>Make a Donation</h2>
+                                    <h2>Page en cours de construction</h2>
                                 </div>
-                                <div id="Donations" className="tab-pane">
+                                {/* <div id="Donations" className="tab-pane">
                                     <form onSubmit={SubmitHandler}>
                                         <div className="wpo-donations-amount">
-                                            <h2>Your Donation</h2>
+                                            <h2>Faire un don</h2>
                                             <input type="text" className="form-control" name="text" id="text" placeholder="Enter Donation Amount" />
                                         </div>
                                         <div className="wpo-donations-details">
@@ -117,7 +121,7 @@ const DonatePage =() => {
                                             <button type="submit" className="theme-btn submit-btn">Donate Now</button>
                                         </div>
                                     </form>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

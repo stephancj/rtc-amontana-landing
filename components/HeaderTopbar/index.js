@@ -17,11 +17,10 @@ const HeaderTopbar = () => {
                     <div className="col col-md-5 col-sm-12 col-12">
                         <div className="contact-info">
                             <ul>
-                                <li>Visit our social pages</li>
-                                <li><a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/"><i className="ti-facebook"></i></a></li>
+                                <li>Visiter nos réseaux sociaux</li>
+                                <li><a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/rotaractamontana"><i className="ti-facebook"></i></a></li>
                                 <li><a target="_blank" rel="noopener noreferrer" href="https://twitter.com/"><i className="ti-twitter-alt"></i></a></li>
-                                <li><a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/"><i className="ti-instagram"></i></a></li>
-                                <li><a target="_blank" rel="noopener noreferrer" href="https://www.google.com/"><i className="ti-google"></i></a></li>
+                                <li><a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/rotaract_amontana/"><i className="ti-instagram"></i></a></li>
                             </ul>
                         </div>
                     </div>
