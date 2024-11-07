@@ -52,7 +52,7 @@ const About = (props) => {
                     <div className="col-lg-6 col-md-12 col-12">
                         <div className="wpo-about-text">
                             <span>A propos</span>
-                            <h2>We Can Save More Lifes With Your Helping Hand.</h2>
+                            <h2>Un avenir meilleur pour notre communauté.</h2>
                             <p>
                                 Le Rotaract Club Amontana est une association de jeunes professionnels et étudiants, affiliée à Rotary International. 
                                 Depuis 1997, nous sommes engagés dans des projets variés tels que des actions environnementales, des collectes de fonds, du soutien scolaire... 
