@@ -1,7 +1,7 @@
 import pb from './base.service';
 
 export const getAllUpcomingEvents = async () => {
-    const upcomingEvents = await pb.collection('upcoming').getFullList();
+    const upcomingEvents = await pb.collection('upcoming').getFullList({sort: '-date'});
     return upcomingEvents;
 }
 
