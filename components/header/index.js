@@ -21,12 +21,13 @@ const Header = ({ topbarNone, hclass, Logo }) => {
             e.preventDefault();
             const currentPath = router.pathname;
             if (currentPath === '/') {
-                const element = document.getElementById(id);
-                if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                } else {
-                    window.location.hash = id;
-                }
+                // const element = document.getElementById(id);
+                // if (element) {
+                //     element.scrollIntoView({ behavior: 'smooth' });
+                // } else {
+                //     window.location.hash = id;
+                // }
+                return
             } else {
                 router.push(`/?id=${id}`); // You can adjust this as needed
             }
@@ -59,40 +60,40 @@ const Header = ({ topbarNone, hclass, Logo }) => {
                                             <Link href="/">Accueil</Link>
                                         </li>
                                         <li className="menu-item-has-children">
-                                            <Link href="/about" onClick={ClickHandler('about')}>A propos</Link>
+                                            <Link href="/about">A propos</Link>
                                             <ul className="sub-menu">
-                                                <li><Link href="/cause" onClick={ClickHandler('cause')}>Cause</Link></li>
-                                                <li><Link href="/cause-single/Poor-Children" onClick={ClickHandler('cause-single')}>Cause Single</Link></li>
+                                                <li><Link href="/cause">Cause</Link></li>
+                                                <li><Link href="/cause-single/Poor-Children">Cause Single</Link></li>
                                             </ul>
                                         </li>
                                         <li className="menu-item-has-children">
-                                            <Link href="/causes" onClick={ClickHandler('causes')}>Causes</Link>
+                                            <Link href="/causes">Causes</Link>
                                             <ul className="sub-menu">
-                                                <li><Link href="/event" onClick={ClickHandler('event')}>Events</Link></li>
-                                                <li><Link href="/event-s2" onClick={ClickHandler('event-s2')}>Events S2</Link></li>
-                                                <li><Link href="/event-single/Help-Children" onClick={ClickHandler('event-single')}>Events Single</Link></li>
+                                                <li><Link href="/event">Events</Link></li>
+                                                <li><Link href="/event-s2">Events S2</Link></li>
+                                                <li><Link href="/event-single/Help-Children">Events Single</Link></li>
                                             </ul>
                                         </li>
                                         <li className="menu-item-has-children">
-                                            <Link href="/#events" onClick={ClickHandler('events')}>Actualités</Link>
+                                            <Link href="/#events">Actualités</Link>
                                             <ul className="sub-menu">
-                                                <li><Link href="/about" onClick={ClickHandler('about')}>About</Link></li>
-                                                <li><Link href="/service" onClick={ClickHandler('service')}>Service</Link></li>
-                                                <li><Link href="/service/Clean-Water" onClick={ClickHandler('service-single')}>Service Single</Link></li>
-                                                <li><Link href="/project" onClick={ClickHandler('project')}>Project</Link></li>
-                                                <li><Link href="/project/African-Macaw-Bird" onClick={ClickHandler('project-single')}>Project Single</Link></li>
-                                                <li><Link href="/donate" onClick={ClickHandler('donate')}>Donate</Link></li>
-                                                <li><Link href="/volunteer" onClick={ClickHandler('volunteer')}>Volunteer</Link></li>
-                                                <li><Link href="/testimonial" onClick={ClickHandler('testimonial')}>Testimonial</Link></li>
-                                                <li><Link href="/404" onClick={ClickHandler('404')}>Error 404</Link></li>
-                                                <li><Link href="/login" onClick={ClickHandler('login')}>Login</Link></li>
-                                                <li><Link href="/register" onClick={ClickHandler('register')}>Sign Up</Link></li>
+                                                <li><Link href="/about">About</Link></li>
+                                                <li><Link href="/service">Service</Link></li>
+                                                <li><Link href="/service/Clean-Water">Service Single</Link></li>
+                                                <li><Link href="/project">Project</Link></li>
+                                                <li><Link href="/project/African-Macaw-Bird">Project Single</Link></li>
+                                                <li><Link href="/donate">Donate</Link></li>
+                                                <li><Link href="/volunteer">Volunteer</Link></li>
+                                                <li><Link href="/testimonial">Testimonial</Link></li>
+                                                <li><Link href="/404">Error 404</Link></li>
+                                                <li><Link href="/login">Login</Link></li>
+                                                <li><Link href="/register">Sign Up</Link></li>
                                             </ul>
                                         </li>
                                         <li className="menu-item-has-children">
-                                            <Link href="/#actions" onClick={ClickHandler('actions')}>Actions</Link>
+                                            <Link href="/#actions">Actions</Link>
                                         </li>
-                                        <li><Link href="/team" onClick={ClickHandler('team')}>Equipe</Link></li>
+                                        <li><Link href="/team">Equipe</Link></li>
                                     </ul>
                                 </div>
                             </div>
