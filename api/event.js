@@ -1,4 +1,3 @@
-import eimg1 from '/public/images/event/passation.jpg'
 import eimg2 from '/public/images/event/img-2.jpg'
 import eimg3 from '/public/images/event/img-3.jpg'
 import eimg4 from '/public/images/event/img-4.jpg'
@@ -9,14 +8,6 @@ import eimg8 from '/public/images/event/img-8.jpg'
 import eimg9 from '/public/images/event/img-9.jpg'
 
 const Events = [
-    {
-        id: '1',
-        eImg:eimg1,
-        date:"11 Juillet, 2024",
-        eTitle: 'Passation de collier de Président.', 
-        slug: 'Help-The-Poor',
-        dec:'There are many variations of passages of Lorem Ipsum available.',
-    },
     {
         id: '2',
         eImg:eimg2,
