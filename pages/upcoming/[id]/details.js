@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import { useRouter } from 'next/router'
 import Events from '../../../api/event'
-import Navbar from '../../../components/Navbar';
 import PageTitle from '../../../components/pagetitle'
 import Scrollbar from '../../../components/scrollbar'
 import EventTabs from './alltab'
@@ -12,6 +11,7 @@ import { getAllUpcomingEvents } from '../../../services/upcomingEvents.service';
 import parse from 'html-react-parser';
 import Loader from '../../../components/shared/loader/loader';
 import { FILE_URL } from '../../../utils/constants';
+import Navbar2 from '../../../components/Navbar2';
 
 const TeamSinglePage = (props) => {
     const router = useRouter();
@@ -67,7 +67,7 @@ const TeamSinglePage = (props) => {
                 </div>
             ) : (
                 <Fragment>
-                    <Navbar Logo={Logo} />
+                    <Navbar2 Logo={Logo} />
                     <PageTitle pageTitle={upcoming?.title} pagesub={'Prochainement'} backgroundImage={FILE_URL(upcoming?.collectionId, upcoming?.id, upcoming?.image)}/>
                     <div className="wpo-event-details-area section-padding">
                         <div className="container">

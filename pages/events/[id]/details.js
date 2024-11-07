@@ -2,7 +2,6 @@ import React, { Fragment, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import PageTitle from "../../../components/pagetitle";
-import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/footer";
 import Scrollbar from "../../../components/scrollbar";
 import Image from "next/image";
@@ -13,6 +12,7 @@ import { FILE_URL, NEXT_PUBLIC_URL, SHARE_TO_FACEBOOK, SHARE_TO_LINKEDIN, SHARE_
 import Slider from "react-slick";
 import parse from "html-react-parser";
 import Loader from "../../../components/shared/loader/loader";
+import Navbar2 from "../../../components/Navbar2";
 
 
 const EventPage = () => {
@@ -118,7 +118,7 @@ useEffect(() => {
                 </div>
             ) : (
                 <Fragment>
-                    <Navbar Logo={Logo} />
+                    <Navbar2 Logo={Logo} />
                     <PageTitle
                         pageTitle={event?.title || "Événement"}
                         pagesub="Actualités"

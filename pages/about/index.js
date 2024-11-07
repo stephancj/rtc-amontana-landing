@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import Navbar from '../../components/Navbar'
+import Navbar2 from '../../components/Navbar2'
 import PageTitle from '../../components/pagetitle'
 import VideoSec from '../../components/VideoSec';
 import Footer from '../../components/footer'
@@ -16,11 +16,11 @@ import PartnerSection from '../../components/PartnerSection';
 const AboutPage =() => {
     return(
         <Fragment>
-            <Navbar Logo={Logo}/>
-            <PageTitle pageTitle={'About Us'} pagesub={'About'}/> 
+            <Navbar2 Logo={Logo}/>
+            <PageTitle pageTitle={'Rotaract Club Amontana'} pagesub={'A Propos'}/> 
             <VideoSec/>
             {/* <Service Fclass={'wpo-features-section-s2'}/> */}
-            <AboutS2/>
+            {/* <AboutS2/> */}
             <FunFact/>
             {/* <CauseSection/> */}
             {/* <TeamSection/> */}

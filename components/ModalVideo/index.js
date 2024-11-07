@@ -29,14 +29,16 @@ const VideoModal = () => {
             <div className="modal__align">
               <div className="modal__content" modal={modal}>
                 <div className="modal__video-align">
-                  <iframe
-                    className="modal__video-style"
-                    loading="lazy"
-                    src="https://www.youtube.com/embed/iSbzh0r9IV4"
-                    title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
+                  <iframe 
+                    width="1029" 
+                    height="579" 
+                    src="https://www.youtube.com/embed/6DIR8fr9VJA" 
+                    title="Join the movement! | Rotaract" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>  
+                  </iframe>
                 </div>
               </div>
             </div>
