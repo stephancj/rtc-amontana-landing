@@ -67,7 +67,7 @@ const Header = ({ topbarNone, hclass, Logo }) => {
                                             </ul> */}
                                         </li>
                                         <li className="menu-item-has-children">
-                                            <Link href="/causes" onClick={ClickHandler('causes')}>Causes</Link>
+                                            <Link href="/causes" onClick={ClickHandler('causes')}>Nos Causes</Link>
                                             {/* <ul className="sub-menu">
                                                 <li><Link href="/event">Events</Link></li>
                                                 <li><Link href="/event-s2">Events S2</Link></li>

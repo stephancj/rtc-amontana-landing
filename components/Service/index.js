@@ -62,7 +62,7 @@ const Service = (props) => {
             <div className="row justify-content-center">
                     <div className="col-lg-6">
                         <div className="wpo-section-title">
-                            <span>Causes</span>
+                            <span>Nos Causes</span>
                             <h2>Nos axes stratégiques</h2>
                             <p>Nous croyons en un monde où chaque individu a accès à une vie saine et à des opportunités d'épanouissement. C'est pourquoi nous nous engageons sur sept fronts :</p>
                         </div>

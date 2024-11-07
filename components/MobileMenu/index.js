@@ -1,238 +1,121 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react';
 import { Collapse, CardBody, Card } from 'reactstrap';
-import Link from 'next/link'
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const menus = [
     {
         id: 1,
         title: 'Accueil',
         link: '/',
-        // submenu: [
-        //     {
-        //         id: 11,
-        //         title: 'Home Charity',
-        //         link: '/home'
-        //     },
-        //     {
-        //         id: 12,
-        //         title: 'Home Education',
-        //         link: '/home2'
-        //     },
-        //     {
-        //         id: 13,
-        //         title: 'Home Wildlife',
-        //         link: '/home3'
-        //     },
-        //     {
-        //         id: 14,
-        //         title: 'Home Ocean Polution',
-        //         link: '/home4'
-        //     },
-        //     {
-        //         id: 15,
-        //         title: 'Home World Pandemic',
-        //         link: '/home5'
-        //     },
-        //     {
-        //         id: 16,
-        //         title: 'Home Nature',
-        //         link: '/home6'
-        //     },
-        //     {
-        //         id: 17,
-        //         title: 'Home Nature S2',
-        //         link: '/home7'
-        //     },
-        // ]
+        hashtag: 'home',
     },
-
     {
         id: 2,
         title: 'A propos',
         link: '/cause',
-        submenu: [
-            {
-                id: 21,
-                title: 'Cause',
-                link: '/cause'
-            },
-            {
-                id: 22,
-                title: 'Cause Single',
-                link: '/cause-single/Poor-Children'
-            }
-        ]
+        hashtag: 'about',
     },
     {
         id: 4,
-        title: 'Causes',
+        title: 'Nos Causes',
         link: '/event',
-        submenu: [
-            {
-                id: 41,
-                title: 'Event',
-                link: '/event'
-            },
-            {
-                id: 42,
-                title: 'Event S2',
-                link: '/event-s2'
-            },
-            {
-                id: 43,
-                title: 'Event Single',
-                link: '/event-single/Help-Children'
-            }
-        ]
+        hashtag: 'causes',
     },
-
-{
-    id: 3,
+    {
+        id: 3,
         title: 'Actualités',
         link: '/',
-        submenu: [
-            {
-                id: 31,
-                title: 'About',
-                link: '/about'
-            },
-            {
-                id: 32,
-                title: 'Service',
-                link: '/service'
-            },
-            {
-                id: 33,
-                title: 'Service Single',
-                link: '/service/Clean-Water'
-            },
-            {
-                id: 37,
-                title: 'Project',
-                link: '/project'
-            },
-            {
-                id: 38,
-                title: 'Project Single',
-                link: '/project/African-Macaw-Bird'
-            },
-            {
-                id: 39,
-                title: 'Donate',
-                link: '/donate'
-            },
-            {
-                id: 391,
-                title: 'Volunteer',
-                link: '/volunteer'
-            },
-            {
-                id: 392,
-                title: 'Testimonial',
-                link: '/testimonial'
-            },
-            {
-                id: 34,
-                title: '404 Error',
-                link: '/404'
-            },
-            {
-                id: 35,
-                title: 'Login',
-                link: '/login'
-            },
-            {
-                id: 36,
-                title: 'Register',
-                link: '/register'
-            },
-        ]
+        hashtag: 'events',
     },
     {
         id: 5,
         title: 'Actions',
         link: '/#blog',
+        hashtag: 'actions',
     },
     {
         id: 88,
         title: 'Equipe',
         link: '/contact',
+        hashtag: 'team',
     }
-    
-    
-]
+];
 
+const MobileMenu = () => {
+    const [isMenuShow, setIsMenuShow] = useState(false);
+    const [isOpen, setIsOpen] = useState(0);
+    const router = useRouter();
 
-export default class MobileMenu extends Component {
+    const menuHandler = () => {
+        setIsMenuShow(!isMenuShow);
+    };
 
-    state = {
-        isMenuShow: false,
-        isOpen: 0,
-    }
+    const toggleSubMenu = id => () => {
+        setIsOpen(id === isOpen ? 0 : id);
+    };
 
-    menuHandler = () => {
-        this.setState({
-            isMenuShow: !this.state.isMenuShow
-        })
-    }
+    const ClickHandler = (id) => {
+        return (e) => {
+            e.preventDefault();
+            const currentPath = router.pathname;
+            if (currentPath === '/') {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    window.location.hash = id;
+                }
+                return;
+            } else {
+                router.push(`/?id=${id}`);
+            }
+        };
+    };
 
-    setIsOpen = id => () => {
-        this.setState({
-            isOpen: id === this.state.isOpen ? 0 : id
-        })
-    }
+    return (
+        <div>
+            <div className={`mobileMenu ${isMenuShow ? 'show' : ''}`}>
+                <div className="menu-close">
+                    <div className="clox" onClick={menuHandler}><i className="ti-close"></i></div>
+                </div>
 
-    render() {
-
-        const { isMenuShow, isOpen } = this.state;
-
-        const ClickHandler = () =>{
-            window.scrollTo(10, 0);
-         }
-
-        return (
-            <div>
-                <div className={`mobileMenu ${isMenuShow ? 'show' : ''}`}>
-                    <div className="menu-close">
-                         <div className="clox" onClick={this.menuHandler}><i className="ti-close"></i></div>
-                    </div>
-
-                    <ul className="responsivemenu">
-                        {menus.map(item => {
-                            return (
-                                <li key={item.id}>
-                                    {item.submenu ? <p onClick={this.setIsOpen(item.id)}>
-                                        {item.title}
-                                        {item.submenu ? <i className="fa fa-angle-right" aria-hidden="true"></i> : ''}
-                                    </p> : <Link onClick={ClickHandler} href={item.link}>{item.title}</Link>}
-                                    {item.submenu ?
+                <ul className="responsivemenu">
+                    {menus.map(item => {
+                        return (
+                            <li key={item.id}>
+                                {item.submenu ? <p onClick={toggleSubMenu(item.id)}>
+                                    {item.title}
+                                    {item.submenu ? <i className="fa fa-angle-right" aria-hidden="true"></i> : ''}
+                                </p> : <Link onClick={ClickHandler(item.hashtag)} href={item.link}>{item.title}</Link>}
+                                {item.submenu ?
                                     <Collapse isOpen={item.id === isOpen}>
                                         <Card>
                                             <CardBody>
                                                 <ul>
                                                     {item.submenu.map(submenu => (
-                                                        <li key={submenu.id}><Link onClick={ClickHandler} className="active" href={submenu.link}>{submenu.title}</Link></li>
+                                                        <li key={submenu.id}><Link onClick={ClickHandler(submenu.hashtag)} className="active" href={submenu.link}>{submenu.title}</Link></li>
                                                     ))}
                                                 </ul>
                                             </CardBody>
                                         </Card>
                                     </Collapse>
                                     : ''}
-                                </li>
-                            )
-                        })}
-                    </ul>
-
-                </div>
-
-                <div className="showmenu" onClick={this.menuHandler}>
-                    <button type="button" className="navbar-toggler open-btn">
-                            <span className="icon-bar first-angle"></span>
-                            <span className="icon-bar middle-angle"></span>
-                            <span className="icon-bar last-angle"></span>
-                    </button>
-                </div>
+                            </li>
+                        );
+                    })}
+                </ul>
             </div>
-        )
-    }
-}
+
+            <div className="showmenu" onClick={menuHandler}>
+                <button type="button" className="navbar-toggler open-btn">
+                    <span className="icon-bar first-angle"></span>
+                    <span className="icon-bar middle-angle"></span>
+                    <span className="icon-bar last-angle"></span>
+                </button>
+            </div>
+        </div>
+    );
+};
+
+export default MobileMenu;
