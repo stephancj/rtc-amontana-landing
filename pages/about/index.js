@@ -21,10 +21,13 @@ const AboutPage =() => {
             <VideoSec/>
             {/* <Service Fclass={'wpo-features-section-s2'}/> */}
             {/* <AboutS2/> */}
-            <FunFact/>
+            {/* <FunFact/> */}
             {/* <CauseSection/> */}
             {/* <TeamSection/> */}
-            <PartnerSection tNone={'title-none'}/> 
+            {/* <PartnerSection tNone={'title-none'}/>  */}
+            <div className="wpo-donate-header">
+                <h2>Page en cours de construction</h2>
+            </div>
             <Footer/>
             <Scrollbar/>
         </Fragment>
