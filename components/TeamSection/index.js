@@ -75,19 +75,19 @@ const TeamSection = (props) => {
                 <div className="wpo-team-wrap">
                     <div className="team-slider">
                         <Slider {...settings}>
-                            {props.members.map((Team, index) => (
+                            {props.members.map((member, index) => (
                                 <div className="wpo-team-item" key={index}>
                                     <div className="wpo-team-img">
                                         <Image 
-                                            src={FILE_URL(Team.collectionId, Team.id, Team.image)} 
-                                            alt={Team.fullname} 
+                                            src={FILE_URL(member.collectionId, member.id, member.image)} 
+                                            alt={member.fullname} 
                                             width={1000} 
                                             height={1000}
                                         />
                                     </div>
                                     <div className="wpo-team-content">
-                                        <h2><Link onClick={ClickHandler} href='/team-single/[slug]' as={`/team-single/${Team.fullname}`}>{Team.fullname}</Link></h2>
-                                        <span>{Team.function}</span>
+                                        <h2><Link onClick={ClickHandler} href='/team/[slug]' as={`/team/${member.slug}`}>{member.fullname}</Link></h2>
+                                        <span>{member.function}</span>
                                     </div>
                                 </div>
                             ))}

@@ -189,10 +189,11 @@
 .attorney-info-text h2 {
     font-size: 30px;
     font-weight: 700;
-    color: #fff;
+    color: white !important;
     margin-top: 0;
     margin-bottom: 50px;
     text-align: center;
+    background: #B25277 !important;
 }
 
 .attorney-info-text {
@@ -206,6 +207,8 @@
             font-weight: 700;
             margin-bottom: 22px;
             list-style: none;
+            display: flex;
+            justify-content: space-between;
 
             &:last-child{
                 padding-bottom: 0;
