@@ -18,6 +18,7 @@ import { getAllEvents } from "../services/events.service";
 import { getAllActions } from "../services/actions.service";
 import { getAllMembers } from "../services/members.service";
 import { getAllAreasOfFocus } from "../services/areasOfFocus.service";
+import { getPartners } from "../services/partners.service";
 import { useEffect } from "react";
 import { getAllUpcomingEvents } from "../services/upcomingEvents.service";
 import Loader from "../components/shared/loader/loader";
@@ -29,20 +30,23 @@ const HomePage = (props) => {
     const [upcomings, setUpcomings] = React.useState([]);
     const [members, setMembers] = React.useState([]);
     const [aofs, setAofs] = React.useState([]);
+    const [partners, setPartners] = React.useState([]);
 
     const getAllData = async () => {
-        const [aofs, events, actions, upcomings,  members] = await Promise.all([
+        const [aofs, events, actions, upcomings,  members, partners] = await Promise.all([
             getAllAreasOfFocus(),
             getAllEvents(),
             getAllActions(),
             getAllUpcomingEvents(),
-            getAllMembers()
+            getAllMembers(),
+            getPartners()
         ]);
         setEvents(events);
         setActions(actions);
         setMembers(members);
         setUpcomings(upcomings);
         setAofs(aofs);
+        setPartners(partners);
         setIsLoading(false);
     };
 
@@ -81,7 +85,7 @@ const HomePage = (props) => {
                 vImg={vimg}
                 cTitle={"Rejoignez-nous, transformez des vies, vivez la magie"}
             />
-            <PartnerSection />
+            <PartnerSection partners={partners} />
             <Footer />
             <Scrollbar />
         </div>

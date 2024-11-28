@@ -1,41 +1,19 @@
 import Image from "next/image";
 import React from "react";
 import Slider from "react-slick";
-import pimg1 from '/public/images/partners/img-1.jpg'
-import pimg2 from '/public/images/partners/img-2.jpg'
-import pimg3 from '/public/images/partners/img-3.jpg'
-import pimg4 from '/public/images/partners/img-4.jpg'
-import pimg5 from '/public/images/partners/img-5.jpg'
-
-const partners = [
-    {
-        pImg: pimg1,
-    },
-    {
-        pImg: pimg2,
-    },
-    {
-        pImg: pimg3,
-    },
-    {
-        pImg: pimg4,
-    },
-    {
-        pImg: pimg5,
-    },
-    {
-        pImg: pimg1,
-    },
-]
+import { FILE_URL } from "../../utils/constants";
+import { Tooltip } from "@mui/material";
+import Link from 'next/link'
 
 
 const PartnerSection = (props) => {
+    console.log(props.partners);
 
     var settings = {
-        dots: false,
+        dots: true,
         arrows: false,
         speed: 1000,
-        slidesToShow: 5,
+        slidesToShow: props.partners.length > 4 ? 4 : props.partners.length,
         slidesToScroll: 1,
         autoplay: true,
         responsive: [
@@ -94,10 +72,20 @@ const PartnerSection = (props) => {
                     <div className="col col-xs-12">
                         <div className="partner-grids partners-slider owl-carousel">
                             <Slider {...settings}>
-                                {partners.map((partner, pitem) => (
-                                    <div className="grid" key={pitem}>
-                                        <Image src={partner.pImg} alt="" />
-                                    </div>
+                                {props.partners.map((partner, pitem) => (
+                                    <Tooltip title={partner.name} key={pitem}>
+                                        <Link 
+                                            className="grid" 
+                                            key={pitem}
+                                            href={partner.url}
+                                            target="_blank"
+                                        >
+                                            <Image src={FILE_URL(partner.collectionId, partner.id, partner.logo)} alt={partner.name} width={500} height={500}/>
+                                        </Link>
+                                    </Tooltip>
+                                    // <div className="grid" key={pitem}>
+                                    //     <Image src={FILE_URL(partner.collectionId, partner.id, partner.logo)} alt={partner.name} width={500} height={500}/>
+                                    // </div>
                                 ))}
                             </Slider>
                         </div>

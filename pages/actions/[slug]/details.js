@@ -19,7 +19,7 @@ import Navbar2 from "../../../components/Navbar2";
 
 const ActionPage = () => {
 const router = useRouter();
-const { id } = router.query;
+const { slug } = router.query;
 const [allActions, setallActions] = useState([]);
 const [action, setAction] = useState(null);
 const [previousAction, setpreviousAction] = useState(null);
@@ -95,8 +95,8 @@ const settings = {
 };
 
 useEffect(() => {
-    if (id) {
-    // Vérifier que l'id est défini avant de faire l'appel à l'API
+    if (slug) {
+    // Vérifier que le slug est défini avant de faire l'appel à l'API
     const fetchAction = async () => {
         try {
         const allActions = await getAllActions();
@@ -111,12 +111,12 @@ useEffect(() => {
 
     fetchAction();
     }
-}, [id]);// Dépendance sur l'id pour recharger les données quand il change
+}, [slug]);// Dépendance sur le slug pour recharger les données quand il change
 
 useEffect(() => {
     if (allActions.length > 0) {
-        const action = allActions.find((action) => action.id === id);
-        const actionIndex = allActions.findIndex((action) => action.id === id);
+        const action = allActions.find((action) => action.slug === slug);
+        const actionIndex = allActions.findIndex((action) => action.slug === slug);
 
         setAction(action);
         const previousAction = allActions[actionIndex + 1] || null;
@@ -127,7 +127,7 @@ useEffect(() => {
 
         const relatedActions = allActions.filter((action) => {
             const hasSameAof = action.aof.some((aof) => action.aof.includes(aof));
-            return hasSameAof && action.id !== id;
+            return hasSameAof && action.slug !== slug;
         });
 
         setRelatedActions(relatedActions);

@@ -17,7 +17,7 @@ import Navbar2 from "../../../components/Navbar2";
 
 const EventPage = () => {
 const router = useRouter();
-const { id } = router.query;
+const { slug } = router.query;
 const [allEvents, setAllEvents] = useState([]);
 const [event, setEvent] = useState(null);
 const [previousEvent, setPreviousEvent] = useState(null);
@@ -71,8 +71,8 @@ const settings = {
 };
 
 useEffect(() => {
-    if (id) {
-    // Vérifier que l'id est défini avant de faire l'appel à l'API
+    if (slug) {
+    // Vérifier que le slug est défini avant de faire l'appel à l'API
     const fetchEvent = async () => {
         try {
         const allEvents = await getAllEvents();
@@ -87,12 +87,12 @@ useEffect(() => {
 
     fetchEvent();
     }
-}, [id]);// Dépendance sur l'id pour recharger les données quand il change
+}, [slug]);// Dépendance sur le slug pour recharger les données quand il change
 
 useEffect(() => {
     if (allEvents.length > 0) {
-    const event = allEvents.find((event) => event.id === id);
-    const eventIndex = allEvents.findIndex((event) => event.id === id);
+    const event = allEvents.find((event) => event.slug === slug);
+    const eventIndex = allEvents.findIndex((event) => event.slug === slug);
     console.log('eventIndex', eventIndex);
     setEvent(event);
     const previousEvent = allEvents[eventIndex + 1] || null;
@@ -150,8 +150,9 @@ useEffect(() => {
                                             <div>
                                                 {parse(`${event?.description}`)}
                                             </div>
-                                            <blockquote>{event?.quote}</blockquote>
-
+                                            {event?.quote && (
+                                                <blockquote>{event?.quote}</blockquote>
+                                            )}
                                             <div className="gallery">
                                                 <Slider {...settings} className="sliderImage">
                                                     {event?.gallery.map((image, index) => (
@@ -192,8 +193,8 @@ useEffect(() => {
                                         <div className="more-posts">
                                             <div className="previous-post">
                                                 <Link 
-                                                    href={previousEvent!==null ? '/events/[id]/details' : '#'}
-                                                    as={previousEvent!==null ? `/events/${previousEvent?.id}/details` : '#'}
+                                                    href={previousEvent!==null ? '/events/[slug]/details' : '#'}
+                                                    as={previousEvent!==null ? `/events/${previousEvent?.slug}/details` : '#'}
                                                 >
                                                 <span className="post-control-link">
                                                     Evénement précédent
@@ -205,8 +206,8 @@ useEffect(() => {
                                             </div>
                                             <div className="next-post">
                                                 <Link 
-                                                    href={nextEvent!==null ? '/events/[id]/details' : '#'} 
-                                                    as={nextEvent!==null ? `/events/${nextEvent?.id}/details` : '#'}
+                                                    href={nextEvent!==null ? '/events/[slug]/details' : '#'} 
+                                                    as={nextEvent!==null ? `/events/${nextEvent?.slug}/details` : '#'}
                                                 >
                                                     <span className="post-control-link">Evénement suivant</span>
                                                     <span className="post-name">

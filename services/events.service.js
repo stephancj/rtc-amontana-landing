@@ -6,9 +6,12 @@ export const getAllEvents = async () => {
 }
 
 export const getEvent = async (id) => {
-    console.log('getEvent', id);
     const event = await pb.collection('events').getOne(`${id}`);
-    console.log(event);
+    return event;
+}
+
+export const getEventBySlug = async (slug) => {
+    const event = await pb.collection('events').getOne(`slug == "${slug}"`);
     return event;
 }
 

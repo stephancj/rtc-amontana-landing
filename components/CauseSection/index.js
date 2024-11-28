@@ -44,7 +44,7 @@ const CauseSection = (props) => {
                                     <div className="wpo-campaign-content">
                                         <div className="wpo-campaign-text-top">
                                             <span>{formatDateTime(action.date)}</span>
-                                            <h2><Link onClick={ClickHandler} href="/actions/[id]/details" as={`/actions/${action.id}/details`}>{action.title}</Link></h2>
+                                            <h2><Link onClick={ClickHandler} href="/actions/[slug]/details" as={`/actions/${action.slug}/details`}>{action.title}</Link></h2>
                                             {/* <div className="progress-section">
                                                 <div className="process">
                                                     <div className="progress">

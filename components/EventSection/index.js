@@ -39,7 +39,7 @@ const EventSection = (props) => {
                                         <div className="wpo-event-content">
                                             <div className="wpo-event-text-top">
                                                 <span>{formatDateTime(upcoming.date)}</span>
-                                                <h2><Link onClick={ClickHandler} href='/upcoming/[id]/details' as={`/upcoming/${upcoming.id}/details`}>{upcoming.title}</Link></h2>
+                                                <h2><Link onClick={ClickHandler} href='/upcoming/[slug]/details' as={`/upcoming/${upcoming.slug}/details`}>{upcoming.title}</Link></h2>
                                                 {/* <p>{upcoming.description}</p> */}
                                             </div>
                                         </div>

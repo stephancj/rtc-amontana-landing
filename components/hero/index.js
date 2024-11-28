@@ -9,7 +9,6 @@ import hero3 from '/public/images/slider/heroRTCA1.jpg'
 
 
 
-
 const Hero =(props) => {
     const yearsOfService = new Date().getFullYear() - 1998
 
@@ -20,7 +19,7 @@ const Hero =(props) => {
                     <div className="col col-xs-6 col-lg-6">
                         <div className="wpo-hero-section-text">
                             <div className="wpo-hero-title-top">
-                                <span>Rotaract Club Antananarivo Amontana</span>
+                                <span>Rotaract Club Amontana</span>
                             </div>
                             <div className="wpo-hero-title">
                                 <h2>Le service par la camaraderie</h2>
@@ -47,9 +46,9 @@ const Hero =(props) => {
                                 <div className="right-item">
                                     <div className="wpo-total-project">
                                         <div className="wpo-total-project-wrap">
-                                            <div className="wpo-total-project-icon">
+                                            {/* <div className="wpo-total-project-icon">
                                                 <i className="fi flaticon-salary"></i>
-                                            </div>
+                                            </div> */}
                                             <div className="wpo-total-project-text">
                                                 <h3>{yearsOfService}</h3>
                                                 <p>années de services et d'espoir</p>

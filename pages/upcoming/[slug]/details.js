@@ -15,7 +15,7 @@ import Navbar2 from '../../../components/Navbar2';
 
 const TeamSinglePage = (props) => {
     const router = useRouter();
-    const { id } = router.query;
+    const { slug } = router.query;
     const [allUpcomings, setAllUpcomings] = useState([]);
     const [upcoming, setUpcoming] = useState(null);
     const [previousUpcoming, setPreviousUpcoming] = useState(null);
@@ -26,8 +26,8 @@ const TeamSinglePage = (props) => {
     const eventDetails = Events.find(item => item.slug === router.query.slug)
 
     useEffect(() => {
-        if (id) {
-        // Vérifier que l'id est défini avant de faire l'appel à l'API
+        if (slug) {
+        // Vérifier que le slug est défini avant de faire l'appel à l'API
         const fetchUpcoming = async () => {
             try {
             const allUpcomings = await getAllUpcomingEvents();
@@ -42,11 +42,11 @@ const TeamSinglePage = (props) => {
     
         fetchUpcoming();
         }
-    }, [id]);// Dépendance sur l'id pour recharger les données quand il change
+    }, [slug]);// Dépendance sur le slug pour recharger les données quand il change
 
     useEffect(() => {
         if (allUpcomings.length > 0) {
-        const upcoming = allUpcomings.find((upcoming) => upcoming.id === id);
+        const upcoming = allUpcomings.find((upcoming) => upcoming.slug === slug);
     
         setUpcoming(upcoming);    
         }
@@ -75,7 +75,7 @@ const TeamSinglePage = (props) => {
                                 <div className="col col-lg-12">
                                     <div className="wpo-event-item">
                                         <div className="wpo-event-details-text">
-                                            <h2>{upcoming?.title}</h2>
+                                            {/* <h2>{upcoming?.title}</h2> */}
                                             <p>{parse(`${upcoming?.description}`)}</p>
                                         </div>
                                         <EventTabs 
