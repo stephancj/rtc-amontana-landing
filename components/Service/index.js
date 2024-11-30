@@ -86,7 +86,7 @@ const Service = (props) => {
                                 <div className="wpo-features-text">
                                     <h2>
                                         {/* href='/service/[slug]' as={`/service/${service.slug}`} */}
-                                        <Link href=''> 
+                                        <Link href={aof.url} target='_blank'> 
                                             {aof.name}
                                         </Link>
                                     </h2>

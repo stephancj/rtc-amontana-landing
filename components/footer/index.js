@@ -163,7 +163,7 @@ const Footer = (props) => {
                                                     alt="Image Gallery"
                                                     width={200}
                                                     height={200}
-                                                    onClick={() => handleOpen(project)} // Open the modal with this image
+                                                    // Open the modal with this image
                                                 />
                                             </div>
                                         </li>
@@ -179,6 +179,7 @@ const Footer = (props) => {
                     <div className="row">
                         <div className="col col-xs-12">
                             <p className="copyright"> &copy; {currentYear} Rotaract Club Amontana.</p>
+                            <p className="design">Designed and developed by <Link href="https://stephancj.github.io">Stéphan Christian</Link></p>
                         </div>
                     </div>
                 </div>

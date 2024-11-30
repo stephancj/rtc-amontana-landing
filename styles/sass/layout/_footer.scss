@@ -204,31 +204,52 @@
     
     
 
-    .wpo-lower-footer{
+    .wpo-lower-footer {
         text-align: center;
         position: relative;
         background: #192847;
-    
-        .row{
+
+        .row {
             padding: 20px 0;
             position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-    
-        .copyright{
-            display: inline-block;
+
+        .copyright, .design {
             font-size: 15px;
             font-size: 0.9375rem;
-            margin: 0;
-    
-            a{
-                color: $white;
-                text-decoration: none;
+            margin: 0 auto;
+            vertical-align: middle;
+
+            a {
+                color: #D22064;
+                text-decoration:underline;
+                font-size: medium;
             }
-    
+
             @media (max-width: 991px) {
-                float: none;
-                display: block;
+                display: inline-block;
+                text-align: center;
+                width: auto;
             }
+        }
+
+        .copyright, .design {
+            color: #e7e7e7;
+            text-align: center;
+            width: auto;
+            margin: 0 auto;
+
+            @media (max-width: 991px) {
+                text-align: center;
+                margin: 0 auto;
+            }
+        }
+
+        .design {
+            font-size: small;
         }
     }
     
