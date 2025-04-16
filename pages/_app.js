@@ -13,10 +13,13 @@ import "slick-carousel/slick/slick-theme.css";
 import 'photoswipe/dist/photoswipe.css'
 import '../styles/sass/style.scss'
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { DefaultSeo } from "next-seo";
+import SEO from "../next-seo.config";
 
 function MyApp({ Component, pageProps }) {
   return (
     <div>
+      <DefaultSeo {...SEO} />
       <Component {...pageProps} />
       <ToastContainer />
       <GoogleAnalytics gaId="G-8VNPWXF8HV" />
