@@ -14,7 +14,7 @@ import Navbar2 from '../../../components/Navbar2';
 
 const TeamSinglePage = ({ upcoming }) => {
     const router = useRouter();
-    
+
     const imageUrl = FILE_URL(upcoming.collectionId, upcoming.id, upcoming.image);
 
     return (
