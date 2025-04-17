@@ -157,13 +157,14 @@ const Footer = (props) => {
                                     {/* Display only first 6 images in the footer */}
                                     {gallery.slice(0, 6).map((project, pitem) => (
                                         <li className="grid" key={pitem}>
-                                            <div className="img-holder">
+                                            <div className="img-holder" style={{ cursor: 'pointer' }}>
                                                 <Image
                                                     src={FILE_URL(project?.collectionId, project?.id, project?.image)}
                                                     alt="Image Gallery"
                                                     width={200}
                                                     height={200}
                                                     // Open the modal with this image
+                                                    onClick={() => handleOpen(project)}
                                                 />
                                             </div>
                                         </li>
