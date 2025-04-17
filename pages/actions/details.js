@@ -12,7 +12,7 @@ import Image from 'next/image';
 
 
 
-const TeamSinglePage = (props) => {
+const ActionDetailsPage = (props) => {
     const router = useRouter()
 
     const CauseDetails = Causes.find(item => item.slug === router.query.slug)
@@ -42,4 +42,4 @@ const TeamSinglePage = (props) => {
         </Fragment>
     )
 };
-export default TeamSinglePage;
+export default ActionDetailsPage;

@@ -1,4 +1,5 @@
-import React, { Fragment, useEffect, useState } from "react";
+// pages/actions/[slug]/index.js
+import React, { Fragment } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import PageTitle from "../../../components/pagetitle";
@@ -12,259 +13,175 @@ import { FILE_URL, NEXT_PUBLIC_URL, SHARE_TO_FACEBOOK, SHARE_TO_LINKEDIN, SHARE_
 import Slider from "react-slick";
 import parse from 'html-react-parser';
 import ActionSidebar from '../sidebar';
-import Loader from "../../../components/shared/loader/loader";
 import Navbar2 from "../../../components/Navbar2";
+import { NextSeo } from "next-seo";
 
+const ActionPage = ({ action, previousAction, nextAction, relatedActions }) => {
+    const router = useRouter();
 
-
-const ActionPage = () => {
-const router = useRouter();
-const { slug } = router.query;
-const [allActions, setallActions] = useState([]);
-const [action, setAction] = useState(null);
-const [previousAction, setpreviousAction] = useState(null);
-const [nextAction, setnextAction] = useState(null);
-const [isLoading, setIsLoading] = useState(true);
-const [relatedActions, setRelatedActions] = useState([]);
-
-
-const styles = {
-    gallery: {
-        overflow: 'hidden',
-        margin: '40px -7.5px 0',
-    },
-    galleryDiv: {
-        width: 'calc(100% - 7.5px)',
-        float: 'left',
-        margin: '10px 7.5px 15px'
-
-    },
-    actionImage: {
-        width: '98%',
-        borderRadius: '10px 10px 10px 10px',
-        objectFit: 'cover',
-        height: '307.27px'
-    }
-
-}
-
-const settings = {
-    dots: false,
-    arrows: false,
-    speed: 1000,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    autoplay: true,
-    responsive: [
-        {
-            breakpoint: 1500,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-            }
+    const styles = {
+        gallery: {
+            overflow: 'hidden',
+            margin: '40px -7.5px 0',
         },
-        {
-            breakpoint: 1200,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1
-            }
+        galleryDiv: {
+            width: 'calc(100% - 7.5px)',
+            float: 'left',
+            margin: '10px 7.5px 15px'
         },
-        {
-            breakpoint: 991,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1
-            }
-        },
-        {
-            breakpoint: 767,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        },
-        {
-            breakpoint: 480,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        }
-    ]
-};
-
-useEffect(() => {
-    if (slug) {
-    // Vérifier que le slug est défini avant de faire l'appel à l'API
-    const fetchAction = async () => {
-        try {
-        const allActions = await getAllActions();
-        setallActions(allActions);
-
-        } catch (error) {
-        console.error("Failed to fetch action:", error);
-        } finally {
-        setIsLoading(false);
+        actionImage: {
+            width: '98%',
+            borderRadius: '10px',
+            objectFit: 'cover',
+            height: '307.27px'
         }
     };
 
-    fetchAction();
-    }
-}, [slug]);// Dépendance sur le slug pour recharger les données quand il change
-
-useEffect(() => {
-    if (allActions.length > 0) {
-        const action = allActions.find((action) => action.slug === slug);
-        const actionIndex = allActions.findIndex((action) => action.slug === slug);
-
-        setAction(action);
-        const previousAction = allActions[actionIndex + 1] || null;
-
-        setpreviousAction(previousAction);
-        const nextAction = allActions[actionIndex - 1] || null;    
-        setnextAction(nextAction);
-
-        const relatedActions = allActions.filter((action) => {
-            const hasSameAof = action.aof.some((aof) => action.aof.includes(aof));
-            return hasSameAof && action.slug !== slug;
-        });
-
-        setRelatedActions(relatedActions);
-    }
-}, [allActions]);
+    const settings = {
+        dots: false,
+        arrows: false,
+        speed: 1000,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        autoplay: true,
+        responsive: [
+            { breakpoint: 1500, settings: { slidesToShow: 2 } },
+            { breakpoint: 1200, settings: { slidesToShow: 2 } },
+            { breakpoint: 991, settings: { slidesToShow: 2 } },
+            { breakpoint: 767, settings: { slidesToShow: 1 } },
+            { breakpoint: 480, settings: { slidesToShow: 1 } }
+        ]
+    };
 
     return (
-        <div>
-            {isLoading ? (
-                <div
-                style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    height: "100vh",
+        <Fragment>
+            <NextSeo
+                title={action?.meta_title || action?.title}
+                description={action?.meta_desc || 'Découvrez notre action'}
+                openGraph={{
+                    title: action?.meta_title || action?.title,
+                    description: action?.meta_desc || action?.description || 'Découvrez notre action',
+                    url: `${NEXT_PUBLIC_URL}/actions/${action?.slug}/details`,
+                    images: [
+                        {
+                            url: FILE_URL(action?.collectionId, action?.id, action?.image),
+                            width: 800,
+                            height: 600,
+                            alt: action?.title,
+                        },
+                    ],
+                    site_name: 'Rotaract Amontana',
                 }}
-                >
-                <Loader />
-                </div>
-            ) : (
-                <Fragment>
-                    <Navbar2 Logo={Logo} />
-                    <PageTitle
-                        pageTitle={action?.title || "Événement"}
-                        pagesub="Actions"
-                        backgroundImage={FILE_URL(
-                        action?.collectionId,
-                        action?.id,
-                        action?.image
-                        )}
-                    />
-                    <section className="wpo-blog-single-section section-padding">
-                        <div className="container">
-                            <div className="row">
-                                <div className="col col-lg-8">
-                                    <div className="wpo-blog-content">
-                                        <div className="post format-standard-image">
-                                            <div className="entry-meta">
-                                                <ul>
-                                                    <li>
-                                                        <i className="fi flaticon-calendar"></i>{" "}
-                                                        {formatDateTime(action?.date)}
-                                                    </li>
-                                                    <li>
-                                                        <i className="fi flaticon-location"></i>{" "}
-                                                        {action?.location}
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <h2>{action?.title}</h2>
-                                            <div>
-                                                {parse(`${action?.description}`)}
-                                            </div>
+            />
 
-                                            {action?.quote && (
-                                                <blockquote>{action?.quote}</blockquote>
-                                            )}
-
-                                            <div className="gallery" style={styles.gallery}>
-                                                <Slider {...settings} className="sliderImage">
-                                                    {action?.gallery.map((image, index) => (
-                                                        <div key={index} style={styles.galleryDiv}>
-                                                            <Image
-                                                                style={styles.actionImage}
-                                                                className="actionImage"
-                                                                src={`${FILE_URL(action?.collectionId, action?.id, image)}?token=`} 
-                                                                height={500}
-                                                                width={500}
-                                                                alt={image} 
-                                                            />
-                                                        </div>
-                                                    ))}
-                                                </Slider>
-                                            </div>
-                                        </div>
-
-                                        <div className="tag-share-s2 clearfix">
-                                            <div className="tag">
-                                                <span>Partager sur: </span>
-                                                <ul>
-                                                <li>
-                                                    <Link href={SHARE_TO_FACEBOOK(`${NEXT_PUBLIC_URL}${router.asPath}`)} target="_blank">facebook</Link>
-                                                </li>
-                                                <li>
-                                                    <Link href={SHARE_TO_X(`${NEXT_PUBLIC_URL}${router.asPath}`)} target="_blank">X(Twitter)</Link>
-                                                </li>
-                                                <li>
-                                                    <Link href={SHARE_TO_THREADS(`${NEXT_PUBLIC_URL}${router.asPath}`)} target="_blank">threads</Link>
-                                                </li>
-                                                <li>
-                                                    <Link href={SHARE_TO_LINKEDIN(`${NEXT_PUBLIC_URL}${router.asPath}`)} target="_blank">linkedin</Link>
-                                                </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <div className="more-posts">
-                                            <div className="previous-post">
-                                                <Link 
-                                                    href={previousAction!==null ? '/actions/[id]/details' : '#'}
-                                                    as={previousAction!==null ? `/actions/${previousAction?.id}/details` : '#'}
-                                                >
-                                                <span className="post-control-link">
-                                                    Evénement précédent
-                                                </span>
-                                                <span className="post-name">
-                                                {previousAction ? previousAction?.title : 'Pas d\'évenement antérieure'}
-                                                </span>
-                                                </Link>
-                                            </div>
-                                            <div className="next-post">
-                                                <Link 
-                                                    href={nextAction!==null ? '/actions/[id]/details' : '#'} 
-                                                    as={nextAction!==null ? `/actions/${nextAction?.id}/details` : '#'}
-                                                >
-                                                    <span className="post-control-link">Evénement suivant</span>
-                                                    <span className="post-name">
-                                                        {nextAction ? nextAction?.title : 'Vous êtes à jour sur notre actualité'}
-                                                    </span>
-                                                </Link>
-                                            </div>
-                                        </div>
+            <Navbar2 Logo={Logo} />
+            <PageTitle
+                pageTitle={action?.title || "Événement"}
+                pagesub="Actions"
+                backgroundImage={FILE_URL(action?.collectionId, action?.id, action?.image)}
+            />
+            <section className="wpo-blog-single-section section-padding">
+                <div className="container">
+                    <div className="row">
+                        <div className="col col-lg-8">
+                            <div className="wpo-blog-content">
+                                <div className="post format-standard-image">
+                                    <div className="entry-meta">
+                                        <ul>
+                                            <li><i className="fi flaticon-calendar"></i> {formatDateTime(action?.date)}</li>
+                                            <li><i className="fi flaticon-location"></i> {action?.location}</li>
+                                        </ul>
+                                    </div>
+                                    <h2>{action?.title}</h2>
+                                    <div>{parse(`${action?.description}`)}</div>
+                                    {action?.quote && <blockquote>{action?.quote}</blockquote>}
+                                    <div className="gallery" style={styles.gallery}>
+                                        <Slider {...settings} className="sliderImage">
+                                            {action?.gallery.map((image, index) => (
+                                                <div key={index} style={styles.galleryDiv}>
+                                                    <Image
+                                                        style={styles.actionImage}
+                                                        className="actionImage"
+                                                        src={`${FILE_URL(action?.collectionId, action?.id, image)}?token=`}
+                                                        height={500}
+                                                        width={500}
+                                                        alt={image}
+                                                    />
+                                                </div>
+                                            ))}
+                                        </Slider>
                                     </div>
                                 </div>
-                                <ActionSidebar 
-                                    relatedActions={relatedActions}
-                                    tags={action?.expand?.aof}
-                                />
+                                <div className="tag-share-s2 clearfix">
+                                    <div className="tag">
+                                        <span>Partager sur: </span>
+                                        <ul>
+                                            <li><Link href={SHARE_TO_FACEBOOK(`${NEXT_PUBLIC_URL}${router.asPath}`)} target="_blank">facebook</Link></li>
+                                            <li><Link href={SHARE_TO_X(`${NEXT_PUBLIC_URL}${router.asPath}`)} target="_blank">X(Twitter)</Link></li>
+                                            <li><Link href={SHARE_TO_THREADS(`${NEXT_PUBLIC_URL}${router.asPath}`)} target="_blank">threads</Link></li>
+                                            <li><Link href={SHARE_TO_LINKEDIN(`${NEXT_PUBLIC_URL}${router.asPath}`)} target="_blank">linkedin</Link></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div className="more-posts">
+                                    <div className="previous-post">
+                                        <Link href={previousAction ? `/actions/${previousAction?.slug}/details` : '#'}>
+                                            <span className="post-control-link">Evénement précédent</span>
+                                            <span className="post-name">{previousAction ? previousAction?.title : 'Pas d\'événement antérieur'}</span>
+                                        </Link>
+                                    </div>
+                                    <div className="next-post">
+                                        <Link href={nextAction ? `/actions/${nextAction?.slug}/details` : '#'}>
+                                            <span className="post-control-link">Evénement suivant</span>
+                                            <span className="post-name">{nextAction ? nextAction?.title : 'Vous êtes à jour sur notre actualité'}</span>
+                                        </Link>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </section>
-                    <Footer />
-                    <Scrollbar />
-                </Fragment>
-            )}
-        </div>
+                        <ActionSidebar relatedActions={relatedActions} tags={action?.expand?.aof} />
+                    </div>
+                </div>
+            </section>
+            <Footer />
+            <Scrollbar />
+        </Fragment>
     );
 };
+
+export async function getServerSideProps(context) {
+    const { slug } = context.params;
+
+    try {
+        const allActions = await getAllActions();
+        const currentIndex = allActions.findIndex(action => action.slug === slug);
+        if (currentIndex === -1) {
+            return { notFound: true };
+        }
+
+        const action = allActions[currentIndex];
+        const previousAction = allActions[currentIndex + 1] || null;
+        const nextAction = allActions[currentIndex - 1] || null;
+
+        const relatedActions = allActions.filter(item =>
+            item.slug !== slug &&
+            item.aof.some(aof => action.aof.includes(aof))
+        );
+
+        return {
+            props: {
+                action,
+                previousAction,
+                nextAction,
+                relatedActions
+            }
+        };
+    } catch (error) {
+        console.error("Erreur getServerSideProps:", error);
+        return {
+            notFound: true
+        };
+    }
+}
 
 export default ActionPage;

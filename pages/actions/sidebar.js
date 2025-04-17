@@ -92,7 +92,7 @@ const ActionSidebar = (props) => {
                                         <Image src={FILE_URL(action?.collectionId, action?.id, action?.image)} alt={action?.title} width={500} height={500}/>
                                     </div>
                                     <div className="details">
-                                        <h4><Link onClick={ClickHandler} href="/actions/[id]/details"  as={`/actions/${action.id}/details`}>{action.title}</Link></h4>
+                                        <h4><Link onClick={ClickHandler} href="/actions/[id]/details"  as={`/actions/${action?.slug}/details`}>{action.title}</Link></h4>
                                         <span className="date">{formatDateTime(action?.date)} </span>
                                     </div>
                                 </div>
