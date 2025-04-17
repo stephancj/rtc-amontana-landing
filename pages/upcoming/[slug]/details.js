@@ -21,17 +21,17 @@ const TeamSinglePage = ({ upcoming }) => {
         <Fragment>
             <NextSeo
                 title={upcoming.title}
-                description={upcoming.shortDescription || 'Découvrez cet événement à venir'}
+                description={upcoming.meta_desc || 'Découvrez cet événement à venir'}
                 openGraph={{
-                    title: upcoming.title,
-                    description: upcoming.shortDescription || 'Découvrez cet événement à venir',
+                    title: upcoming.meta_title,
+                    description: upcoming.meta_desc || upcoming.description ||'Découvrez cet événement à venir',
                     url: `https://rotaractamontana.netlify.app/upcoming/${upcoming.slug}/details`,
                     images: [
                         {
                             url: imageUrl,
                             width: 800,
                             height: 600,
-                            alt: upcoming.title,
+                            alt: upcoming.meta_title,
                         },
                     ],
                     site_name: 'Rotaract Amontana',
