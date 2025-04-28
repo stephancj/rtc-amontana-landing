@@ -9,6 +9,7 @@ import pimg2 from '/public/images/checkout/img-2.png'
 import pimg3 from '/public/images/checkout/img-3.png'
 import pimg4 from '/public/images/checkout/img-4.png'
 import Image from 'next/image';
+import { NextSeo } from "next-seo";
 
 
 const DonatePage =() => {
@@ -19,6 +20,24 @@ const DonatePage =() => {
 
     return(
         <Fragment>
+            <NextSeo
+                title={'Soutenez le Rotaract Club Amontana : Votre Don Compte'}
+                description={'Aidez le Rotaract Club Amontana à poursuivre ses actions communautaires à Antananarivo. Chaque don est précieux. Faites un geste pour améliorer des vies !'}
+                openGraph={{
+                    title: 'Soutenez le Rotaract Club Amontana : Votre Don Compte',
+                    description: 'Aidez le Rotaract Club Amontana à poursuivre ses actions communautaires à Antananarivo. Chaque don est précieux. Faites un geste pour améliorer des vies !',
+                    url: `${NEXT_PUBLIC_URL}/donate`,
+                    images: [
+                        {
+                            url: null,
+                            width: 800,
+                            height: 600,
+                            alt: 'Donation',
+                        },
+                    ],
+                    site_name: 'Rotaract Club Amontana',
+                }}
+            />
             <Navbar2 Logo={Logo}/>
             <PageTitle pageTitle={'Dons'} pagesub={''}/> 
                 <div className="wpo-donation-page-area section-padding">

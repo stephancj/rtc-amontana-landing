@@ -46,7 +46,7 @@ export default class Header2 extends Component {
                                 <div className="col-lg-3 col-md-6 col-6">
                                     <div className="navbar-header">
                                         <Link onClick={ClickHandler} className="navbar-brand" href="/">
-                                            <Image src={this.props.Logo} alt="Rotaract amontana logo" />
+                                            <Image src={this.props.Logo} alt="Rotaract Club Amontana logo" />
                                         </Link>
                                     </div>
                                 </div>

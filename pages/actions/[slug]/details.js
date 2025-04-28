@@ -70,7 +70,7 @@ const ActionPage = ({ action, previousAction, nextAction, relatedActions }) => {
                             alt: action?.title,
                         },
                     ],
-                    site_name: 'Rotaract Amontana',
+                    site_name: 'Rotaract Club Amontana',
                 }}
             />
 

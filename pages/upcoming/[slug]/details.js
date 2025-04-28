@@ -34,7 +34,7 @@ const TeamSinglePage = ({ upcoming }) => {
                             alt: upcoming.meta_title,
                         },
                     ],
-                    site_name: 'Rotaract Amontana',
+                    site_name: 'Rotaract Club Amontana',
                 }}
             />
             <Navbar2 Logo={Logo} />
