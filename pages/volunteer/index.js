@@ -9,6 +9,8 @@ import vImg from "/public/images/volunteer.jpg";
 import Image from "next/image";
 import { BASIN_URL } from "../../utils/constants";
 import { toast } from "react-toastify";
+import { NEXT_PUBLIC_URL } from "../../utils/constants";
+import { NextSeo } from "next-seo";
 
 const VolunteerPage = () => {
     const [file, setFile] = useState(null);
@@ -53,6 +55,16 @@ const VolunteerPage = () => {
 
     return (
     <Fragment>
+        <NextSeo
+            title={'Rejoignez le Rotaract Amontana : Devenez Volontaire !'}
+            description={'Volontariat enrichissant : Participez à des projets concrets, développez votre leadership et intégrez le Rotaract Amontana.'}
+            openGraph={{
+                title: 'Rejoignez le Rotaract Amontana : Devenez Volontaire !',
+                description: 'Volontariat enrichissant : Participez à des projets concrets, développez votre leadership et intégrez le Rotaract Amontana.',
+                url: `${NEXT_PUBLIC_URL}/volunteer`,
+                site_name: 'Rotaract Club Amontana',
+            }}
+        />
         <Navbar Logo={Logo} />
         <PageTitle pageTitle={"Volunteer"} pagesub={"Volunteer"} />
         <div className="volunteer-area">
