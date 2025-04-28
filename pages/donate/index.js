@@ -9,6 +9,7 @@ import pimg2 from '/public/images/checkout/img-2.png'
 import pimg3 from '/public/images/checkout/img-3.png'
 import pimg4 from '/public/images/checkout/img-4.png'
 import Image from 'next/image';
+import { NEXT_PUBLIC_URL } from "../../../utils/constants";
 import { NextSeo } from "next-seo";
 
 
