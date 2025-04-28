@@ -28,14 +28,6 @@ const DonatePage =() => {
                     title: 'Soutenez le Rotaract Club Amontana : Votre Don Compte',
                     description: 'Aidez le Rotaract Club Amontana à poursuivre ses actions communautaires à Antananarivo. Chaque don est précieux. Faites un geste pour améliorer des vies !',
                     url: `${NEXT_PUBLIC_URL}/donate`,
-                    images: [
-                        {
-                            url: null,
-                            width: 800,
-                            height: 600,
-                            alt: 'Donation',
-                        },
-                    ],
                     site_name: 'Rotaract Club Amontana',
                 }}
             />
