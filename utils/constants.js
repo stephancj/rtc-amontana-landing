@@ -1,5 +1,5 @@
 export const API_BASE_URL = 'https://rtc-amontana.pockethost.io';
-export const NEXT_PUBLIC_URL = 'https://rotaractamontana.vercel.app';
+export const NEXT_PUBLIC_URL = 'https://rotaractamontana.org'; //https://rotaractamontana.vercel.app
 export const FILE_URL = (collectionId, id, filename) => `${API_BASE_URL}/api/files/${collectionId}/${id}/${filename}`;
 export const BASIN_URL = 'https://usebasin.com/f/6ad3ce166881';
 
