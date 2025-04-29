@@ -33,7 +33,7 @@ const Contactpage = () => {
                                         </div>
                                         <div className="office-info-text">
                                             <h2>Email Us</h2>
-                                            <p>amontana.rotaract@gmail.com</p>
+                                            <p>contact@rotaractamontana.org</p>
                                             <p>helloyou@gmail.com</p>
                                         </div>
                                     </div>

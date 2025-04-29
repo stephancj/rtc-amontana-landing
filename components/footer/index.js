@@ -140,7 +140,7 @@ const Footer = (props) => {
                                 <div className="contact-ft">
                                     <p>Si vous avez des questions, n'hésitez pas à nous contacter</p>
                                     <ul>
-                                        <li><i className="fi flaticon-mail"></i>amontana.rotaract@gmail.com</li>
+                                        <li><i className="fi flaticon-mail"></i>contact@rotaractamontana.org</li>
                                         <li><i className="fi flaticon-phone-call"></i>+261 XX XX XXX XX</li>
                                         <li><i className="fi flaticon-location"></i>Madagascar – Antananarivo, 101</li>
                                     </ul>

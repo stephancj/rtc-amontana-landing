@@ -10,7 +10,7 @@ const HeaderTopbar = () => {
                         <div className="contact-intro">
                             <ul>
                                 <li><i className="fi ti-location-pin"></i>101, Antananarivo, Madagascar</li>
-                                <li><i className="fi flaticon-email"></i> amontana.rotaract@gmail.com</li>
+                                <li><i className="fi flaticon-email"></i> contact@rotaractamontana.org</li>
                             </ul>
                         </div>
                     </div>
