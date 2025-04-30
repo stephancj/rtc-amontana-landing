@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { NextSeo } from "next-seo";
+import { NextSeo, ArticleJsonLd } from "next-seo";
 
 import PageTitle from "../../../components/pagetitle";
 import Footer from "../../../components/footer";
@@ -62,6 +62,17 @@ const EventPage = ({ event, previousEvent, nextEvent }) => {
             },
           ],
         }}
+      />
+
+      <ArticleJsonLd
+        url={`${NEXT_PUBLIC_URL}/events/${event.slug}/details`}
+        title={event.meta_title || event.title}
+        images={[FILE_URL(event.collectionId, event.id, event.image)]}
+        datePublished="2024-04-30"
+        authorName="Stéphan Christian"
+        publisherName="Rotaract Club Amontana"
+        publisherLogo={`${NEXT_PUBLIC_URL}/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FfanionRTCA.717e35b9.jpg&w=1200&q=75`}
+        description={event.meta_desc || "Découvrez notre événement"}
       />
 
       <Navbar2 Logo={Logo} />
