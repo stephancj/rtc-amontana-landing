@@ -1,6 +1,5 @@
 // next-sitemap.config.js
-import { NEXT_PUBLIC_URL } from "./utils/constants";
-
+const { NEXT_PUBLIC_URL } = require('./utils/constants');
 
 module.exports = {
     siteUrl: NEXT_PUBLIC_URL || 'http://localhost:9220',
