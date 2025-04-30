@@ -1,35 +1,25 @@
-
-
-
-// const PocketBase = require('pocketbase');
-
-// const pb = new PocketBase(API_BASE_URL);
 const axios = require('axios');
 
+const siteUrl = 'https://rotaractamontana.org';
 
 const getAllEvents = async () => {
-    // const events = await pb.collection('events').getFullList({sort: '-date'});
-    const events = await axios.get(`${'https://rtc-amontana.pockethost.io'}/api/collections/events/records?sort=-date`)
-    return events.data.items;
+    const response = await axios.get(`${'https://rtc-amontana.pockethost.io'}/api/collections/events/records?sort=-date`)
+    return response.data.items;
 }
 
 const getAllActions = async () => {
-    // return await pb.collection('actions').getFullList({expand: 'aof', sort: '-date'});
     return (await axios.get(`${'https://rtc-amontana.pockethost.io'}/api/collections/actions/records?sort=-date&expand=aof`)).data.items
 }
 
 const getAllUpcomingEvents = async () => {
-    // const upcomingEvents = await pb.collection('upcoming').getFullList({sort: '-date'});
-    const upcomingEvents = await axios.get(`${'https://rtc-amontana.pockethost.io'}/api/collections/upcoming/records?sort=-date`)
-    return upcomingEvents.data.items;
+    const response = await axios.get(`${'https://rtc-amontana.pockethost.io'}/api/collections/upcoming/records?sort=-date`)
+    return response.data.items;
 }
 
 const getAllMembers = async () => {
-    // const members = await pb.collection('members').getFullList({sort: 'fullname'});
-    const members = await axios.get(`${'https://rtc-amontana.pockethost.io'}/api/collections/members/records?sort=fullname`)
-    return members.data.items;
+    const response = await axios.get(`${'https://rtc-amontana.pockethost.io'}/api/collections/members/records?sort=fullname`)
+    return response.data.items;
 }
-const siteUrl = 'https://rotaractamontana.org';
 
 const config = {
   siteUrl,
@@ -45,7 +35,7 @@ const config = {
     events.forEach((event) => {
       paths.push({
         loc: `/events/${event.slug}/details`,
-        changefreq: 'weekly',
+        changefreq: 'monthly',
         priority: 0.9,
         lastmod: new Date().toISOString(),
       });
@@ -56,7 +46,7 @@ const config = {
     actions.forEach((action) => {
       paths.push({
         loc: `/actions/${action.slug}/details`,
-        changefreq: 'weekly',
+        changefreq: 'monthly',
         priority: 0.8,
         lastmod: new Date().toISOString(),
       });
@@ -67,7 +57,7 @@ const config = {
     upcoming.forEach((upcomingEvent) => {
       paths.push({
         loc: `/upcoming/${upcomingEvent.slug}/details`,
-        changefreq: 'weekly',
+        changefreq: 'monthly',
         priority: 1.0,
         lastmod: new Date().toISOString(),
       });
