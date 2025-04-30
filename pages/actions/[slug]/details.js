@@ -14,7 +14,7 @@ import Slider from "react-slick";
 import parse from 'html-react-parser';
 import ActionSidebar from '../sidebar';
 import Navbar2 from "../../../components/Navbar2";
-import { NextSeo } from "next-seo";
+import { NextSeo, ArticleJsonLd } from "next-seo";
 
 const ActionPage = ({ action, previousAction, nextAction, relatedActions }) => {
     const router = useRouter();

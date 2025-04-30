@@ -1,7 +1,7 @@
 // pages/evenements/[slug]/index.js
 import { Fragment } from 'react';
 import { useRouter } from 'next/router';
-import { NextSeo } from 'next-seo';
+import { NextSeo, ArticleJsonLd } from 'next-seo';
 import PageTitle from '../../../components/pagetitle';
 import Scrollbar from '../../../components/scrollbar';
 import EventTabs from './alltab';
