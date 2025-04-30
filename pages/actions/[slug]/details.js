@@ -74,6 +74,17 @@ const ActionPage = ({ action, previousAction, nextAction, relatedActions }) => {
                 }}
             />
 
+            <ArticleJsonLd
+                url={`${NEXT_PUBLIC_URL}/actions/${action?.slug}/details`}
+                title={action?.meta_title || action?.title}
+                images={[FILE_URL(action?.collectionId, action?.id, action?.image)]}
+                datePublished={action?.created}
+                authorName={action?.author || "Responsable Image Publique"}
+                publisherName="Rotaract Club Amontana"
+                publisherLogo={`${NEXT_PUBLIC_URL}/images/slider/fanionRTCA.webp`}
+                description={action?.meta_desc || "Découvrez notre action"}
+            />
+
             <Navbar2 Logo={Logo} />
             <PageTitle
                 pageTitle={action?.title || "Événement"}

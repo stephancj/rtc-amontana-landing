@@ -37,6 +37,16 @@ const TeamSinglePage = ({ upcoming }) => {
                     site_name: 'Rotaract Club Amontana',
                 }}
             />
+            <ArticleJsonLd
+                url={`${NEXT_PUBLIC_URL}/upcoming/${upcoming?.slug}/details`}
+                title={upcoming?.meta_title || upcoming?.title}
+                images={[FILE_URL(upcoming?.collectionId, upcoming?.id, upcoming?.image)]}
+                datePublished={upcoming?.created}
+                authorName={upcoming?.author || "Responsable Image Publique"}
+                publisherName="Rotaract Club Amontana"
+                publisherLogo={`${NEXT_PUBLIC_URL}/images/slider/fanionRTCA.webp`}
+                description={upcoming?.meta_desc || "Découvrez notre prochain event"}
+            />
             <Navbar2 Logo={Logo} />
             <PageTitle
                 pageTitle={upcoming.title}
