@@ -78,7 +78,7 @@ const config = {
     members.forEach((member) => {
       paths.push({
         loc: `/team/${member.slug}`,
-        changefreq: 'yearly',
+        changefreq: 'monthly',
         priority: 0.6,
         lastmod: new Date().toISOString(),
       });
