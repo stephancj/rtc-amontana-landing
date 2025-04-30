@@ -1,20 +1,47 @@
-const { NEXT_PUBLIC_URL } = require('./utils/constants');
-const { getAllEvents } = require('./services/events.service');
-const { getAllActions } = require('./services/actions.service')
-const { getAllUpcomingEvents } = require('./services/upcomingEvents.service');
-const { getAllMembers } = require('./services/members.service');
 
-/** @type {import('next-sitemap').IConfig} */
-module.exports = {
-  siteUrl: NEXT_PUBLIC_URL || 'http://localhost:9220',
+
+
+// const PocketBase = require('pocketbase');
+
+// const pb = new PocketBase(API_BASE_URL);
+const axios = require('axios');
+
+
+const getAllEvents = async () => {
+    // const events = await pb.collection('events').getFullList({sort: '-date'});
+    const events = await axios.get(`${'https://rtc-amontana.pockethost.io'}/api/collections/events/records?sort=-date`)
+    return events.data.items;
+}
+
+const getAllActions = async () => {
+    // return await pb.collection('actions').getFullList({expand: 'aof', sort: '-date'});
+    return (await axios.get(`${'https://rtc-amontana.pockethost.io'}/api/collections/actions/records?sort=-date&expand=aof`)).data.items
+}
+
+const getAllUpcomingEvents = async () => {
+    // const upcomingEvents = await pb.collection('upcoming').getFullList({sort: '-date'});
+    const upcomingEvents = await axios.get(`${'https://rtc-amontana.pockethost.io'}/api/collections/upcoming/records?sort=-date`)
+    return upcomingEvents.data.items;
+}
+
+const getAllMembers = async () => {
+    // const members = await pb.collection('members').getFullList({sort: 'fullname'});
+    const members = await axios.get(`${'https://rtc-amontana.pockethost.io'}/api/collections/members/records?sort=fullname`)
+    return members.data.items;
+}
+const siteUrl = 'https://rotaractamontana.org';
+
+const config = {
+  siteUrl,
   generateRobotsTxt: true,
   sitemapSize: 7000,
 
-  additionalPaths: async (config) => {
+  additionalPaths: async () => {
     const paths = [];
 
     // Events: /events/[slug]/details
     const events = await getAllEvents();
+    console.log('events', events)
     events.forEach((event) => {
       paths.push({
         loc: `/events/${event.slug}/details`,
@@ -60,3 +87,5 @@ module.exports = {
     return paths;
   },
 };
+
+module.exports = config;
