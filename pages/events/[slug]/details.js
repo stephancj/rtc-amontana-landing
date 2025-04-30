@@ -68,8 +68,8 @@ const EventPage = ({ event, previousEvent, nextEvent }) => {
         url={`${NEXT_PUBLIC_URL}/events/${event.slug}/details`}
         title={event.meta_title || event.title}
         images={[FILE_URL(event.collectionId, event.id, event.image)]}
-        datePublished="2024-04-30"
-        authorName="Stéphan Christian"
+        datePublished={event.created}
+        authorName={event.author || "Responsable Image Publique"}
         publisherName="Rotaract Club Amontana"
         publisherLogo={`${NEXT_PUBLIC_URL}/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FfanionRTCA.717e35b9.jpg&w=1200&q=75`}
         description={event.meta_desc || "Découvrez notre événement"}
