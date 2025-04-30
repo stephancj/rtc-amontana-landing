@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Clients from './client'
 import Image from 'next/image'
 
-import hero1 from '/public/images/slider/fanionRTCA.jpg'
+import hero1 from '/public/images/slider/fanionRTCA.webp'
 import hero2 from '/public/images/slider/s.png'
 import hero3 from '/public/images/slider/heroRTCA1.jpg'
 

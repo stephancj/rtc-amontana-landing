@@ -71,7 +71,7 @@ const EventPage = ({ event, previousEvent, nextEvent }) => {
         datePublished={event.created}
         authorName={event.author || "Responsable Image Publique"}
         publisherName="Rotaract Club Amontana"
-        publisherLogo={`${NEXT_PUBLIC_URL}/images/slider/fanionRTCA.jpg`}
+        publisherLogo={`${NEXT_PUBLIC_URL}/images/slider/fanionRTCA.webp`}
         description={event.meta_desc || "Découvrez notre événement"}
       />
 
