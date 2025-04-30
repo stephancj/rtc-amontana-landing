@@ -9,7 +9,7 @@ import Footer from '../../../components/footer';
 import Logo from '/public/images/logo.png';
 import { getAllUpcomingEvents } from '../../../services/upcomingEvents.service';
 import parse from 'html-react-parser';
-import { FILE_URL } from '../../../utils/constants';
+import { FILE_URL, NEXT_PUBLIC_URL } from '../../../utils/constants';
 import Navbar2 from '../../../components/Navbar2';
 
 const TeamSinglePage = ({ upcoming }) => {
