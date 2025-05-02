@@ -10,9 +10,9 @@ const SEO = {
         site_name: 'Rotaract Club Amontana',
         images: [
             {
-                url: `${NEXT_PUBLIC_URL}/images/slider/fanionRTCA.webp`,
-                width: 1200,
-                height: 630,
+                url: `${NEXT_PUBLIC_URL}/images/logoRTCASquare.webp`,
+                width: 720,
+                height: 720,
                 alt: 'Rotaract Club Amontana logo',
             },
         ],

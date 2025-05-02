@@ -13,13 +13,17 @@ import "slick-carousel/slick/slick-theme.css";
 import 'photoswipe/dist/photoswipe.css'
 import '../styles/sass/style.scss'
 import { GoogleAnalytics } from '@next/third-parties/google'
-import { DefaultSeo } from "next-seo";
+import { DefaultSeo, LogoJsonLd } from "next-seo";
 import SEO from "../next-seo.config";
 
 function MyApp({ Component, pageProps }) {
   return (
     <div>
       <DefaultSeo {...SEO} />
+      <LogoJsonLd
+        logo="https://rotaractamontana.org/images/logoRTCASquare.webp"
+        url="https://rotaractamontana.org"
+      />
       <Component {...pageProps} />
       <ToastContainer />
       <GoogleAnalytics gaId="G-8VNPWXF8HV" />
