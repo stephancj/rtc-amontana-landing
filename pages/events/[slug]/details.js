@@ -75,6 +75,26 @@ const EventPage = ({ event, previousEvent, nextEvent }) => {
         description={event.meta_desc || "Découvrez notre événement"}
       />
 
+
+      {/* JSON-LD pour enrichissement Google */}
+      {/* <EventJsonLd
+        name={title}
+        startDate={startDate}
+        endDate={endDate}
+        url={url}
+        images={[image]}
+        description={description}
+        location={{
+          name: locationName,
+          address: {
+            streetAddress,
+            addressLocality: city,
+            postalCode,
+            addressCountry: country,
+          },
+        }}
+      /> */}
+
       <Navbar2 Logo={Logo} />
       <PageTitle
         pageTitle={event.title}
