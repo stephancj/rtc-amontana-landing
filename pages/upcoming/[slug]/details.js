@@ -63,8 +63,8 @@ const TeamSinglePage = ({ upcoming }) => {
                 images={[FILE_URL(upcoming.collectionId, upcoming.id, upcoming.image)]}
                 description={upcoming.description}
                 organizer={{
-                    name: organizerName || "Rotaract Club Amontana",
-                    url: organizerUrl ||  'https://rotaractamontana.org',
+                    name: upcoming.organizerName || "Rotaract Club Amontana",
+                    url: upcoming.organizerUrl ||  'https://rotaractamontana.org',
                 }}
             />
             <Navbar2 Logo={Logo} />

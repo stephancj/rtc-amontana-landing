@@ -93,8 +93,8 @@ const EventPage = ({ event, previousEvent, nextEvent }) => {
         images={[FILE_URL(event.collectionId, event.id, event.image)]}
         description={event.description}
         organizer={{
-          name: organizerName || "Rotaract Club Amontana",
-          url: organizerUrl ||  'https://rotaractamontana.org',
+          name: event.organizerName || "Rotaract Club Amontana",
+          url: event.organizerUrl ||  'https://rotaractamontana.org',
         }}
       />
 
