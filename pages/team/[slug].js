@@ -8,9 +8,11 @@ import Footer from '../../components/footer';
 import Image from 'next/image';
 import Logo from '/public/images/logo.png';
 import { getAllMembers } from '../../services/members.service';
-import { FILE_URL } from '../../utils/constants';
+import { FILE_URL, NEXT_PUBLIC_URL } from '../../utils/constants';
 import parse from 'html-react-parser';
 import { NextSeo } from 'next-seo';
+import Head from 'next/head';
+
 
 const TeamSingle = ({ member }) => {
     const router = useRouter();
@@ -21,6 +23,25 @@ const TeamSingle = ({ member }) => {
 
     return (
         <div>
+            <Head>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "Person",
+                            name: member.fullname,
+                            jobTitle: member.function,
+                            image: FILE_URL(member.collectionId, member.id, member.image),
+                            url: `${NEXT_PUBLIC_URL}/team/${member.slug}`,
+                            worksFor: {
+                                "@type": "Organization",
+                                name: "Rotaract Club Amontana",
+                            },
+                        }),
+                    }}
+                />
+            </Head>
             <Fragment>
                 <NextSeo
                     title={`${member.fullname}`}
@@ -28,7 +49,7 @@ const TeamSingle = ({ member }) => {
                     openGraph={{
                     title: `${member.fullname}`,
                     description: `Profil de ${member.fullname}, ${member.function} au sein du Rotaract club Amontana.`,
-                    url: `${process.env.NEXT_PUBLIC_URL}/team/${member.slug}`,
+                    url: `${NEXT_PUBLIC_URL}/team/${member.slug}`,
                     images: [
                         {
                         url: FILE_URL(member.collectionId, member.id, member.image),

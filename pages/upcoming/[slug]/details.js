@@ -1,7 +1,7 @@
 // pages/evenements/[slug]/index.js
 import { Fragment } from 'react';
 import { useRouter } from 'next/router';
-import { NextSeo, ArticleJsonLd } from 'next-seo';
+import { NextSeo, ArticleJsonLd, EventJsonLd } from 'next-seo';
 import PageTitle from '../../../components/pagetitle';
 import Scrollbar from '../../../components/scrollbar';
 import EventTabs from './alltab';
@@ -44,8 +44,28 @@ const TeamSinglePage = ({ upcoming }) => {
                 datePublished={upcoming?.created}
                 authorName={upcoming?.author || "Responsable Image Publique"}
                 publisherName="Rotaract Club Amontana"
-                publisherLogo={`${NEXT_PUBLIC_URL}/images/slider/fanionRTCA.webp`}
+                publisherLogo={`${NEXT_PUBLIC_URL}/images/logoRTCASquare.webp`}
                 description={upcoming?.meta_desc || "Découvrez notre prochain event"}
+            />
+            <EventJsonLd
+                name={upcoming.meta_title || upcoming.title}
+                startDate={upcoming.date}
+                endDate={upcoming.endDate || upcoming.date}
+                location={{
+                    name: upcoming.location,
+                    address: {
+                    streetAddress: upcoming.streetAddress || "",
+                    addressLocality: upcoming.city || "",
+                    addressCountry: upcoming.country || "MG",
+                    },
+                }}
+                url={`${NEXT_PUBLIC_URL}/upcoming/${upcoming?.slug}/details`}
+                images={[FILE_URL(upcoming.collectionId, upcoming.id, upcoming.image)]}
+                description={upcoming.description}
+                organizer={{
+                    name: organizerName || "Rotaract Club Amontana",
+                    url: organizerUrl ||  'https://rotaractamontana.org',
+                }}
             />
             <Navbar2 Logo={Logo} />
             <PageTitle

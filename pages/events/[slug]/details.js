@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { NextSeo, ArticleJsonLd } from "next-seo";
+import { NextSeo, ArticleJsonLd, EventJsonLd } from "next-seo";
 
 import PageTitle from "../../../components/pagetitle";
 import Footer from "../../../components/footer";
@@ -23,6 +23,7 @@ import {
 import parse from "html-react-parser";
 import Slider from "react-slick";
 import Logo from "/public/images/logo.png";
+import { orange } from "@mui/material/colors";
 
 const EventPage = ({ event, previousEvent, nextEvent }) => {
   const router = useRouter();
@@ -75,25 +76,27 @@ const EventPage = ({ event, previousEvent, nextEvent }) => {
         description={event.meta_desc || "Découvrez notre événement"}
       />
 
-
       {/* JSON-LD pour enrichissement Google */}
-      {/* <EventJsonLd
-        name={title}
-        startDate={startDate}
-        endDate={endDate}
-        url={url}
-        images={[image]}
-        description={description}
+      <EventJsonLd
+        name={event.meta_title || event.title}
+        startDate={event.date}
+        endDate={event.endDate || event.date}
         location={{
-          name: locationName,
+          name: event.location,
           address: {
-            streetAddress,
-            addressLocality: city,
-            postalCode,
-            addressCountry: country,
+            streetAddress: event.streetAddress || "",
+            addressLocality: event.city || "",
+            addressCountry: event.country || "MG",
           },
         }}
-      /> */}
+        url={`${NEXT_PUBLIC_URL}/events/${event.slug}/details`}
+        images={[FILE_URL(event.collectionId, event.id, event.image)]}
+        description={event.description}
+        organizer={{
+          name: organizerName || "Rotaract Club Amontana",
+          url: organizerUrl ||  'https://rotaractamontana.org',
+        }}
+      />
 
       <Navbar2 Logo={Logo} />
       <PageTitle
