@@ -75,7 +75,7 @@ const VolunteerPage = () => {
                 <div className="volunteer-item">
                     <div className="volunteer-img-wrap">
                     <div className="volunteer-img">
-                        <Image src={vImg} alt="" />
+                        <Image src={vImg} alt="Joins the rotaract team"   style={{ width: '100%'}}/>
                     </div>
                     </div>
                 </div>
