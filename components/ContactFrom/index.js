@@ -50,7 +50,7 @@ const ContactForm = () => {
                             name="name"
                             onBlur={(e) => changeHandler(e)}
                             onChange={(e) => changeHandler(e)}
-                            placeholder="Your Name" />
+                            placeholder="Votre Nom" />
                         {validator.message('name', forms.name, 'required|alpha_space')}
                     </div>
                 </div>
@@ -62,7 +62,7 @@ const ContactForm = () => {
                             name="email"
                             onBlur={(e) => changeHandler(e)}
                             onChange={(e) => changeHandler(e)}
-                            placeholder="Your Email" />
+                            placeholder="Votre Email" />
                         {validator.message('email', forms.email, 'required|email')}
                     </div>
                 </div>
@@ -74,25 +74,20 @@ const ContactForm = () => {
                             name="phone"
                             onBlur={(e) => changeHandler(e)}
                             onChange={(e) => changeHandler(e)}
-                            placeholder="Your phone" />
+                            placeholder="Votre numéro de téléphone" />
                         {validator.message('phone', forms.phone, 'required|phone')}
                     </div>
                 </div>
                 <div className="col col-lg-6 col-12">
                     <div className="form-field">
-                        <select
-                            onBlur={(e) => changeHandler(e)}
-                            onChange={(e) => changeHandler(e)}
+                        <input
                             value={forms.subject}
                             type="text"
-                            name="subject">
-                            <option >Subject</option>
-                            <option >Subject1</option>
-                            <option >Subject2</option>
-                            <option >Subject3</option>
-                            <option >Subject4</option>
-                        </select>
-                        {validator.message('subject', forms.subject, 'required')}
+                            name="subject"
+                            onBlur={(e) => changeHandler(e)}
+                            onChange={(e) => changeHandler(e)}
+                            placeholder="Sujet" />
+                        {validator.message('subject', forms.subject, 'required|subject')}
                     </div>
                 </div>
                 <div className="col col-lg-12 col-12">
@@ -108,7 +103,7 @@ const ContactForm = () => {
                 </div>
             </div>
             <div className="submit-area">
-                <button type="submit" className="theme-btn"> Submit Now</button>
+                <button type="submit" className="theme-btn"> Soumettre</button>
             </div>
         </form >
     )

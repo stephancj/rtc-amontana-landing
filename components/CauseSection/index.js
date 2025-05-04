@@ -17,7 +17,12 @@ const CauseSection = (props) => {
                 <div className="row justify-content-center">
                     <div className="col-lg-6">
                         <div className="wpo-section-title">
-                            <span>Actions</span>
+                            <span>
+                                <Link onClick={ClickHandler} href="/actions" style={{
+                                    color: 'inherit',
+                                    textDecoration: 'none'
+                                }}>Actions</Link>
+                            </span>
                             <h2>La magie de nos actions</h2>
                             <p>Nous continuons de nous engager à travers diverses initiatives, allant des actions solidaires locales aux projets internationaux, pour avoir un impact positif et durable dans nos communautés.</p>
                         </div>

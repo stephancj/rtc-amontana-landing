@@ -19,9 +19,9 @@ const Error = (props) => {
                                 <Image src={erimg} alt=""/>
                             </div>
                             <div className="error-message">
-                                <h3>Oops! Page Not Found!</h3>
-                                <p>We’re sorry but we can’t seem to find the page you requested. This might be because you have typed the web address incorrectly.</p>
-                                <Link onClick={ClickHandler} href="/" className="theme-btn"> Back to home</Link>
+                                <h3>Oops! Page introuvable!</h3>
+                                <p>Nous sommes désolés mais nous ne parvenons pas à trouver la page que vous avez demandée. Cela peut être dû à une erreur de saisie de l'adresse web..</p>
+                                <Link onClick={ClickHandler} href="/" className="theme-btn"> Retourner à l'acceuil</Link>
                             </div>
                         </div>
                     </div>

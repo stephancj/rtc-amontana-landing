@@ -32,19 +32,19 @@ const ForgotPassword = (props) => {
                 email: '',
             });
             validator.hideMessages();
-            toast.success('You successfully Reset!');
+            toast.success('Reset avec succes');
             router.push('/login')
         } else {
             validator.showMessages();
-            toast.error('Empty field is not allowed!');
+            toast.error('Champ vide!');
         }
     };
     return (
         <Grid className="loginWrapper">
 
             <Grid className="loginForm">
-                <h2>Forgot Password</h2>
-                <p>Reset your account password</p>
+                <h2>Mot de passe oublié</h2>
+                <p>Réinitiliser votre mot de passe</p>
                 <form onSubmit={submitForm}>
                     <Grid container spacing={3}>
                         <Grid item xs={12}>
@@ -66,16 +66,9 @@ const ForgotPassword = (props) => {
                         </Grid>
                         <Grid item xs={12}>
                             <Grid className="formFooter">
-                                <Button fullWidth className="cBtn cBtnLarge cBtnTheme" type="submit">Resend
-                                    Password</Button>
+                                <Button fullWidth className="cBtn cBtnLarge cBtnTheme" type="submit">Renvoyer le mot de passe</Button>
                             </Grid>
-                            <Grid className="loginWithSocial">
-                                <Button className="facebook"><i className="fa fa-facebook"></i></Button>
-                                <Button className="twitter"><i className="fa fa-twitter"></i></Button>
-                                <Button className="linkedin"><i className="fa fa-linkedin"></i></Button>
-                            </Grid>
-                            <p className="noteHelp">Already have an account? <Link href="/login">Return to Sign In</Link>
-                            </p>
+                            <p className="noteHelp"><Link href="/login">Se connecter</Link></p>
                         </Grid>
                     </Grid>
                 </form>

@@ -17,7 +17,12 @@ const BlogSection = (props) => {
                 <div className="row justify-content-center">
                     <div className="col-lg-6">
                         <div className="wpo-section-title">
-                            <span>Evénements</span>
+                            <span>
+                                <Link onClick={ClickHandler} href="/events" style={{
+                                    color: 'inherit',
+                                    textDecoration: 'none'
+                                }}>Evénements</Link>
+                            </span>
                             <h2>Nos dernières actualités</h2>
                             <p>Le club organise ou participe à des événements marquants, dont des conférences, des ateliers et des rencontres interclubs.</p>
                         </div>

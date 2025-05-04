@@ -1,12 +1,32 @@
 import React from 'react'
 import Link from 'next/link'
-import Projects from '../../api/projects'
 import Image from 'next/image'
+import {FILE_URL} from "../../utils/constants";
+import { formatDateTime } from "../../utils/utils";
+
 
 const ProjectSection = (props) => {
+    const items = props.items
+    const type = props.type
+
     const ClickHandler = () =>{
         window.scrollTo(10, 0);
-     }
+    }
+
+    const generateLink = (type, slug = null) => {
+        const basePathMap = {
+            event: '/events',
+            actions: '/actions',
+            upcoming: '/upcoming'
+        };
+    
+        const base = basePathMap[type];
+        if (!base) return '#';
+    
+        const finalSlug = slug ? slug : '[slug]';
+        return `${base}/${finalSlug}/details`;
+    };
+    
 
     return(
 
@@ -16,14 +36,14 @@ const ProjectSection = (props) => {
                 <div className="row">
                     <div className="col-lg-12">
                         <div className="project-grids gallery-container clearfix">
-                            {Projects.slice(0,6).map((project, pitem)=>(
-                                <div className="grid" key={pitem}>
+                            {items.map((item, index)=>(
+                                <div className="grid" key={index}>
                                     <div className="img-holder">
-                                        <Image src={project.projectImg} alt=""/>
+                                        <Image src={FILE_URL(item.collectionId, item.id, item.image)} width={500} height={600} alt=""/>
                                         <div className="hover-content">
-                                            <Link onClick={ClickHandler} className="plus" href="/project/[slug]" as={`/project/${project.slug}`}><i className="ti-plus"></i></Link>
-                                            <h4><Link onClick={ClickHandler} href="/project/[slug]" as={`/project/${project.slug}`}>{project.title}</Link></h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                            <Link onClick={ClickHandler} className="plus" href={generateLink(type)} as={generateLink(type, item.slug)}><i className="ti-plus"></i></Link>
+                                            <h4><Link onClick={ClickHandler} href={generateLink(type)} as={generateLink(type, item.slug)}>{item.title}</Link></h4>
+                                            <p>{formatDateTime(item.date)}</p>
                                         </div>
                                     </div>
                                 </div>

@@ -11,7 +11,7 @@ const StoryPage = (props) => {
     return (
         <div>
             <Navbar Logo={Logo}/>
-            <PageTitle pageTitle={'404'} pagesub={'404'}/> 
+            <PageTitle pageTitle={'404'} pagesub={''}/> 
             <Error/>
             <Footer ftClass={'wpo-site-footer-s2'}/>
             <Scrollbar/>
