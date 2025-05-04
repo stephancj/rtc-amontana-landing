@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://rotaractamontana.org
-
-# Sitemaps
-Sitemap: https://rotaractamontana.org/sitemap.xml
