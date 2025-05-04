@@ -22,10 +22,11 @@ const TeamSinglePage = ({ upcoming }) => {
             <NextSeo
                 title={upcoming.title}
                 description={upcoming.meta_desc || 'Découvrez cet événement à venir'}
+                canonical={`${NEXT_PUBLIC_URL}/upcoming/${upcoming.slug}/details`}
                 openGraph={{
                     title: upcoming.meta_title,
                     description: upcoming.meta_desc || upcoming.description ||'Découvrez cet événement à venir',
-                    url: `https://rotaractamontana.netlify.app/upcoming/${upcoming.slug}/details`,
+                    url: `${NEXT_PUBLIC_URL}/upcoming/${upcoming.slug}/details`,
                     images: [
                         {
                             url: imageUrl,

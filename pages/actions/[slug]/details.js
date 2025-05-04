@@ -58,6 +58,7 @@ const ActionPage = ({ action, previousAction, nextAction, relatedActions }) => {
             <NextSeo
                 title={action?.meta_title || action?.title}
                 description={action?.meta_desc || 'Découvrez notre action'}
+                canonical={`${NEXT_PUBLIC_URL}/actions/${action?.slug}/details`}
                 openGraph={{
                     title: action?.meta_title || action?.title,
                     description: action?.meta_desc || action?.description || 'Découvrez notre action',
