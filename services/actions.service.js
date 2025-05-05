@@ -1,5 +1,9 @@
 import pb from './base.service';
 
 export const getAllActions = async () => {
-    return await pb.collection('actions').getFullList({expand: 'aof', sort: '-date'});
+    return await pb.collection('actions').getFullList({
+        expand: 'aof',
+        filter: 'active=true',
+        sort: '-date'
+    });
 }
