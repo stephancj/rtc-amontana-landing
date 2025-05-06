@@ -51,6 +51,12 @@ const TeamSingle = ({ member }) => {
                     title: `${member.fullname}`,
                     description: `Profil de ${member.fullname}, ${member.function} au sein du Rotaract club Amontana.`,
                     url: `${NEXT_PUBLIC_URL}/team/${member.slug}`,
+                    type: 'profile',
+                    profile: {
+                        firstName: `${member.fullname}`.split(' ')[0],
+                        lastName: `${member.fullname}`.split(' ')[`${member.fullname}`.split(' ').length - 1],
+                        username: member.slug
+                    },
                     images: [
                         {
                         url: FILE_URL(member.collectionId, member.id, member.image),

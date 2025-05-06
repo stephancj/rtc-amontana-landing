@@ -3,6 +3,7 @@ import { NEXT_PUBLIC_URL } from "./utils/constants";
 const SEO = {
     title: "Rotaract Club Amontana – Antananarivo, Madagascar",
     description: "Découvrez le Rotaract Club Antananarivo Amontana, à Madagascar : actions sociales, événements, leadership jeune et engagement communautaire.",
+    canonical: "https://www.rotaractamontana.org",
     openGraph: {
         type: 'website',
         locale: 'fr_FR',

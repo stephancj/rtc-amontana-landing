@@ -22,6 +22,7 @@ import { getPartners } from "../services/partners.service";
 import { useEffect } from "react";
 import { getAllUpcomingEvents } from "../services/upcomingEvents.service";
 import Loader from "../components/shared/loader/loader";
+import Head from "next/head";
 
 const HomePage = (props) => {
     const [isLoading, setIsLoading] = React.useState(true);
@@ -56,6 +57,9 @@ const HomePage = (props) => {
 
     return (
     <div>
+        <Head>
+            <link rel="icon" href="/favicon.ico" />
+        </Head>
         {isLoading ? (
             <div style={{
                 display: "flex", 
@@ -66,29 +70,29 @@ const HomePage = (props) => {
                 <Loader />
             </div>
         ) : (
-        <div>
-            <Navbar Logo={Logo} />
-            <Hero members={members}/>
-            <About />
-            <Service 
-                aofs={aofs}
-                Fclass={"wpo-features-section-s2"} 
-                vclassClass={"v1"} 
-            />
-            <BlogSection events={events} />
-            <CauseSection actions={actions}/>
-            {/* upcoming events and actions */}
-            <EventSection upcomings={upcomings}/>
-            <TeamSection members={members} />
-            {/* <Testimonial/> */}
-            <CtaSection
-                vImg={vimg}
-                cTitle={"Rejoignez-nous, transformez des vies, vivez la magie"}
-            />
-            <PartnerSection partners={partners} />
-            <Footer />
-            <Scrollbar />
-        </div>
+            <div>
+                <Navbar Logo={Logo} />
+                <Hero members={members}/>
+                <About />
+                <Service 
+                    aofs={aofs}
+                    Fclass={"wpo-features-section-s2"} 
+                    vclassClass={"v1"} 
+                />
+                <BlogSection events={events} />
+                <CauseSection actions={actions}/>
+                {/* upcoming events and actions */}
+                <EventSection upcomings={upcomings}/>
+                <TeamSection members={members} />
+                {/* <Testimonial/> */}
+                <CtaSection
+                    vImg={vimg}
+                    cTitle={"Rejoignez-nous, transformez des vies, vivez la magie"}
+                />
+                <PartnerSection partners={partners} />
+                <Footer />
+                <Scrollbar />
+            </div>
         )}
     </div>
     );

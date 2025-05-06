@@ -67,6 +67,10 @@ const TeamSinglePage = ({ upcoming }) => {
                     name: upcoming.organizerName || "Rotaract Club Amontana",
                     url: upcoming.organizerUrl ||  'https://rotaractamontana.org',
                 }}
+                eventStatus={'EventScheduled'}
+                offers={[]}
+                eventAttendanceMode={'OfflineEventAttendanceMode'} //MixedEventAttendanceMode, OnlineEventAttendanceMode
+                performers={['Rotaract Club Amontana']}
             />
             <Navbar2 Logo={Logo} />
             <PageTitle

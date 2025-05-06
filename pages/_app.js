@@ -15,6 +15,7 @@ import '../styles/sass/style.scss'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { DefaultSeo, LogoJsonLd } from "next-seo";
 import SEO from "../next-seo.config";
+import { NEXT_PUBLIC_URL } from "../utils/constants";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -23,6 +24,31 @@ function MyApp({ Component, pageProps }) {
       <LogoJsonLd
         logo="https://rotaractamontana.org/images/logoRTCASquare.webp"
         url="https://rotaractamontana.org"
+      />
+      <OrganizationJsonLd
+        type="Organization"
+        id="46058"
+        logo= {`${NEXT_PUBLIC_URL}/images/logoRTCASquare.webp`}
+        legalName="Rotaract Club Antananarivo-Amontana"
+        name="Rotaract Club Amontana"
+        address={{
+          streetAddress: '',
+          addressLocality: 'Antananarivo',
+          addressRegion: 'Analamanga',
+          postalCode: '101',
+          addressCountry: 'MG',
+        }}
+        contactPoint={[
+          {
+            telephone: '',
+            contactType: 'contact',
+            email: 'contact@rotaractamontana.org',
+            areaServed: 'MG',
+            availableLanguage: ['English', 'French', 'Malagasy'],
+          },
+        ]}
+        sameAs={[]}
+        url={NEXT_PUBLIC_URL}
       />
       <Component {...pageProps} />
       <ToastContainer />
