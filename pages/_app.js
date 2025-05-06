@@ -13,7 +13,7 @@ import "slick-carousel/slick/slick-theme.css";
 import 'photoswipe/dist/photoswipe.css'
 import '../styles/sass/style.scss'
 import { GoogleAnalytics } from '@next/third-parties/google'
-import { DefaultSeo, LogoJsonLd } from "next-seo";
+import { DefaultSeo, LogoJsonLd, OrganizationJsonLd } from "next-seo";
 import SEO from "../next-seo.config";
 import { NEXT_PUBLIC_URL } from "../utils/constants";
 
