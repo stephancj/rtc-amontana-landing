@@ -24,7 +24,7 @@ const DonatePage =() => {
             <NextSeo
                 title={'Soutenez le Rotaract Club Amontana : Votre Don Compte'}
                 description={'Aidez le Rotaract Club Amontana à poursuivre ses actions communautaires à Antananarivo. Chaque don est précieux. Faites un geste pour améliorer des vies !'}
-                canonical={`${NEXT_PUBLIC_URL}/donate`}
+                canonical={`https://www.rotaractamontana.org/donate`}
                 openGraph={{
                     title: 'Soutenez le Rotaract Club Amontana : Votre Don Compte',
                     description: 'Aidez le Rotaract Club Amontana à poursuivre ses actions communautaires à Antananarivo. Chaque don est précieux. Faites un geste pour améliorer des vies !',

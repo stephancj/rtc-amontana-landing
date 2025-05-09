@@ -50,7 +50,7 @@ const EventPage = ({ event, previousEvent, nextEvent }) => {
       <NextSeo
         title={event.meta_title || event.title}
         description={event.meta_desc || "Découvrez notre événement"}
-        canonical={`${NEXT_PUBLIC_URL}/events/${event.slug}/details`}
+        canonical={`https://www.rotaractamontana.org/events/${event.slug}/details`}
         openGraph={{
           url: `${NEXT_PUBLIC_URL}/events/${event.slug}/details`,
           title: event.meta_title || event.title,

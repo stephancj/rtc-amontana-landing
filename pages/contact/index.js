@@ -14,7 +14,7 @@ const ContactPage =() => {
             <NextSeo
                 title={'Contact | Rotaract Club Amontana, Antananarivo'}
                 description={"Contactez le Rotaract Club Amontana à Antananarivo pour en savoir plus sur nos actions, événements et partenariats."}
-                canonical={`${NEXT_PUBLIC_URL}/contact`}
+                canonical={`https://www.rotaractamontana.org/contact`}
                 openGraph={{
                     url: `${NEXT_PUBLIC_URL}/contact`,
                     title: 'Contact | Rotaract Club Amontana, Antananarivo',

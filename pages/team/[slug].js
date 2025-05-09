@@ -46,7 +46,7 @@ const TeamSingle = ({ member }) => {
                 <NextSeo
                     title={`${member.fullname}`}
                     description={`Profil de ${member.fullname}, ${member.function} au sein du Rotaract club Amontana.`}
-                    canonical={`${NEXT_PUBLIC_URL}/team/${member.slug}`}
+                    canonical={`https://www.rotaractamontana.org/team/${member.slug}`}
                     openGraph={{
                     title: `${member.fullname}`,
                     description: `Profil de ${member.fullname}, ${member.function} au sein du Rotaract club Amontana.`,

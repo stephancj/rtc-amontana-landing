@@ -16,7 +16,7 @@ const EventsPage =({events}) => {
             <NextSeo
                 title='Événements | Rotaract Club Amontana, Antananarivo'
                 description="Découvrez les événements auxquels le Rotaract Club Amontana, Antananarivo, Madagascar a participé, incluant des conférences, ateliers, forums et initiatives communautaires."
-                canonical={`${NEXT_PUBLIC_URL}/events`}
+                canonical={`https://www.rotaractamontana.org/events`}
                 openGraph={{
                     title: 'Événements | Rotaract Club Amontana, Antananarivo',
                     description: 'Découvrez les événements auxquels le Rotaract Club Amontana, Antananarivo, Madagascar a participé, incluant des conférences, ateliers, forums et initiatives communautaires.',

@@ -58,7 +58,7 @@ const VolunteerPage = () => {
         <NextSeo
             title={'Rejoignez le Rotaract Amontana : Devenez Volontaire !'}
             description={'Volontariat enrichissant : Participez à des projets concrets, développez votre leadership et intégrez le Rotaract Amontana.'}
-            canonical={`${NEXT_PUBLIC_URL}/volunteer`}
+            canonical={`https://www.rotaractamontana.org/volunteer`}
             openGraph={{
                 title: 'Rejoignez le Rotaract Amontana : Devenez Volontaire !',
                 description: 'Volontariat enrichissant : Participez à des projets concrets, développez votre leadership et intégrez le Rotaract Amontana.',

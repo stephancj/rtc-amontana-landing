@@ -16,7 +16,7 @@ const ActionsPage =({actions}) => {
             <NextSeo
               title='Nos Actions | Rotaract Amontana Madagascar'
               description="Découvrez les actions citoyennes, humanitaires et solidaires menées par le Rotaract Amontana. Engagez-vous pour un impact durable à Madagascar."
-              canonical={`${NEXT_PUBLIC_URL}/actions`}
+              canonical={`https://www.rotaractamontana.org/actions`}
               openGraph={{
                   title: 'Nos Actions | Rotaract Amontana Madagascar',
                   description: 'Découvrez les actions citoyennes, humanitaires et solidaires menées par le Rotaract Amontana. Engagez-vous pour un impact durable à Madagascar.',

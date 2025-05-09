@@ -22,7 +22,7 @@ const TeamSinglePage = ({ upcoming }) => {
             <NextSeo
                 title={upcoming.title}
                 description={upcoming.meta_desc || 'Découvrez cet événement à venir'}
-                canonical={`${NEXT_PUBLIC_URL}/upcoming/${upcoming.slug}/details`}
+                canonical={`https://www.rotaractamontana.org/upcoming/${upcoming.slug}/details`}
                 openGraph={{
                     title: upcoming.meta_title,
                     description: upcoming.meta_desc || upcoming.description ||'Découvrez cet événement à venir',
