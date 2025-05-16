@@ -31,13 +31,13 @@ const EventPage = ({ event, previousEvent, nextEvent }) => {
 
   const settings = {
     dots: false,
-    arrows: false,
+    arrows: true,
     speed: 1000,
     slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
     responsive: [
-      { breakpoint: 1500, settings: { slidesToShow: 2 } },
+      { breakpoint: 1500, settings: { slidesToShow: 3 } },
       { breakpoint: 1200, settings: { slidesToShow: 2 } },
       { breakpoint: 991, settings: { slidesToShow: 2 } },
       { breakpoint: 767, settings: { slidesToShow: 1 } },
