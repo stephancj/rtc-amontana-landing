@@ -25,6 +25,8 @@ import Loader from "../components/shared/loader/loader";
 import Head from "next/head";
 import FAQSection from "../components/FAQSection";
 import { getAllFaqs } from "../services/faqs.service";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const HomePage = (props) => {
     const [isLoading, setIsLoading] = React.useState(true);
@@ -58,6 +60,10 @@ const HomePage = (props) => {
 
     useEffect(() => {
         getAllData();
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
     }, []);
 
     return (

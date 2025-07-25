@@ -76,7 +76,7 @@ const TeamSection = (props) => {
                     <div className="team-slider">
                         <Slider {...settings}>
                             {props.members.map((member, index) => (
-                                <div className="wpo-team-item" key={index}>
+                                <div className="wpo-team-item" key={index} data-aos="fade-up">
                                     <div className="wpo-team-img">
                                         <Image 
                                             src={FILE_URL(member.collectionId, member.id, member.image)} 

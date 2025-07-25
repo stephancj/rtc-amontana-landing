@@ -32,7 +32,7 @@ const BlogSection = (props) => {
                     <div className="row">
                         {props.events.slice(0,3).map((event, eItem) => (
                             <div className="col col-lg-4 col-md-6 col-12" key={eItem}>
-                                <div className="wpo-blog-item">
+                                <div className="wpo-blog-item" data-aos="fade-up">
                                     <div className="wpo-blog-img">
                                         <Image 
                                             src={FILE_URL(event.collectionId, event.id, event.image)} 

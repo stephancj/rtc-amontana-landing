@@ -18,7 +18,7 @@ const About = (props) => {
                 <div className="row align-items-center">
                     <div className="col-lg-6 col-md-12 col-12">
                         <div className="wpo-about-wrap">
-                            <div className="wpo-about-img">
+                            <div className="wpo-about-img" data-aos="fade-right">
                                 <Image src={abimg} alt=""/>
                                 <div className="wpo-ab-shape-1">
                                     <div className="s-s1"></div>
@@ -50,7 +50,7 @@ const About = (props) => {
                         </div>
                     </div>
                     <div className="col-lg-6 col-md-12 col-12">
-                        <div className="wpo-about-text">
+                        <div className="wpo-about-text" data-aos="fade-left">
                             <span>A propos</span>
                             <h2>Un avenir meilleur pour notre communauté.</h2>
                             <p>

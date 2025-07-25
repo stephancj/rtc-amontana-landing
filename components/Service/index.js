@@ -72,7 +72,7 @@ const Service = (props) => {
                     <Slider {...settings}>
                         {props.aofs.map((aof, index) => (
                         <div className="col col-xl-3 col-lg-6 col-sm-6 col-12 slider-item" key={index}>
-                            <div className="wpo-features-item" style={{backgroundColor: aof.backgroundColor}}>
+                            <div className="wpo-features-item" style={{backgroundColor: aof.backgroundColor}} data-aos="fade-up">
                                 <div className="wpo-features-icon">
                                     <div className="icon">
                                         <Image 

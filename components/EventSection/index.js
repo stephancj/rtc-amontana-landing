@@ -25,7 +25,7 @@ const EventSection = (props) => {
                     <div className="row">
                         {props.upcomings.slice(0,3).map((upcoming, eitem)=>(
                             <div className="col col-lg-4 col-md-6 col-12" key={eitem}>
-                                <div className="wpo-event-single">
+                                <div className="wpo-event-single" data-aos="fade-up">
                                     <div className="wpo-event-item">
                                         <div className="wpo-event-img">
                                             <Image 

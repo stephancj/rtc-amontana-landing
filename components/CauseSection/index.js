@@ -32,7 +32,7 @@ const CauseSection = (props) => {
                     <div className="row">
                     {props.actions.slice(0, 3).map((action, index) => (
                         <div className="col-lg-4 col-md-6 col-12" key={index}>
-                            <div className="wpo-campaign-single">
+                            <div className="wpo-campaign-single" data-aos="fade-up">
                                 <div className="wpo-campaign-item">
                                     <div className="wpo-campaign-img">
                                         <Image 

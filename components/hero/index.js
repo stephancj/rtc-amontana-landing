@@ -17,7 +17,7 @@ const Hero =(props) => {
             <div className="container-fluid">
                 <div className="row align-items-center">
                     <div className="col col-xs-6 col-lg-6">
-                        <div className="wpo-hero-section-text">
+                        <div className="wpo-hero-section-text" data-aos="fade-right">
                             <div className="wpo-hero-title-top">
                                 <span>Rotaract Club Amontana</span>
                             </div>
@@ -33,7 +33,7 @@ const Hero =(props) => {
                         </div>
                     </div>
                     <div className="col-lg-6">
-                        <div className="right-vec">
+                        <div className="right-vec" data-aos="fade-left">
                             <div className="right-items-wrap">
                                 <div className="right-item">
                                     <div className="r-img">

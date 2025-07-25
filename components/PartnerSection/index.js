@@ -79,6 +79,7 @@ const PartnerSection = (props) => {
                                             key={pitem}
                                             href={partner.url}
                                             target="_blank"
+                                            data-aos="fade-up"
                                         >
                                             <Image src={FILE_URL(partner.collectionId, partner.id, partner.logo)} alt={partner.name} width={500} height={500}/>
                                         </Link>
