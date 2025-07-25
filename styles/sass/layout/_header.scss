@@ -1339,6 +1339,17 @@
 	overflow-y: scroll;
 }
 
+.mobileMenu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.4);
+  z-index: 9998;
+  transition: opacity 0.3s;
+}
+
 .responsivemenu .card-body {
 	background: #D22064;
 }
@@ -1417,6 +1428,19 @@
 	display: none;
 }
 
+.responsivemenu li a,
+.responsivemenu li p {
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.responsivemenu li a:hover,
+.responsivemenu li p:hover {
+  background: #fff;
+  color: #D22064;
+  text-decoration: underline;
+  box-shadow: 0 2px 8px rgba(210,32,100,0.08);
+}
+
 @media (max-width:992px) {
 	.showmenu {
 		display: block;
@@ -1446,6 +1470,77 @@
 	}
 }
 
+.mobileMenu.enhanced {
+  border-top-right-radius: 32px;
+  border-bottom-right-radius: 32px;
+  box-shadow: 0 8px 32px 0 rgba(50, 50, 50, 0.25);
+  transition: left 0.4s cubic-bezier(.77,0,.18,1), opacity 0.3s;
+  opacity: 0.98;
+  padding-top: 0;
+  padding-bottom: 32px;
+}
+.mobileMenu.enhanced .mobileMenu-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem 1rem 1.5rem;
+  background: #fff;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.mobileMenu.enhanced .mobileMenu-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+}
+.mobileMenu.enhanced .mobileMenu-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  padding: 0 2rem 1.5rem 2rem;
+  letter-spacing: 1px;
+}
+.mobileMenu.enhanced .responsivemenu {
+  margin-top: 1.5rem;
+}
+.mobileMenu.enhanced .responsivemenu li a,
+.mobileMenu.enhanced .responsivemenu li p {
+  font-size: 1.15rem;
+  padding: 18px 40px;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  outline: none;
+}
+.mobileMenu.enhanced .responsivemenu li a:focus,
+.mobileMenu.enhanced .responsivemenu li p:focus {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #D22064;
+  background: #fff;
+  color: #D22064;
+}
+@media(max-width:450px) {
+  .mobileMenu.enhanced {
+    left: -200px;
+    width: 200px;
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+  }
+  .mobileMenu.enhanced .mobileMenu-header {
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+  }
+  .mobileMenu.enhanced .mobileMenu-title {
+    padding: 0 1rem 1rem 1rem;
+  }
+  .mobileMenu.enhanced .responsivemenu li a,
+  .mobileMenu.enhanced .responsivemenu li p {
+    font-size: 1rem;
+    padding: 13px 18px;
+  }
+}
 
 
 .middle-header-3 .showmenu {
