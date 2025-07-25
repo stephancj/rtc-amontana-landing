@@ -1,8 +1,9 @@
+
 import React, { useState } from 'react';
 import parse from 'html-react-parser';
-import { FaqPageJsonLd } from 'next-seo';
-
+import { FAQPageJsonLd } from 'next-seo';
 const FAQSection = ({ faqs }) => {
+
     const [openIndex, setOpenIndex] = useState(null);
 
     const toggleIndex = (idx) => {
@@ -11,7 +12,7 @@ const FAQSection = ({ faqs }) => {
 
     return (
         <>
-            <FaqPageJsonLd
+            <FAQPageJsonLd
                 mainEntity={faqs.map(item => ({
                     questionName: item.question,
                     acceptedAnswerText: item.answer,
