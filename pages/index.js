@@ -23,6 +23,8 @@ import { useEffect } from "react";
 import { getAllUpcomingEvents } from "../services/upcomingEvents.service";
 import Loader from "../components/shared/loader/loader";
 import Head from "next/head";
+import FAQSection from "../components/FAQSection";
+import { getAllFaqs } from "../services/faqs.service";
 
 const HomePage = (props) => {
     const [isLoading, setIsLoading] = React.useState(true);
@@ -32,15 +34,17 @@ const HomePage = (props) => {
     const [members, setMembers] = React.useState([]);
     const [aofs, setAofs] = React.useState([]);
     const [partners, setPartners] = React.useState([]);
+    const [faqs, setFaqs] = React.useState([]);
 
     const getAllData = async () => {
-        const [aofs, events, actions, upcomings,  members, partners] = await Promise.all([
+        const [aofs, events, actions, upcomings,  members, partners, faqs] = await Promise.all([
             getAllAreasOfFocus(),
             getAllEvents(),
             getAllActions(),
             getAllUpcomingEvents(),
             getAllMembers(),
-            getPartners()
+            getPartners(),
+            getAllFaqs()
         ]);
         setEvents(events);
         setActions(actions);
@@ -48,6 +52,7 @@ const HomePage = (props) => {
         setUpcomings(upcomings);
         setAofs(aofs);
         setPartners(partners);
+        setFaqs(faqs);
         setIsLoading(false);
     };
 
@@ -90,6 +95,7 @@ const HomePage = (props) => {
                     cTitle={"Rejoignez-nous, transformez des vies, vivez la magie"}
                 />
                 <PartnerSection partners={partners} />
+                <FAQSection faqs={faqs} />
                 <Footer />
                 <Scrollbar />
             </div>
